@@ -71,3 +71,15 @@ The application utilizes standard browser `localStorage` solely for:
 
 All of the above keys exist exclusively on the user's local machine and are never transmitted to any external server or third party. Users can clear this data at any time via their browser's "Clear Site Data" or "Clear Cookies & Cache" tools.
 
+---
+
+## 6. Educational Research Mission & Support for Official Rights Holders
+
+### Pure Academic & Historical Preservation Scope
+This project is engineered exclusively as a **non-commercial educational and academic research demonstration** in modern web technologies (TypeScript, HTML5 Canvas 2D, Three.js WebGL, and Web Audio API).
+
+- **Non-Invasive Clean-Room Code**: No proprietary binary ROM files, commercial assets, graphics rips, or audio recordings are stored, hosted, or distributed.
+- **Anti-Hijacking Policy**: This project does not seek to clone, hijack, bypass licensing, or replace commercial games or hardware consoles.
+- **Encouragement to Purchase Official Releases**: All visitors are actively encouraged to support original developers, game publishers, and hardware creators (Nintendo, Bandai Namco, Sega, Sony Interactive Entertainment, Capcom, Square Enix / Taito, id Software / Bethesda, Valve, etc.) by purchasing official commercial games, remasters, eShop titles, and licensed hardware.
+
+

@@ -1,6 +1,11 @@
 # 📚 Games Catalog & Historical Dossiers
 
-A detailed reference for all 35 authentic historic game recreations included in the **Classic Retro Arcade Vault**.
+A detailed reference for all 53 authentic historic game and console recreations included in the **Classic Retro Arcade, Handheld & Console Vault**.
+
+> [!NOTE]
+> **Educational Research & Rights Holder Notice**
+> 
+> This catalog documents clean-room TypeScript recreations engineered strictly for **educational research, computer history preservation, and interactive web graphics analysis**. This project does **NOT** seek to hijack, replace, or monetize original commercial titles. We strongly encourage all retro gaming fans to support original developers and rights holders by visiting their official portals and purchasing official commercial releases and remasters.
 
 ---
 
@@ -256,3 +261,29 @@ A detailed reference for all 35 authentic historic game recreations included in 
   1. **Super Mario Advance 4: Super Mario Bros. 3 (2003)**: The definitive 32-bit remaster of SMB3 featuring Tanooki suit flying, Frog suits, digitized Charles Martinet voice clips, and Koopaling airships.
   2. **Pokémon Emerald (2004)**: The ultimate Generation III Hoenn adventure featuring animated 32-bit battle sprites, Team Magma vs. Team Aqua storyline, summoning Rayquaza at Sootopolis City, and the Battle Frontier.
   3. **The Legend of Zelda: The Minish Cap (2004)**: Capcom/Flagship's pixel-art action adventure starring Link and the talking cap Ezlo, featuring size-shifting to explore Hyrule as a microscopic Minish and forging the Four Sword.
+
+---
+
+## 🌐 Directory of Official Original Publishers & Rights Holders
+
+For historical reference and to support the original hardware manufacturers, game studios, and copyright holders who created these legendary works, please visit their official web portals:
+
+| Original Publisher / Creator | Iconic Titles & Hardware | Official Web Portals |
+|------------------------------|--------------------------|----------------------|
+| **Nintendo Co., Ltd.** | *Donkey Kong*, *Mario Bros.*, *Super Mario Bros.*, *Game Boy DMG-01*, *Super Mario Land*, *Tetris DMG*, *Dr. Mario*, *Metroid II*, *Kirby's Dream Land*, *Super Mario Land 2*, *Zelda: Link's Awakening*, *Donkey Kong '94*, *Wario Land II*, *Game Boy Advance SP*, *Super Mario Advance 4*, *Zelda: The Minish Cap* | [Nintendo Official Website](https://www.nintendo.com) • [Nintendo eShop & Store](https://store.nintendo.com) |
+| **Bandai Namco Entertainment** | *Pac-Man*, *Ridge Racer 3D* | [Bandai Namco Official Site](https://www.bandainamcoent.com) • [Pac-Man Official Portal](https://pacman.com) |
+| **Sega Corporation** | *OutRun*, *Zaxxon*, *Frogger* | [Sega Official Website](https://www.sega.com) • [Sega Shop](https://shop.sega.com) |
+| **Sony Interactive Entertainment** | *PlayStation 1 (PS1)* | [PlayStation Official Site](https://www.playstation.com) • [PlayStation Store](https://store.playstation.com) |
+| **Game Freak Inc.** | *Pokémon Red & Blue*, *Pokémon Emerald* | [Pokémon Official Portal](https://www.pokemon.com) • [Game Freak Japan](https://www.gamefreak.co.jp) |
+| **Capcom Co., Ltd.** | *The Legend of Zelda: The Minish Cap* | [Capcom Official Site](https://www.capcom.com) |
+| **Naughty Dog / Sony** | *Crash Bandicoot 3D* | [Naughty Dog Official](https://www.naughtydog.com) • [Crash Bandicoot Site](https://www.crashbandicoot.com) |
+| **Taito Corporation / Square Enix** | *Space Invaders* | [Taito Official Website](https://www.taito.co.jp/en) • [Square Enix Portal](https://www.square-enix.com) |
+| **id Software / Bethesda / Microsoft** | *Wolfenstein 3D*, *DOOM* | [id Software Official](https://www.idsoftware.com) • [Bethesda.net](https://bethesda.net) |
+| **Valve Corporation** | *Half-Life* | [Valve Corporation](https://www.valvesoftware.com) • [Half-Life on Steam](https://store.steampowered.com/app/70/HalfLife/) |
+| **Atari Interactive** | *Pong*, *Asteroids* | [Atari Official Website](https://atari.com) |
+| **Activision Blizzard / Sierra On-Line** | *King's Quest I*, *Space Quest I*, *Demon Attack* | [Activision Official Site](https://www.activision.com) • [Blizzard Entertainment](https://www.blizzard.com) |
+| **3D Realms / Apogee** | *Duke Nukem 3D* | [3D Realms Official Portal](https://3drealms.com) |
+| **Technos Japan / Arc System Works** | *Double Dragon* | [Arc System Works Official](https://www.arcsystemworks.jp/en/) |
+| **Imangi Studios** | *Temple Run 3D* | [Imangi Studios Official](https://imangistudios.com) |
+| **Computer History Museums & Libraries** | BBC Micro, Commodore 64, ZX Spectrum, ZX81 | [Internet Archive Software Library](https://archive.org/details/softwarelibrary) • [Center for Computing History UK](https://www.computinghistory.org.uk) |
+

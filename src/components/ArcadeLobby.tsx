@@ -1517,9 +1517,6 @@ export const ArcadeLobby: React.FC<ArcadeLobbyProps> = ({
                 {t.activeGamesBadge}
               </span>
             </div>
-            <p className="text-[11px] text-neutral-400 font-mono hidden sm:block">
-              {t.headerSub}
-            </p>
           </div>
         </div>
 
@@ -5417,7 +5414,7 @@ export const ArcadeLobby: React.FC<ArcadeLobbyProps> = ({
               Retro Arcade Vault • Volledig responsief voor mobiel &amp; desktop
             </div>
             <div className="flex items-center gap-4">
-              <span>36 Klassiekers (1972–2011) • 0 External ROMs</span>
+              <span>53 Klassieke Games &amp; Consoles • 0 External ROMs</span>
               {onOpenLeaderboard && (
                 <button
                   type="button"

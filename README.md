@@ -8,7 +8,7 @@
 [![Web Audio API](https://img.shields.io/badge/Audio-Chiptune_Synthesizers-orange.svg?style=flat-square)](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](LICENSE)
 
-An interactive, browser-native **Retro Arcade, Handheld & Computer Museum** featuring **40+ fully playable classic games and consoles** spanning 1972 through 2011. Includes arcade cabinets, microcomputers, the **1989 Nintendo Game Boy (DMG-01)**, the **2003 Game Boy Advance SP (32-Bit)**, and the **1994 Sony PlayStation 1 (PS1 32-Bit)**. Built from scratch with zero external game ROM dependencies using pure TypeScript, React 19, Canvas 2D, Three.js WebGL, and real-time Web Audio API sound synthesizers.
+An interactive, browser-native **Retro Arcade, Handheld & Computer Museum** featuring **53 fully playable classic games and consoles** spanning 1972 through 2011. Includes arcade cabinets, microcomputers, the **1989 Nintendo Game Boy (DMG-01)**, the **2003 Game Boy Advance SP (32-Bit)**, and the **1994 Sony PlayStation 1 (PS1 32-Bit)**. Built from scratch with zero external game ROM dependencies using pure TypeScript, React 19, Canvas 2D, Three.js WebGL, and real-time Web Audio API sound synthesizers.
 
 ---
 
@@ -49,15 +49,28 @@ An interactive, browser-native **Retro Arcade, Handheld & Computer Museum** feat
 
 ---
 
+## 🎓 Educational Research Mission & Non-Commercial Preservation Policy
+
+> [!NOTE]
+> **Strictly an Educational & Academic Computer History Research Project**
+> 
+> This repository is developed **strictly for educational, academic, and historical preservation research**. Its goal is to demonstrate how early video game physics, pseudo-3D graphics algorithms, and hardware audio synthesizers can be re-engineered cleanly using modern open web standards (TypeScript, Canvas 2D, Three.js WebGL, and Web Audio API).
+>
+> - **NOT Intended to Hijack, Compete, or Monetize**: This project does **NOT** attempt to hijack, replace, bypass, or commercialize original intellectual property, trade secrets, or commercial titles.
+> - **Zero Commercial Asset Distribution**: No proprietary binary ROM dumps (`.nes`, `.gb`, `.gba`, `.iso`), commercial audio recordings (`.mp3`), or original artwork files are hosted, packaged, or distributed.
+> - **Support Official Creators & Rights Holders**: We strongly encourage all visitors and gaming enthusiasts to support the original creators, publishers, and current rights holders by purchasing official commercial remasters, digital re-releases, console collections, and official merchandise.
+
+---
+
 ## 🤖 Built with Artificial Intelligence & GitHub Testing Notice
 
-This entire retro vault — including all **40+ clean-room game engines**, sub-stepped physics pipelines, procedural Web Audio synthesizers, CRT/LCD shaders, and the 3D WebGL arcade hall — was conceptualized, structured, and **coded in collaboration with modern AI models (Google AI Studio / Gemini)**.
+This entire retro vault — including all **53 clean-room game and console engines**, sub-stepped physics pipelines, procedural Web Audio synthesizers, CRT/LCD shaders, and the 3D WebGL arcade hall — was conceptualized, structured, and **coded in collaboration with modern AI models (Google AI Studio / Gemini)**.
 
 ### 🧪 GitHub Community Testing & AI Instructions Notice
 
 > [!IMPORTANT]
 > **Many games and console engines are in active evolution and require testing!**
-> Because all 40+ games are re-engineered from scratch in native TypeScript without original ROM binaries:
+> Because all 53 games are re-engineered from scratch in native TypeScript without original ROM binaries:
 > 1. **Testing Needed**: Several titles (especially newer console additions like PlayStation 1 3D games, Game Boy Advance SP titles, and 3D FPS engines) need community testing across different browsers, mobile devices, and gamepads.
 > 2. **Reporting Issues**: If you encounter a bug, audio glitch, input collision issue, or graphical anomaly, please open a GitHub Issue with reproduction steps.
 > 3. **Additional AI Instructions (`AGENTS.md` & `GEMINI.md`)**: When contributing code or using AI coding assistants (such as Google AI Studio, Gemini, or Claude) to expand games, consult `AGENTS.md` and `GEMINI.md` at the project root. These files contain system instructions and guidelines for game physics, input handling, and clean-room coding standards.
@@ -246,6 +259,31 @@ classic-retro-arcade/
 ├── vite.config.ts
 └── README.md
 ```
+
+---
+
+## 🌐 Official Original Publishers & Rights Holders Directory
+
+To encourage visitors to explore, support, and purchase the official commercial releases, remasters, and original titles created by these legendary hardware and software pioneers, direct links to official publisher sites are listed below:
+
+| Original Company / Rights Holder | Associated Games & Hardware Platforms | Official Websites & Storefronts |
+|-----------------------------------|---------------------------------------|---------------------------------|
+| **Nintendo Co., Ltd.** | *Donkey Kong*, *Mario Bros.*, *Super Mario Bros.*, *Game Boy (DMG-01)*, *Super Mario Land*, *Tetris DMG*, *Dr. Mario*, *Metroid II*, *Kirby's Dream Land*, *Super Mario Land 2*, *Zelda: Link's Awakening*, *Donkey Kong '94*, *Wario Land II*, *Game Boy Advance SP*, *Super Mario Advance 4*, *Zelda: The Minish Cap* | [Nintendo Official Site](https://www.nintendo.com) • [Nintendo Store](https://store.nintendo.com) |
+| **Bandai Namco Entertainment** | *Pac-Man*, *Ridge Racer 3D* | [Bandai Namco Official Portal](https://www.bandainamcoent.com) • [Pac-Man Official](https://pacman.com) |
+| **Sega Corporation** | *OutRun*, *Zaxxon*, *Frogger* | [Sega Official Website](https://www.sega.com) • [Sega Shop](https://shop.sega.com) |
+| **Sony Interactive Entertainment** | *PlayStation 1 (PS1)* | [PlayStation Official Site](https://www.playstation.com) • [PlayStation Store](https://store.playstation.com) |
+| **Game Freak Inc.** | *Pokémon Red & Blue*, *Pokémon Emerald* | [Pokémon Official Website](https://www.pokemon.com) • [Game Freak](https://www.gamefreak.co.jp) |
+| **Capcom Co., Ltd.** | *The Legend of Zelda: The Minish Cap* | [Capcom Official Website](https://www.capcom.com) |
+| **Naughty Dog / Sony** | *Crash Bandicoot 3D* | [Naughty Dog Official](https://www.naughtydog.com) • [Crash Bandicoot Portal](https://www.crashbandicoot.com) |
+| **Taito Corporation / Square Enix** | *Space Invaders* | [Taito Official Portal](https://www.taito.co.jp/en) • [Square Enix Store](https://www.square-enix.com) |
+| **id Software / Bethesda / Microsoft** | *Wolfenstein 3D*, *DOOM* | [id Software Official](https://www.idsoftware.com) • [Bethesda.net](https://bethesda.net) |
+| **Valve Corporation** | *Half-Life* | [Valve Software](https://www.valvesoftware.com) • [Half-Life on Steam](https://store.steampowered.com/app/70/HalfLife/) |
+| **Atari Interactive** | *Pong*, *Asteroids* | [Atari Official Portal](https://atari.com) |
+| **Activision Blizzard / Sierra On-Line** | *King's Quest I*, *Space Quest I*, *Demon Attack* | [Activision Official](https://www.activision.com) • [Blizzard Entertainment](https://www.blizzard.com) |
+| **3D Realms / Apogee** | *Duke Nukem 3D* | [3D Realms Official Portal](https://3drealms.com) |
+| **Technos Japan / Arc System Works** | *Double Dragon* | [Arc System Works](https://www.arcsystemworks.jp/en/) |
+| **Imangi Studios** | *Temple Run 3D* | [Imangi Studios Official](https://imangistudios.com) |
+| **Historical Computer Museums & Archives** | BBC Micro, Commodore 64, ZX Spectrum, ZX81 | [Internet Archive Software Library](https://archive.org/details/softwarelibrary) • [Center for Computing History](https://www.computinghistory.org.uk) |
 
 ---
 

@@ -2385,10 +2385,10 @@ export const GAMES_METADATA: GameMetadata[] = [
 export const LOBBY_TRANSLATIONS = {
   nl: {
     badge: 'RETRO ARCADE VAULT',
-    activeGamesBadge: '47 KLASSIEKERS ACTIEF • FREE PLAY',
+    activeGamesBadge: '53 GAMES & CONSOLES ACTIEF • FREE PLAY',
     headerSub: 'Gouden Tijdperk Retro Speelhal, Game Boy Bibliotheek & PC Klassiekers • 10 Game Boy Klassiekers, GBA SP, Atari, Sinclair, BBC Micro, C64 & DOS',
     mainTitle: 'De Ultieme Retro Speelhal',
-    mainDesc: 'Stap binnen in de gouden eeuw van videogames (1972 – 2011). Speel 47 iconische arcademeesterwerken, complete 10-game Game Boy bibliotheek, handheld klassiekers en pc-avonturen in authentieke resolutie, 60 FPS snelheid en originele chiptune-synthese.',
+    mainDesc: 'Stap binnen in de gouden eeuw van videogames (1972 – 2011). Speel 53 iconische arcademeesterwerken, complete 10-game Game Boy bibliotheek, handheld klassiekers en pc-avonturen in authentieke resolutie, 60 FPS snelheid en originele chiptune-synthese.',
     
     // Views
     views: {
@@ -2453,10 +2453,10 @@ export const LOBBY_TRANSLATIONS = {
   },
   en: {
     badge: 'RETRO ARCADE VAULT',
-    activeGamesBadge: '47 CLASSICS IN VAULT • FREE PLAY',
+    activeGamesBadge: '53 GAMES & CONSOLES IN VAULT • FREE PLAY',
     headerSub: 'Golden Era Retro Arcade Collection, Complete Game Boy Library & PC Classics • 10 Game Boy Classics, GBA SP, Atari Vector, Sinclair, BBC Micro, C64 & DOS',
     mainTitle: 'The Ultimate Retro Arcade Hall',
-    mainDesc: 'Step into the golden age of video games (1972 – 2011). Play 47 iconic arcade masterpieces, full 10-game Game Boy library, handheld classics, vector games and graphic adventures in authentic resolution, 60 FPS performance, and original synthesized chiptune audio.',
+    mainDesc: 'Step into the golden age of video games (1972 – 2011). Play 53 iconic arcade masterpieces, full 10-game Game Boy library, handheld classics, vector games and graphic adventures in authentic resolution, 60 FPS performance, and original synthesized chiptune audio.',
 
     // Views
     views: {
