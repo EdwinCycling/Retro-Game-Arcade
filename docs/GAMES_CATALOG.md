@@ -217,3 +217,42 @@ A detailed reference for all 35 authentic historic game recreations included in 
 - **Platform**: iOS & Android
 - **Historical Significance**: The pioneer of the modern mobile endless 3D runner genre.
 - **Engine Highlights**: Procedural 3D WebGL temple pathways, 90-degree fast corner turns, obstacle jumping & sliding, tilt-leaning coin magnets, and Demon Monkey pursuit.
+
+---
+
+## 36. Game Boy DMG-01 Console & Game Vault (1989)
+- **Developer**: Gunpei Yokoi & Nintendo R&D1
+- **Platform**: Game Boy Handheld (Sharp LR35902 8-bit CPU @ 4.19 MHz)
+- **Historical Significance**: The revolutionary handheld console that popularized portable gaming worldwide with over 118 million units sold.
+- **Hardware & Engine Highlights**: 160×144 dot-matrix LCD screen with authentic 4-shade olive green palettes, contrast slider wheel, physical cartridge insertion mechanism, and 10 iconic games playable in the vault:
+  1. **Super Mario Land (1989)**: Sarasaland adventure with Birabuto kingdom, Sky Pop airplane, and Tatanga spaceship boss.
+  2. **Tetris DMG (1989)**: The world-famous puzzle game bundled with the Game Boy, featuring the iconic *Korobeiniki* chiptune soundtrack.
+  3. **Dr. Mario (1990)**: Fast-paced virus eradication puzzle game with falling double-colored vitamin capsules.
+  4. **Metroid II: Return of Samus (1991)**: Atmospheric bounty hunting on planet SR388 hunting 39 Metroid evolutions.
+  5. **Kirby's Dream Land (1992)**: Masahiro Sakurai's debut featuring Kirby's inhale, float, and star-spitting mechanics against King Dedede.
+  6. **Super Mario Land 2: 6 Golden Coins (1992)**: Expanded Mario platformer introducing Mario's greedy rival Wario.
+  7. **The Legend of Zelda: Link's Awakening (1993)**: Koholint Island mystery adventure featuring the Wind Fish and 8 Instrument dungeons.
+  8. **Donkey Kong '94 (1994)**: Masterpiece puzzle platformer expanding the original arcade classic with 101 puzzle levels and Mario backflips.
+  9. **Pokémon Red & Blue (1996)**: Satoshi Tajiri's revolutionary monster collecting RPG featuring 151 Pokémon across Kanto.
+  10. **Wario Land II (1998)**: Innovative puzzle platformer starring the immortal anti-hero Wario with reaction transformations (Flat Wario, Hot Wario, Zombie Wario).
+
+---
+
+## 37. PlayStation 1 (PS1 32-Bit) Console & Discs (1994)
+- **Developer**: Ken Kutaragi / Sony Computer Entertainment
+- **Platform**: Sony PlayStation 1 (LSI R3000A 32-Bit RISC CPU @ 33.8688 MHz)
+- **Historical Significance**: The console that ushered video games into the 3D polygon and double-speed CD-ROM disc era, selling over 102 million systems.
+- **Hardware & Engine Highlights**: 320×240 textured 3D mesh rendering, 24-channel SPU CD audio, Memory Card saving, DualShock analog vibration controllers, and 3D games:
+  1. **Crash Bandicoot 3D (1996)**: Naughty Dog's landmark 3D corridor platformer on N. Sanity Island featuring spin attacks, Wumpa fruit, TNT crates, and Aku Aku tiki mask protection.
+  2. **Ridge Racer 3D (1994)**: Namco's iconic launch 3D drift racer featuring high-speed 60 FPS drifting around the Mountain Cliff Circuit and Namco's energetic CD techno score.
+
+---
+
+## 38. Game Boy Advance SP (GBA SP 32-Bit) Console & Cartridges (2003)
+- **Developer**: Nintendo R&D2 / Satoru Iwata
+- **Platform**: Game Boy Advance SP (ARM7TDMI 32-Bit RISC CPU @ 16.78 MHz)
+- **Historical Significance**: The iconic foldable clamshell handheld with a frontlit/backlit screen (AGS-001 / AGS-101) and rechargeable Li-Ion battery.
+- **Hardware & Engine Highlights**: 240×160 32-bit color screen with 32,768 colors, 6 metallic shell colorways (Silver, Cobalt Blue, Flame Red, Onyx Black, Pearl Pink, Tribal), DirectSound 6-channel stereo PCM audio, and flagship 32-bit games:
+  1. **Super Mario Advance 4: Super Mario Bros. 3 (2003)**: The definitive 32-bit remaster of SMB3 featuring Tanooki suit flying, Frog suits, digitized Charles Martinet voice clips, and Koopaling airships.
+  2. **Pokémon Emerald (2004)**: The ultimate Generation III Hoenn adventure featuring animated 32-bit battle sprites, Team Magma vs. Team Aqua storyline, summoning Rayquaza at Sootopolis City, and the Battle Frontier.
+  3. **The Legend of Zelda: The Minish Cap (2004)**: Capcom/Flagship's pixel-art action adventure starring Link and the talking cap Ezlo, featuring size-shifting to explore Hyrule as a microscopic Minish and forging the Four Sword.

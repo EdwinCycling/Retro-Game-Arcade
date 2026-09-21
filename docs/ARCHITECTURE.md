@@ -54,9 +54,25 @@ No audio assets (MP3/WAV) are downloaded over the network. Every sound effect an
   - Low-frequency mechanical fan hum
   - Attract-mode chatter from adjacent machines
 
+### E. Game Boy Advance DirectSound & PS1 SPU Audio
+- **GBA DirectSound**: Emulates dual 8-bit DirectSound PCM channels + 4 legacy Game Boy PSG chiptune channels (2 square wave, 1 wave table, 1 noise channel).
+- **PS1 24-Channel SPU**: Procedural 3D CD audio synthesis with reverb delay lines, ADPCM noise modulation, and pitch shifting for high-speed motor sound effects (*Ridge Racer*) and island chiptunes (*Crash Bandicoot*).
+
 ---
 
-## 3. Rendering Techniques
+## 3. Rendering Techniques & Handheld / Console Shaders
+
+### Handheld & Console Hardware Emulation
+1. **Game Boy DMG-01 (1989)**:
+   - 160×144 pixel buffer scaled with crisp nearest-neighbor integer interpolation.
+   - 4-shade olive green palette matrix (`#0f380f`, `#306230`, `#8bac0f`, `#9bbc0f`) with physical LCD grid line overlays and contrast wheel manipulation.
+2. **Game Boy Advance SP (2003)**:
+   - 240×160 32-bit color screen with 32,768 colors.
+   - Clamshell folding animation and toggleable AGS-001 (Frontlit) / AGS-101 (Backlit Brighter) display lighting.
+   - 6 customizable metallic shell colorways (Silver, Cobalt Blue, Flame Red, Onyx Black, Pearl Pink, Tribal).
+3. **Sony PlayStation 1 (1994)**:
+   - 320×240 polygon/sprite mesh renderer with double-speed CD-ROM drive spinning animation.
+   - PS1 Memory Card save state simulation and DualShock analog thumbstick vibration feedback.
 
 ### Pseudo-3D Sprite Scaling Engine (*OutRun*)
 - Uses Yu Suzuki's classic pseudo-3D road technique:

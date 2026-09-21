@@ -48,12 +48,33 @@ The **Classic Retro Arcade** supports four distinct control schemes out of the b
 - **C / L**: Jump (Combine with Punch/Kick for flying kick)
 - **Z + X (simultaneously)**: Devastating Back Elbow strike
 
-#### 🔫 FPS Games (DOOM, Wolfenstein 3D, Duke Nukem 3D, Half-Life)
-- **W / A / S / D**: Walk forward/backward, Strafe left/right
-- **Mouse / Left / Right Arrow**: Turn view
-- **Left Click / Space / Ctrl**: Fire active weapon
-- **1 - 5**: Select weapon (Crowbar/Fists, Pistol, Shotgun, Chaingun, Rocket)
-- **E**: Open doors and push hidden wall secrets
+#### 🎮 Handheld & Console Controls (Game Boy DMG, GBA SP, PS1)
+
+##### 🕹️ Nintendo Game Boy DMG-01 (1989)
+- **Arrow Keys / D-Pad**: Move character / cursor
+- **Z / J / A**: Button A (Jump, Confirm, Spin)
+- **X / K / B**: Button B (Sprint, Cancel, Fire)
+- **Shift / Tab**: Select
+- **Enter / Space**: Start / Pause
+
+##### 📱 Game Boy Advance SP (2003)
+- **Arrow Keys / D-Pad**: 8-way movement
+- **Z / J / A**: Button A (Jump / Action)
+- **X / K / B**: Button B (Dash / Attack / Item)
+- **A / Q / L**: L Shoulder Trigger
+- **S / E / R**: R Shoulder Trigger
+- **Shift / Tab**: Select / Map
+- **Enter / Space**: Start / Menu
+
+##### 🎮 Sony PlayStation 1 (1994)
+- **Arrow Keys / Left Analog Stick**: Move / Steer
+- **Z / J**: Cross ✕ (Accelerate / Jump)
+- **X / K**: Circle ◯ (Brake / Drift / Cancel)
+- **C / L**: Square □ (Attack / Spin / Alt Brakes)
+- **V / I**: Triangle △ (View Change / Item)
+- **Q / E**: L1 / R1 Triggers
+- **1 / 2**: L2 / R2 Triggers
+- **Enter / Space**: Start / Pause
 
 ---
 
