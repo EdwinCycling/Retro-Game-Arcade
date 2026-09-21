@@ -1,15 +1,15 @@
 export type Language = 'nl' | 'en';
 
 export interface GameMetadata {
-  id: 'pacman' | 'space_invaders' | 'donkey_kong' | 'demon_attack' | 'repton' | 'eindeloos' | 'frogger' | 'chuckie_egg' | 'frak' | 'arcadians' | 'rocket_raid' | 'qbert' | 'outrun' | 'tetris' | 'kings_quest' | 'space_quest' | 'pong' | 'battle_chess' | 'mario' | 'super_mario' | 'wolfenstein' | 'doom' | 'duke' | 'half_life' | 'c64_pinball' | 'temple_run' | 'lemmings' | 'manic_miner' | 'monster_maze' | 'asteroids' | 'prince' | 'double_dragon' | 'snake' | 'zaxxon' | 'exile';
+  id: 'pacman' | 'space_invaders' | 'donkey_kong' | 'demon_attack' | 'repton' | 'eindeloos' | 'frogger' | 'chuckie_egg' | 'frak' | 'arcadians' | 'rocket_raid' | 'qbert' | 'outrun' | 'tetris' | 'kings_quest' | 'space_quest' | 'pong' | 'battle_chess' | 'mario' | 'super_mario' | 'wolfenstein' | 'doom' | 'duke' | 'half_life' | 'c64_pinball' | 'temple_run' | 'lemmings' | 'manic_miner' | 'monster_maze' | 'asteroids' | 'prince' | 'double_dragon' | 'snake' | 'zaxxon' | 'exile' | 'impossible_mission' | 'mario_land' | 'tetris_dmg' | 'dr_mario' | 'metroid_2' | 'kirby_dream_land' | 'mario_land_2' | 'zelda_links_awakening' | 'donkey_kong_94' | 'pokemon_red' | 'wario_land_2' | 'gba_sp' | 'ps1' | 'pokemon_emerald' | 'mario_advance' | 'zelda_minish' | 'crash_bandicoot' | 'ridge_racer';
   year: number;
   yearDisplay: string;
   yearIcon: string;
-  system: 'bbc_micro' | 'arcade' | 'c64' | 'atari_2600' | 'ibm_pc' | 'mobile' | 'zx_spectrum' | 'zx81' | 'dos_pc';
+  system: 'bbc_micro' | 'arcade' | 'c64' | 'atari_2600' | 'ibm_pc' | 'mobile' | 'zx_spectrum' | 'zx81' | 'dos_pc' | 'gameboy' | 'gba_sp' | 'ps1';
   systemName: { nl: string; en: string };
-  genre: 'space' | 'maze' | 'platform' | 'simulation' | 'puzzle' | 'adventure' | 'runner' | 'horror' | 'cinematic_platform' | 'beat_em_up' | 'snake' | 'racing' | 'physics_sandbox';
+  genre: 'space' | 'maze' | 'platform' | 'simulation' | 'puzzle' | 'adventure' | 'runner' | 'horror' | 'cinematic_platform' | 'beat_em_up' | 'snake' | 'racing' | 'physics_sandbox' | 'rpg' | 'action';
   genreName: { nl: string; en: string };
-  category?: 'arcade' | 'adventure' | 'c64' | 'mobile' | 'spectrum' | 'zx81';
+  category?: 'arcade' | 'adventure' | 'c64' | 'mobile' | 'spectrum' | 'zx81' | 'handheld' | 'portable';
   categoryName?: { nl: string; en: string };
   title: string;
   subtitle: { nl: string; en: string };
@@ -1497,16 +1497,898 @@ export const GAMES_METADATA: GameMetadata[] = [
       media: 'Dual Motorola 68000 Arcade PCB'
     },
     coinPrice: '1 COIN / FREE PLAY'
+  },
+  {
+    id: 'impossible_mission',
+    year: 1984,
+    yearDisplay: '1984',
+    yearIcon: '🕵️',
+    system: 'c64',
+    systemName: { nl: 'Commodore 64 & SID 6581', en: 'Commodore 64 & SID 6581' },
+    genre: 'platform',
+    genreName: { nl: 'Cinematic Stealth Platformer', en: 'Cinematic Stealth Platformer' },
+    category: 'c64',
+    categoryName: { nl: 'Commodore 64 Klassiekers', en: 'Commodore 64 Classics' },
+    title: 'IMPOSSIBLE MISSION',
+    subtitle: { nl: 'Epyx • Stay A While, Stay Forever!', en: 'Epyx • Stay A While, Stay Forever!' },
+    creator: 'Epyx • Dennis Caswell',
+    cabinetTheme: {
+      primaryColor: '#3b82f6',
+      secondaryColor: '#1d4ed8',
+      neonColor: '#60a5fa',
+      glowBorder: 'rgba(59, 130, 246, 0.45)',
+      accentBg: 'from-blue-950 to-black',
+      textColor: 'text-blue-400',
+      marqueeBg: 'bg-blue-900/70'
+    },
+    summary: {
+      nl: 'De ultieme Commodore 64 sensatie van Dennis Caswell en Epyx! Infiltreer het ondergrondse bunkercomplex van professor Elvin Atombender, maak gymnastieke salto\'s over dodelijke robots, doorzoek computers en terminals naar computerponskaarten en defuseer de kernraket binnen 6 uur!',
+      en: 'The definitive Commodore 64 masterpiece by Dennis Caswell and Epyx! Infiltrate Professor Elvin Atombender\'s subterranean bunker, execute gymnastic somersaults over lethal patrol robots, search mainframes for punch-card puzzle pieces, and defuse the missile before the 6-hour clock expires!'
+    },
+    highlights: {
+      nl: [
+        'Legendarische gedigitaliseerde spraaksynthese ("Another visitor... Stay a while, stay forever!" & de valschreeuw)',
+        'Gymnastieke 360-graden vliegende salto en realistische fysica-animatie op ruitjespapier ontworpen',
+        '8 Subterrane sectoren met hydraulische liftschacht, patrouille- en laser-robots en de dodelijke plasma-orb',
+        'Interactieve zakcomputer om 36 ponskaartstukken te roteren, spiegelen en robots tijdelijk te snoozen'
+      ],
+      en: [
+        'Legendary digitized speech synthesis ("Another visitor... Stay a while, stay forever!" & the iconic scream)',
+        'Gymnastic 360-degree running somersault jump and authentic kinematic weight designed on graph paper',
+        '8 Subterranean sectors with hydraulic elevator shaft, patrol & laser-zapping robots, and the deadly plasma orb',
+        'Interactive in-game Pocket Computer to rotate, flip and assemble 36 punch-card pieces and snooze room robots'
+      ]
+    },
+    specs: {
+      resolution: 'Commodore 64 VIC-II 320x200 (Scaled 640x360)',
+      fps: '60 FPS Smooth Raster Animation',
+      soundChip: 'MOS SID 6581 + Electronic Speech Systems (ESS)',
+      media: 'Commodore 1541 5.25" Floppy Disk'
+    },
+    coinPrice: '1541 DISK FLOPPY'
+  },
+  {
+    id: 'mario_land',
+    year: 1989,
+    yearDisplay: '1989',
+    yearIcon: '🍄',
+    system: 'gameboy',
+    systemName: { nl: 'Nintendo Game Boy (DMG-01)', en: 'Nintendo Game Boy (DMG-01)' },
+    genre: 'platform',
+    genreName: { nl: 'Handheld Platformer', en: 'Handheld Platformer' },
+    category: 'handheld',
+    categoryName: { nl: 'Handheld & Game Boy', en: 'Handheld & Game Boy' },
+    title: 'SUPER MARIO LAND',
+    subtitle: { nl: 'Het Legendarische Game Boy Lanceerspel in Sarasaland', en: 'The Legendary Game Boy Launch Title in Sarasaland' },
+    creator: 'Nintendo R&D1 • Gunpei Yokoi & Satoru Okada',
+    cabinetTheme: {
+      primaryColor: '#f59e0b',
+      secondaryColor: '#d97706',
+      neonColor: '#fbbf24',
+      glowBorder: 'rgba(245, 158, 11, 0.45)',
+      accentBg: 'from-amber-950 to-neutral-950',
+      textColor: 'text-amber-400',
+      marqueeBg: 'bg-amber-900/60'
+    },
+    summary: {
+      nl: 'De iconische Game Boy debuuttitel met Mario in Sarasaland! Red Prinses Daisy van de ruimtetyran Tatanga, ontwijk vliegende sfinxen, stuiter met de Superball-powerup en verzamel levens in het Bonus Roulette spel.',
+      en: 'The iconic Game Boy debut title featuring Mario in Sarasaland! Rescue Princess Daisy from alien invader Tatanga, dodge sphinxes, fire bouncy Superballs, and win bonus lives in the roulette mini-game.'
+    },
+    highlights: {
+      nl: [
+        'Vlaggenschip Game Boy launch game ontworpen door Gunpei Yokoi & Satoru Okada',
+        'Unieke stuiterende Superball-fysica die munten pakt en vijanden uitschakelt',
+        'Egypte & Birabuto Kingdom sfeer met sfinxen, piramides en bonusliften',
+        'Vier authentieke LCD kleurpaletten (DMG Pea Soup, Pocket B&W, Light Indiglo, Super Game Boy)'
+      ],
+      en: [
+        'Flagship Game Boy launch game directed by Gunpei Yokoi & Satoru Okada',
+        'Unique bouncy 45° Superball physics that collects coins and blasts enemies',
+        'Egyptian Birabuto Kingdom aesthetic with sphinxes, pyramids, and moving elevators',
+        'Four authentic LCD color palettes (DMG Pea Soup, Pocket B&W, Light Indiglo, Super Game Boy)'
+      ]
+    },
+    specs: {
+      resolution: 'DMG-01 STN LCD 160×144 (4 Tinten Groen)',
+      fps: '59.7 FPS Sharp LR35902 CPU (4.19 MHz)',
+      soundChip: 'Game Boy APU 4-Channel Stereo Chiptune (Hirokazu Tanaka)',
+      media: 'Game Boy ROM Cartridge (DMG-ML-USA)'
+    },
+    coinPrice: 'DMG-01 4× AA'
+  },
+  {
+    id: 'tetris_dmg',
+    year: 1989,
+    yearDisplay: '1989',
+    yearIcon: '🧩',
+    system: 'gameboy',
+    systemName: { nl: 'Nintendo Game Boy (DMG-01)', en: 'Nintendo Game Boy (DMG-01)' },
+    genre: 'puzzle',
+    genreName: { nl: 'Handheld Puzzelspel', en: 'Handheld Puzzle' },
+    category: 'handheld',
+    categoryName: { nl: 'Handheld & Game Boy', en: 'Handheld & Game Boy' },
+    title: 'TETRIS (GAME BOY DMG)',
+    subtitle: { nl: 'De Meest Verkochte Draagbare Puzzelhit Ooit', en: 'The Best-Selling Portable Puzzle Hit of All Time' },
+    creator: 'Nintendo • Alexey Pajitnov & Hirokazu Tanaka',
+    cabinetTheme: {
+      primaryColor: '#3b82f6',
+      secondaryColor: '#2563eb',
+      neonColor: '#60a5fa',
+      glowBorder: 'rgba(59, 130, 246, 0.45)',
+      accentBg: 'from-blue-950 to-neutral-950',
+      textColor: 'text-blue-400',
+      marqueeBg: 'bg-blue-900/60'
+    },
+    summary: {
+      nl: 'Het ultieme fenomeen dat de Game Boy definieerde. Speel A-Type eindeloze marathon of B-Type 25-lijnen challenge met de wereldberoemde Korobeiniki chiptune muziek en verdien de raketlancering bij winst!',
+      en: 'The defining global phenomenon of portable gaming. Play A-Type endless marathon or B-Type 25-lines challenge with the iconic Korobeiniki chiptune soundtrack and celebrate with the rocket launch!'
+    },
+    highlights: {
+      nl: [
+        '35+ Miljoen exemplaren verkocht wereldwijd gebundeld met de Game Boy DMG-01',
+        'A-Type Endless Marathon & B-Type 25 Lines challenge spelmodi',
+        'Volledige 8-bit Korobeiniki (Type A) & Troika (Type B) chiptune synthesizers',
+        'Legendarische Russische Soyuz/Buran raketlancering animatie bij triomf'
+      ],
+      en: [
+        'Over 35 million cartridges sold worldwide bundled with Game Boy DMG-01',
+        'A-Type Endless Marathon & B-Type 25 Lines challenge modes',
+        'Full 8-bit Korobeiniki (Type A) & Troika (Type B) chiptune synthesizers',
+        'Legendary Russian Soyuz/Buran space shuttle rocket launch animation on triumph'
+      ]
+    },
+    specs: {
+      resolution: 'DMG-01 STN LCD 160×144 (10×20 Matrix)',
+      fps: '59.7 FPS Sharp LR35902 CPU (4.19 MHz)',
+      soundChip: 'Game Boy APU 4-Channel Stereo Chiptune (Hirokazu Tanaka)',
+      media: 'Game Boy ROM Cartridge (DMG-TR-USA)'
+    },
+    coinPrice: 'DMG-01 4× AA'
+  },
+  {
+    id: 'dr_mario',
+    year: 1990,
+    yearDisplay: '1990',
+    yearIcon: '💊',
+    system: 'gameboy',
+    systemName: { nl: 'Nintendo Game Boy (DMG-01)', en: 'Nintendo Game Boy (DMG-01)' },
+    genre: 'puzzle',
+    genreName: { nl: 'Handheld Virus Puzzel', en: 'Handheld Virus Puzzle' },
+    category: 'handheld',
+    categoryName: { nl: 'Handheld & Game Boy', en: 'Handheld & Game Boy' },
+    title: 'DR. MARIO',
+    subtitle: { nl: 'Dood Virussen met Vitaminecapsules • Fever & Chill', en: 'Eradicate Viruses with Megavitamins • Fever & Chill' },
+    creator: 'Nintendo R&D1 • Gunpei Yokoi & Hirokazu Tanaka',
+    cabinetTheme: {
+      primaryColor: '#ef4444',
+      secondaryColor: '#b91c1c',
+      neonColor: '#f87171',
+      glowBorder: 'rgba(239, 68, 68, 0.45)',
+      accentBg: 'from-red-950 to-neutral-950',
+      textColor: 'text-red-400',
+      marqueeBg: 'bg-red-900/60'
+    },
+    summary: {
+      nl: 'Draai en stapel tweekleurige vitaminepillen in de geneesmiddelenfles om rode, gele en blauwe virussen uit te schakelen met 4-op-een-rij combinaties! Bevat de iconische "Fever" chiptune soundtrack.',
+      en: 'Rotate and drop two-tone megavitamin capsules inside the medicine jar to eliminate viruses with 4-in-a-row color lines! Features the unforgettable "Fever" chiptune soundtrack.'
+    },
+    highlights: {
+      nl: [
+        'Verslavende 4-op-een-rij virusvernietiging gameplay ontworpen door Gunpei Yokoi',
+        'Iconische "Fever" en "Chill" chiptune synthesizerthema’s gecomponeerd door Hirokazu Tanaka',
+        'Kleur- en patroonpatronen geoptimaliseerd voor het originele 4-tinten groen LCD scherm',
+        'Stijgende virusdichtheid en valsnelheid bij elk behaald infectieniveau'
+      ],
+      en: [
+        'Addictive 4-in-a-row virus eradication puzzle design directed by Gunpei Yokoi',
+        'Legendary "Fever" and "Chill" chiptune APU soundtracks by Hirokazu Tanaka',
+        'Patterned shade markers optimized for the original 4-shade greenish LCD screen',
+        'Increasing virus counts and drop velocity with every cleared medical tier'
+      ]
+    },
+    specs: {
+      resolution: 'DMG-01 STN LCD 160×144 (8×16 Bottle Grid)',
+      fps: '59.7 FPS Sharp LR35902 CPU (4.19 MHz)',
+      soundChip: 'Game Boy APU 4-Channel Stereo Chiptune (Hirokazu Tanaka)',
+      media: 'Game Boy ROM Cartridge (DMG-VU-USA)'
+    },
+    coinPrice: 'DMG-01 4× AA'
+  },
+  {
+    id: 'metroid_2',
+    year: 1991,
+    yearDisplay: '1991',
+    yearIcon: '👽',
+    system: 'gameboy',
+    systemName: { nl: 'Nintendo Game Boy (DMG-01)', en: 'Nintendo Game Boy (DMG-01)' },
+    genre: 'adventure',
+    genreName: { nl: 'Sci-Fi Metroidvania', en: 'Sci-Fi Metroidvania' },
+    category: 'handheld',
+    categoryName: { nl: 'Handheld & Game Boy', en: 'Handheld & Game Boy' },
+    title: 'METROID II: RETURN OF SAMUS',
+    subtitle: { nl: 'De Uitroeiing van de Metroids op Planeet SR388', en: 'The Metroid Extermination on Planet SR388' },
+    creator: 'Nintendo R&D1 • Makoto Kanoh & Ryoji Yoshitomi',
+    cabinetTheme: {
+      primaryColor: '#10b981',
+      secondaryColor: '#047857',
+      neonColor: '#34d399',
+      glowBorder: 'rgba(16, 185, 129, 0.45)',
+      accentBg: 'from-emerald-950 to-neutral-950',
+      textColor: 'text-emerald-400',
+      marqueeBg: 'bg-emerald-900/60'
+    },
+    summary: {
+      nl: 'Infiltreer het mysterieuze grottensysteem van planeet SR388 als premiejager Samus Aran. Gebruik de Morph Ball, Spider Ball en raketten om de 39 geëvolueerde Alpha-, Gamma-, Zeta- en Omega-Metroids op te sporen en uit te schakelen!',
+      en: 'Infiltrate the subterranean caverns of Planet SR388 as bounty hunter Samus Aran. Master Morph Ball, Spider Ball wall climbs, and missile arsenals to hunt down and exterminate the 39 evolving Metroid lifeforms!'
+    },
+    highlights: {
+      nl: [
+        'Eerste debuut van de Spider Ball, Space Jump en Plasma Beam in de Metroid franchise',
+        'Atmosferische 8-bit ambient grotsoundtrack gecomponeerd door Ryoji Yoshitomi',
+        'Metroid sensor teller die afloopt naarmate je de 39 buitenaardse wezens verslaat',
+        'Grootse diepe doolhoven met dalende zuurniveaus na elke gesneuvelde Metroid'
+      ],
+      en: [
+        'First appearance of the Spider Ball, Space Jump, and Plasma Beam in the Metroid series',
+        'Atmospheric 8-bit subterranean ambient score composed by Ryoji Yoshitomi',
+        'Metroid sensor radar counter tracking remaining targets down to the Queen Metroid',
+        'Deep cavernous exploration with receding lava levels unlocking deeper subterranean biomes'
+      ]
+    },
+    specs: {
+      resolution: 'DMG-01 STN LCD 160×144 (Smooth Cavern Scrolling)',
+      fps: '59.7 FPS Sharp LR35902 CPU (4.19 MHz)',
+      soundChip: 'Game Boy APU 4-Channel Stereo Chiptune (Ryoji Yoshitomi)',
+      media: 'Game Boy ROM Cartridge (DMG-ME-USA)'
+    },
+    coinPrice: 'DMG-01 4× AA'
+  },
+  {
+    id: 'kirby_dream_land',
+    year: 1992,
+    yearDisplay: '1992',
+    yearIcon: '⭐',
+    system: 'gameboy',
+    systemName: { nl: 'Nintendo Game Boy (DMG-01)', en: 'Nintendo Game Boy (DMG-01)' },
+    genre: 'platform',
+    genreName: { nl: 'Handheld Platformer', en: 'Handheld Platformer' },
+    category: 'handheld',
+    categoryName: { nl: 'Handheld & Game Boy', en: 'Handheld & Game Boy' },
+    title: "KIRBY'S DREAM LAND",
+    subtitle: { nl: 'Het Historische Debuut van de Roze Held van Dream Land', en: 'The Legendary Debut of Dream Land’s Inhaling Hero' },
+    creator: 'HAL Laboratory • Masahiro Sakurai & Jun Ishikawa',
+    cabinetTheme: {
+      primaryColor: '#f472b6',
+      secondaryColor: '#db2777',
+      neonColor: '#fbcfe8',
+      glowBorder: 'rgba(244, 114, 182, 0.45)',
+      accentBg: 'from-pink-950 to-neutral-950',
+      textColor: 'text-pink-400',
+      marqueeBg: 'bg-pink-900/60'
+    },
+    summary: {
+      nl: 'Het debuut van Masahiro Sakurai\'s geliefde roze held Kirby! Zuig vijanden en sterren op, zweef oneindig door de lucht door lucht in te slikken en herover het gestolen voedsel van Dream Land uit handen van King Dedede.',
+      en: 'The world debut of Masahiro Sakurai’s beloved hero Kirby! Inhale foes and star blocks, float across the sky with infinite flutter jumps, and recover Dream Land’s stolen food from King Dedede.'
+    },
+    highlights: {
+      nl: [
+        'Baanbrekend inhaleer- en zweefmechanisme bedacht door een 19-jarige Masahiro Sakurai',
+        'Wereldberoemde "Green Greens" en "Gourmet Race" chiptune melodieën van Jun Ishikawa',
+        'Vier iconische werelden: Green Greens, Castle Lololo, Float Islands en Mt. Dedede',
+        'De iconische vrolijke Kirby Victory Dance na elk voltooid level'
+      ],
+      en: [
+        'Pioneering inhale, spit, and infinite flight mechanics designed by 19-year-old Masahiro Sakurai',
+        'Evergreen "Green Greens" and boss melodies composed by Jun Ishikawa',
+        'Four vibrant worlds: Green Greens, Castle Lololo, Float Islands, and Mt. Dedede',
+        'Signature celebratory Kirby victory dance upon conquering each world stage'
+      ]
+    },
+    specs: {
+      resolution: 'DMG-01 STN LCD 160×144 (Character Sprite Multiplexing)',
+      fps: '59.7 FPS Sharp LR35902 CPU (4.19 MHz)',
+      soundChip: 'Game Boy APU 4-Channel Stereo Chiptune (Jun Ishikawa)',
+      media: 'Game Boy ROM Cartridge (DMG-KY-USA)'
+    },
+    coinPrice: 'DMG-01 4× AA'
+  },
+  {
+    id: 'mario_land_2',
+    year: 1992,
+    yearDisplay: '1992',
+    yearIcon: '👑',
+    system: 'gameboy',
+    systemName: { nl: 'Nintendo Game Boy (DMG-01)', en: 'Nintendo Game Boy (DMG-01)' },
+    genre: 'platform',
+    genreName: { nl: 'Handheld Platformer', en: 'Handheld Platformer' },
+    category: 'handheld',
+    categoryName: { nl: 'Handheld & Game Boy', en: 'Handheld & Game Boy' },
+    title: 'SUPER MARIO LAND 2: 6 GOLDEN COINS',
+    subtitle: { nl: 'Herover Mario’s Kasteel van Nieuwkomer Wario', en: 'Reclaim Mario’s Castle from the Greedy Wario' },
+    creator: 'Nintendo R&D1 • Hiroji Kiyotake & Kazumi Totaka',
+    cabinetTheme: {
+      primaryColor: '#eab308',
+      secondaryColor: '#ca8a04',
+      neonColor: '#facc15',
+      glowBorder: 'rgba(234, 179, 8, 0.45)',
+      accentBg: 'from-yellow-950 to-neutral-950',
+      textColor: 'text-yellow-400',
+      marqueeBg: 'bg-yellow-900/60'
+    },
+    summary: {
+      nl: 'De reusachtige 4MB opvolger waarin Wario voor het eerst zijn opwachting maakt! Verzamel de 6 gouden munten verspreid over de Tree Zone, Space Zone, Macro Zone en Pumpkin Zone om Wario\'s kasteelpoorten te openen.',
+      en: 'The expansive 4-megabit sequel introducing Wario to the Nintendo universe! Collect 6 Golden Coins across the Tree Zone, Space Zone, Macro Zone, and Pumpkin Zone to storm Wario’s occupied castle.'
+    },
+    highlights: {
+      nl: [
+        'Eerste historische verschijning van aartsrivaal Wario in de videogamegeschiedenis',
+        'Introductie van de Konijnenoren wortel-powerup om sierlijk door levels te zweven',
+        'Prachtige grote karaktersprites met vloeiende animaties ontworpen door Hiroji Kiyotake',
+        'Memorabele soundtrack van Kazumi Totaka met het verborgen "Totaka’s Song"'
+      ],
+      en: [
+        'First historic appearance of greedy rival Wario in Nintendo video game history',
+        'Debut of the Bunny Ears Carrot power-up allowing Mario to flutter-glide over hazards',
+        'Massive expressive character sprites and rich level tilesets by Hiroji Kiyotake',
+        'Memorable soundtrack by Kazumi Totaka including the easter-egg "Totaka’s Song"'
+      ]
+    },
+    specs: {
+      resolution: 'DMG-01 STN LCD 160×144 (4-Megabit High-Density ROM)',
+      fps: '59.7 FPS Sharp LR35902 CPU (4.19 MHz)',
+      soundChip: 'Game Boy APU 4-Channel Stereo Chiptune (Kazumi Totaka)',
+      media: 'Game Boy ROM Cartridge (DMG-MQ-USA)'
+    },
+    coinPrice: 'DMG-01 4× AA'
+  },
+  {
+    id: 'zelda_links_awakening',
+    year: 1993,
+    yearDisplay: '1993',
+    yearIcon: '🗡️',
+    system: 'gameboy',
+    systemName: { nl: 'Nintendo Game Boy (DMG-01)', en: 'Nintendo Game Boy (DMG-01)' },
+    genre: 'adventure',
+    genreName: { nl: 'Top-Down Action Adventure', en: 'Top-Down Action Adventure' },
+    category: 'handheld',
+    categoryName: { nl: 'Handheld & Game Boy', en: 'Handheld & Game Boy' },
+    title: "THE LEGEND OF ZELDA: LINK'S AWAKENING",
+    subtitle: { nl: 'Het Mysterie van Koholint Island en de Windvis', en: 'The Mystery of Koholint Island & the Wind Fish' },
+    creator: 'Nintendo EAD • Takashi Tezuka & Koji Kondo',
+    cabinetTheme: {
+      primaryColor: '#10b981',
+      secondaryColor: '#059669',
+      neonColor: '#6ee7b7',
+      glowBorder: 'rgba(16, 185, 129, 0.45)',
+      accentBg: 'from-emerald-950 to-neutral-950',
+      textColor: 'text-emerald-400',
+      marqueeBg: 'bg-emerald-900/60'
+    },
+    summary: {
+      nl: 'Link spoelt aan op het mysterieuze Koholint Island. Verzamel de 8 Sirene-instrumenten, verken kerkers vol slimme puzzels met de Roc\'s Feather sprong en ontwaak de slapende Windvis op de bergtop.',
+      en: 'Link shipwrecks onto the mysterious Koholint Island. Gather the 8 Instruments of the Sirens, navigate puzzle-packed dungeons with Roc’s Feather jumping, and awaken the Wind Fish asleep atop Mt. Tamaranch.'
+    },
+    highlights: {
+      nl: [
+        'Eerste Zelda avontuur waarin Link vrij kan springen met Roc\'s Feather',
+        'Rijk en ontroerend verhaal geschreven door Yoshiaki Koizumi en Takashi Tezuka',
+        '8 Instrumenten van de Sirenen en de legendarische "Ballad of the Wind Fish"',
+        'Gastoptredens van Yoshi, Chain Chomp, Goomba’s en Wart'
+      ],
+      en: [
+        'First Zelda title introducing true vertical jumping via Roc’s Feather item',
+        'Rich, emotionally resonant narrative scripted by Yoshiaki Koizumi and Takashi Tezuka',
+        '8 Sirens Instruments yielding the legendary "Ballad of the Wind Fish" melody',
+        'Whimsical Nintendo crossover cameos including Yoshi dolls, Chain Chomps, and Goombas'
+      ]
+    },
+    specs: {
+      resolution: 'DMG-01 STN LCD 160×144 (Grid-Tile Overworld & Dungeons)',
+      fps: '59.7 FPS Sharp LR35902 CPU (4.19 MHz)',
+      soundChip: 'Game Boy APU 4-Channel Stereo Chiptune (Minako Hamano & Kozue Ishikawa)',
+      media: 'Game Boy ROM Cartridge + Battery SRAM (DMG-ZL-USA)'
+    },
+    coinPrice: 'DMG-01 4× AA'
+  },
+  {
+    id: 'donkey_kong_94',
+    year: 1994,
+    yearDisplay: '1994',
+    yearIcon: '🔨',
+    system: 'gameboy',
+    systemName: { nl: 'Nintendo Game Boy (DMG-01)', en: 'Nintendo Game Boy (DMG-01)' },
+    genre: 'puzzle',
+    genreName: { nl: 'Platform Puzzel Meesterwerk', en: 'Platform Puzzle Masterpiece' },
+    category: 'handheld',
+    categoryName: { nl: 'Handheld & Game Boy', en: 'Handheld & Game Boy' },
+    title: "DONKEY KONG '94",
+    subtitle: { nl: '101 Ingenieuze Sleutelpuzzel Levels • Mario Acrobatiek', en: '101 Clever Key-Puzzle Levels • Mario Acrobatic Moves' },
+    creator: 'Nintendo EAD • Shigeru Miyamoto & Takao Shimizu',
+    cabinetTheme: {
+      primaryColor: '#f97316',
+      secondaryColor: '#c2410c',
+      neonColor: '#fdba74',
+      glowBorder: 'rgba(249, 115, 22, 0.45)',
+      accentBg: 'from-orange-950 to-neutral-950',
+      textColor: 'text-orange-400',
+      marqueeBg: 'bg-orange-900/60'
+    },
+    summary: {
+      nl: 'Wat begint als een getrouwe remake van de 4 arcade-schermen ontpopt zich tot een monumentale 101-levels tellende puzzelplatformer! Gebruik handstandsprongen, drievoudige salto\'s en sleutels om Pauline te bevrijden.',
+      en: 'Beginning as a faithful 4-stage arcade tribute, this masterpiece blossoms into 101 ingenious puzzle-platforming stages! Master handstand backflips, key carrying, and bridge switches to rescue Pauline.'
+    },
+    highlights: {
+      nl: [
+        'Debuut van Mario’s moderne acrobatische bewegingen (handstand, salto, triple jump)',
+        '101 Afwisselende levels verdeeld over Big City, Forest, Ship, Iceberg en Rocky Valley',
+        'Vlaggenschip Super Game Boy showcase met unieke custom kaders en spraakeffecten',
+        'Puzzels waarbij je sleutels op je hoofd balanceert en schakelaars activeert'
+      ],
+      en: [
+        'Debut of Mario’s modern acrobatic repertoire (handstand walking, high backflips, side somersaults)',
+        '101 Expansive stages spanning Big City, Forest, Ship, Iceberg, Desert, and Tower',
+        'Flagship Super Game Boy launch showcase with rich borders and synthesized voice clips',
+        'Complex puzzle mechanics carrying keys over conveyor belts and pressing timed switches'
+      ]
+    },
+    specs: {
+      resolution: 'DMG-01 STN LCD 160×144 (Super Game Boy Enhanced)',
+      fps: '59.7 FPS Sharp LR35902 CPU (4.19 MHz)',
+      soundChip: 'Game Boy APU 4-Channel Stereo Chiptune (Taisuke Araki)',
+      media: 'Game Boy ROM Cartridge (DMG-KG-USA)'
+    },
+    coinPrice: 'DMG-01 4× AA'
+  },
+  {
+    id: 'pokemon_red',
+    year: 1996,
+    yearDisplay: '1996',
+    yearIcon: '⚡',
+    system: 'gameboy',
+    systemName: { nl: 'Nintendo Game Boy (DMG-01)', en: 'Nintendo Game Boy (DMG-01)' },
+    genre: 'rpg',
+    genreName: { nl: 'Klassieke Monster RPG', en: 'Classic Monster RPG' },
+    category: 'handheld',
+    categoryName: { nl: 'Handheld & Game Boy', en: 'Handheld & Game Boy' },
+    title: 'POKÉMON RED & BLUE',
+    subtitle: { nl: 'Gotta Catch ’Em All • Het Mondiale Fenomeen in Kanto', en: 'Gotta Catch ’Em All • The Global Phenomenon in Kanto' },
+    creator: 'Game Freak • Satoshi Tajiri & Junichi Masuda',
+    cabinetTheme: {
+      primaryColor: '#dc2626',
+      secondaryColor: '#991b1b',
+      neonColor: '#f87171',
+      glowBorder: 'rgba(220, 38, 38, 0.5)',
+      accentBg: 'from-red-950 to-neutral-950',
+      textColor: 'text-red-400',
+      marqueeBg: 'bg-red-900/60'
+    },
+    summary: {
+      nl: 'De game die de wereld veroverde! Kies je starter Charmander, Squirtle of Bulbasaur in Pallet Town, vang alle 151 Pokémon in Kanto, versla de 8 Gym Leaders en triomfeer tegen de Elite Four en je rivaal!',
+      en: 'The title that sparked a worldwide phenomenon! Choose your Pallet Town starter Charmander, Squirtle, or Bulbasaur, capture all 151 Pokémon across Kanto, conquer 8 Gyms, and defeat the Elite Four!'
+    },
+    highlights: {
+      nl: [
+        'Het levenswerk van Satoshi Tajiri geïnspireerd op insecten vangen in zijn jeugd',
+        '151 Unieke Pokémon monsters om te vangen, trainen, evolueren en verhandelen via Game Link kabel',
+        'Onvergetelijke chiptune composities en gevechtsthema’s gecomponeerd door Junichi Masuda',
+        'Turn-based gevechtssysteem met type-effectiviteit (Water, Vuur, Gras, Elektrisch, Psyschisch)'
+      ],
+      en: [
+        'Satoshi Tajiri’s 6-year passion project inspired by childhood bug-catching adventures',
+        '151 Iconic creatures to catch, train, evolve, and trade via the Game Link cable',
+        'Unforgettable battle chiptunes and Pallet Town themes composed by Junichi Masuda',
+        'Deep turn-based tactical combat with type matchups (Fire, Water, Grass, Electric, Psychic)'
+      ]
+    },
+    specs: {
+      resolution: 'DMG-01 STN LCD 160×144 (Tile-Engine + Monster Sprites)',
+      fps: '59.7 FPS Sharp LR35902 CPU (4.19 MHz)',
+      soundChip: 'Game Boy APU 4-Channel Stereo Chiptune (Junichi Masuda)',
+      media: 'Game Boy ROM Cartridge + Battery Save SRAM (DMG-AP-USA)'
+    },
+    coinPrice: 'DMG-01 4× AA'
+  },
+  {
+    id: 'wario_land_2',
+    year: 1998,
+    yearDisplay: '1998',
+    yearIcon: '💰',
+    system: 'gameboy',
+    systemName: { nl: 'Nintendo Game Boy (DMG-01)', en: 'Nintendo Game Boy (DMG-01)' },
+    genre: 'platform',
+    genreName: { nl: 'Puzzel Actie Platformer', en: 'Puzzle Action Platformer' },
+    category: 'handheld',
+    categoryName: { nl: 'Handheld & Game Boy', en: 'Handheld & Game Boy' },
+    title: 'WARIO LAND II',
+    subtitle: { nl: 'De Onsterfelijke Anti-Held • Schoudertackle & Transformaties', en: 'The Immortal Anti-Hero • Shoulder Charge & Status Effects' },
+    creator: 'Nintendo R&D1 • Takehiro Izushi & Kozue Ishikawa',
+    cabinetTheme: {
+      primaryColor: '#ca8a04',
+      secondaryColor: '#854d0e',
+      neonColor: '#fde047',
+      glowBorder: 'rgba(202, 138, 4, 0.5)',
+      accentBg: 'from-yellow-950 to-neutral-950',
+      textColor: 'text-yellow-400',
+      marqueeBg: 'bg-yellow-900/60'
+    },
+    summary: {
+      nl: 'Kapitein Syrup en de Black Sugar Pirates hebben Wario\'s kasteelschat gestolen! In dit meesterwerk kan Wario niet doodgaan: vijandelijke aanvallen transformeren hem in Flaming Wario, Flat Wario, Fat Wario en Zombie Wario om geheime routes te ontgrendelen.',
+      en: 'Captain Syrup and the Black Sugar Pirates have plundered Wario’s castle! In this genre-defying game, Wario is immortal: hazards transform him into Hot Wario, Flat Wario, Fat Wario, and Zombie Wario to solve puzzles.'
+    },
+    highlights: {
+      nl: [
+        'Revolutionair gameplay-concept: Wario kan niet sterven, maar muteert door gevaren',
+        'Verander in Flaming Wario om blokken te verbranden, Flat Wario om door kieren te glijden of Fat Wario',
+        'Vertakkende verhaallijnen en meerdere geheime eindes afhankelijk van de gekozen routes',
+        'Krachtige schoudertackle om vijanden op te tillen, tegen muren te smijten en munten te oogsten'
+      ],
+      en: [
+        'Revolutionary invulnerability mechanic where status ailments trigger puzzle-solving transformations',
+        'Morph into Hot Wario to incinerate blocks, Flat Wario to glide through gaps, and Zombie Wario to drop floors',
+        'Branching non-linear level paths and multiple secret narrative endings',
+        'Heavyweight shoulder tackle allowing Wario to stun, carry, throw enemies, and smash treasure chests'
+      ]
+    },
+    specs: {
+      resolution: 'DMG-01 STN LCD 160×144 (8-Megabit Super ROM)',
+      fps: '59.7 FPS Sharp LR35902 CPU (4.19 MHz)',
+      soundChip: 'Game Boy APU 4-Channel Stereo Chiptune (Kozue Ishikawa)',
+      media: 'Game Boy ROM Cartridge + Battery SRAM (DMG-AW-USA)'
+    },
+    coinPrice: 'DMG-01 4× AA'
+  },
+  {
+    id: 'gba_sp',
+    year: 2003,
+    yearDisplay: '2003',
+    yearIcon: '📱',
+    system: 'gba_sp',
+    systemName: { nl: 'Game Boy Advance SP (32-Bit)', en: 'Game Boy Advance SP (32-Bit)' },
+    genre: 'rpg',
+    genreName: { nl: 'Handheld 32-Bit Multi-Cartridge', en: 'Handheld 32-Bit Multi-Cartridge' },
+    category: 'handheld',
+    categoryName: { nl: 'Handheld & Game Boy', en: 'Handheld & Game Boy' },
+    title: 'GAME BOY ADVANCE SP',
+    subtitle: { nl: 'Inklapbare 32-Bit Console • Pokémon Emerald, Mario & Zelda', en: 'Clamshell 32-Bit Console • Pokémon Emerald, Mario & Zelda' },
+    creator: 'Nintendo • Kenichiro Ashida & Satoru Iwata',
+    cabinetTheme: {
+      primaryColor: '#0284c7',
+      secondaryColor: '#0369a1',
+      neonColor: '#38bdf8',
+      glowBorder: 'rgba(2, 132, 199, 0.5)',
+      accentBg: 'from-sky-950 to-neutral-950',
+      textColor: 'text-sky-400',
+      marqueeBg: 'bg-sky-900/60'
+    },
+    summary: {
+      nl: 'De revolutionaire opvouwbare 32-bit handheld van Nintendo! Inclusief werkend scharnier, AGS-001/101 backlight schakelaar, 6 metallic kleurvarianten en 3 legendarische cartridges: Pokémon Emerald, Super Mario Advance 4 en The Legend of Zelda: The Minish Cap.',
+      en: 'Nintendo’s revolutionary foldable 32-bit handheld! Features an interactive clamshell hinge, AGS-001/101 backlight toggle, 6 metallic colorways, and 3 legendary playable cartridges: Pokémon Emerald, Super Mario Advance 4, and The Legend of Zelda: The Minish Cap.'
+    },
+    highlights: {
+      nl: [
+        'Volledig inklapbaar clamshell-ontwerp met realistische 3D scharnierhoek',
+        '3 Speelbare GBA Cartridges: Pokémon Emerald, Super Mario Advance 4 en Zelda: The Minish Cap',
+        'Schakelbare AGS-101 Backlit / AGS-001 Frontlit display & 6 behuizingskleuren',
+        '32-bit DirectSound stereo audio-synthesizer met authentieke jingles en battle geluiden'
+      ],
+      en: [
+        'Fully foldable clamshell design with realistic 3D hinge perspective',
+        '3 Playable GBA Cartridges: Pokémon Emerald, Super Mario Advance 4, and Zelda: The Minish Cap',
+        'Switchable AGS-101 Backlit / AGS-001 Frontlit display & 6 metallic shell colorways',
+        '32-bit DirectSound stereo audio synthesizer with authentic jingles and battle sounds'
+      ]
+    },
+    specs: {
+      resolution: '240×160 TFT LCD (32.768 Kleuren)',
+      fps: '59.7 FPS ARM7TDMI 32-bit RISC (16.78 MHz)',
+      soundChip: 'DirectSound 6-Channel Stereo PCM + Dual Wave APU',
+      media: 'GBA Multi-Cartridge System (AGB-ROM)'
+    },
+    coinPrice: 'Li-Ion Accu'
+  },
+  {
+    id: 'ps1',
+    year: 1994,
+    yearDisplay: '1994',
+    yearIcon: '💿',
+    system: 'ps1',
+    systemName: { nl: 'Sony PlayStation (PS1 32-Bit)', en: 'Sony PlayStation (PS1 32-Bit)' },
+    genre: 'action',
+    genreName: { nl: '3D CD-ROM Console', en: '3D CD-ROM Console' },
+    category: 'portable',
+    categoryName: { nl: 'Draagbare & Portable Players', en: 'Portable & Handheld Players' },
+    title: 'SONY PLAYSTATION 1',
+    subtitle: { nl: 'Iconische Grijze Console • Crash Bandicoot & Ridge Racer', en: 'Iconic Gray Console • Crash Bandicoot & Ridge Racer' },
+    creator: 'Sony Computer Entertainment • Ken Kutaragi',
+    cabinetTheme: {
+      primaryColor: '#94a3b8',
+      secondaryColor: '#64748b',
+      neonColor: '#cbd5e1',
+      glowBorder: 'rgba(148, 163, 184, 0.5)',
+      accentBg: 'from-slate-900 to-neutral-950',
+      textColor: 'text-slate-300',
+      marqueeBg: 'bg-slate-900/80'
+    },
+    summary: {
+      nl: 'De revolutionaire 32-bit CD-ROM console van Sony! Inclusief werkende CD-lade animatie, authentieke PS1 opstart-jingle, DualShock controller ondersteuning & 2 speelbare CD-ROM titels: Crash Bandicoot & Ridge Racer.',
+      en: 'Sony’s revolutionary 32-bit CD-ROM console! Features opening CD lid animation, authentic PS1 boot chime, DualShock rumble support & 2 playable CD-ROM classics: Crash Bandicoot & Ridge Racer.'
+    },
+    highlights: {
+      nl: [
+        'Dedicated PS1 Speelkast met interactieve grijze behuizing & geopende CD-spil animatie',
+        '2 Legendarische 3D Games: Crash Bandicoot (3D corridor platformer) & Ridge Racer (3D mountain circuit)',
+        'Authentieke Sony PS1 opstart-jingle gesynthetiseerd via Web Audio API',
+        'Volledige Xbox & DualShock gamepad ondersteuning met analoge knuppels'
+      ],
+      en: [
+        'Dedicated PS1 Cabinet with interactive gray console & CD spindle spinning animation',
+        '2 Legendary 3D Games: Crash Bandicoot (3D corridor platformer) & Ridge Racer (3D mountain circuit)',
+        'Authentic Sony PS1 boot chime synthesized via Web Audio API',
+        'Full Xbox & DualShock gamepad support with analog thumbsticks'
+      ]
+    },
+    specs: {
+      resolution: '320×240 High-Res 3D Textured Mesh (24-bit VRAM)',
+      fps: '60 FPS MIPS R3000A 32-bit RISC (33.86 MHz)',
+      soundChip: 'SPU 24-Channel CD-Quality Stereo Synthesizer',
+      media: 'Double-Speed CD-ROM (650MB Black Disc)'
+    },
+    coinPrice: 'PS1 Memory Card'
+  },
+  {
+    id: 'ridge_racer',
+    year: 1994,
+    yearDisplay: '1994',
+    yearIcon: '🏎️',
+    system: 'ps1',
+    systemName: { nl: 'Sony PlayStation (PS1 32-Bit)', en: 'Sony PlayStation (PS1 32-Bit)' },
+    genre: 'racing',
+    genreName: { nl: '3D Arcade Racing Klassieker', en: '3D Arcade Racing Classic' },
+    category: 'portable',
+    categoryName: { nl: 'Draagbare & Portable Players', en: 'Portable & Handheld Players' },
+    title: 'RIDGE RACER (PS1 3D)',
+    subtitle: { nl: 'De Iconische PS1 Launch Drift-Racer in Mountain Cliff Circuit', en: 'The Iconic PS1 Launch Drift-Racer on Mountain Cliff Circuit' },
+    creator: 'Namco • Kazunori Yamauchi & Shinji Hosoe',
+    cabinetTheme: {
+      primaryColor: '#ef4444',
+      secondaryColor: '#dc2626',
+      neonColor: '#f87171',
+      glowBorder: 'rgba(239, 68, 68, 0.5)',
+      accentBg: 'from-red-950 to-neutral-950',
+      textColor: 'text-red-400',
+      marqueeBg: 'bg-red-900/80'
+    },
+    summary: {
+      nl: 'De legendarische launchgame die de kracht van 3D CD-ROM gaming op de PS1 bewees! Scheur door bergtunnels en langs stranden, voer haarscherpe drifts uit op hoge snelheid en luister naar de pompende Namco techno-soundtrack.',
+      en: 'The legendary launch title showcasing 3D CD-ROM power on PS1! Drift through mountain tunnels and coastal curves accompanied by Namco’s high-energy techno soundtrack.'
+    },
+    highlights: {
+      nl: [
+        'Vlaggenschip PS1 launch game met 60 FPS 3D polygonale raceauto’s',
+        'Inclusief F/A Racing rood/geel sportwagen en Ridge Racer Mountain Circuit',
+        'Pompende Namco Ridge Racer CD techno soundtrack & meeslepende driftfysica',
+        'Ondersteuning voor analoge stuurknuppels op de DualShock controller'
+      ],
+      en: [
+        'Flagship PS1 launch title rendering 60 FPS 3D polygonal racing sports cars',
+        'Includes F/A Racing red/yellow car on the iconic Ridge Racer Mountain Circuit',
+        'Pumping Namco Ridge Racer CD techno score & responsive drifting mechanics',
+        'Full DualShock analog thumbstick & vibration controller feedback'
+      ]
+    },
+    specs: {
+      resolution: '320×240 Textured 3D Mesh (24-bit Color)',
+      fps: '60 FPS Smooth Drift Physics Engine',
+      soundChip: 'Namco System 22 / PS1 SPU Stereo Audio',
+      media: 'Double-Speed PS1 CD-ROM Disc'
+    },
+    coinPrice: 'PS1 Memory Card'
+  },
+  {
+    id: 'crash_bandicoot',
+    year: 1996,
+    yearDisplay: '1996',
+    yearIcon: '🦊',
+    system: 'ps1',
+    systemName: { nl: 'Sony PlayStation (PS1 32-Bit)', en: 'Sony PlayStation (PS1 32-Bit)' },
+    genre: 'platform',
+    genreName: { nl: '3D Corridor Platformer', en: '3D Corridor Platformer' },
+    category: 'portable',
+    categoryName: { nl: 'Draagbare & Portable Players', en: 'Portable & Handheld Players' },
+    title: 'CRASH BANDICOOT (PS1 3D)',
+    subtitle: { nl: 'Het Baanbrekende 3D Avontuur op N. Sanity Island', en: 'The Groundbreaking 3D Adventure on N. Sanity Island' },
+    creator: 'Naughty Dog • Andy Gavin & Jason Rubin',
+    cabinetTheme: {
+      primaryColor: '#f97316',
+      secondaryColor: '#ea580c',
+      neonColor: '#fb923c',
+      glowBorder: 'rgba(249, 115, 22, 0.5)',
+      accentBg: 'from-orange-950 to-neutral-950',
+      textColor: 'text-orange-400',
+      marqueeBg: 'bg-orange-900/80'
+    },
+    summary: {
+      nl: 'De iconische Sony PlayStation mascotte ontworpen door Naughty Dog! Rijd door het tropische junglepad op N. Sanity Island, voer de iconische spinaanval uit om Wumpa-vruchten te verzamelen en breek TNT kisten.',
+      en: 'The iconic PlayStation mascot crafted by Naughty Dog! Sprint down N. Sanity Island jungle corridors, execute Crash’s signature spin attack, collect Wumpa fruit, and smash TNT crates.'
+    },
+    highlights: {
+      nl: [
+        'Genoemd door Andy Gavin en Jason Rubin als de "Sonic\'s Ass Game" voor zijn revolutionaire 3D diepteperspectief',
+        'Spinaanval, sprong en Wumpa-vrucht verzamelsysteem met Aku Aku houten bescherrmasker',
+        'Machtige trofeecounter, kistenbreker-animatie en eilandjungle omgeving',
+        'Volledig speelbaar in 3D met DualShock analoge besturing'
+      ],
+      en: [
+        'Nicknamed by Naughty Dog as "Sonic’s Ass Game" for pioneered 3D forward-viewing platforming',
+        'Spin attacks, jump acrobatics, Wumpa fruit collection, and protective Aku Aku tiki masks',
+        'Crate counter tracker, nitro hazards, and lush N. Sanity Island jungle biome',
+        'Playable in full 3D with DualShock analog thumbsticks'
+      ]
+    },
+    specs: {
+      resolution: '320×240 High-Poly 3D Character Mesh',
+      fps: '60 FPS Smooth Corridor Platformer Engine',
+      soundChip: 'PS1 SPU 24-Channel Tropical Chiptune & Sound Effects',
+      media: 'Double-Speed PS1 CD-ROM Disc'
+    },
+    coinPrice: 'PS1 Memory Card'
+  },
+  {
+    id: 'mario_advance',
+    year: 2003,
+    yearDisplay: '2003',
+    yearIcon: '🍄',
+    system: 'gba_sp',
+    systemName: { nl: 'Game Boy Advance SP (32-Bit)', en: 'Game Boy Advance SP (32-Bit)' },
+    genre: 'platform',
+    genreName: { nl: 'Handheld 32-Bit Platformer', en: 'Handheld 32-Bit Platformer' },
+    category: 'handheld',
+    categoryName: { nl: 'Handheld & Game Boy', en: 'Handheld & Game Boy' },
+    title: 'SUPER MARIO ADVANCE 4',
+    subtitle: { nl: 'Super Mario Bros 3 Remastered voor GBA SP', en: 'Super Mario Bros 3 Remastered for GBA SP' },
+    creator: 'Nintendo R&D2 • Shigeru Miyamoto & Takashi Tezuka',
+    cabinetTheme: {
+      primaryColor: '#ef4444',
+      secondaryColor: '#b91c1c',
+      neonColor: '#f87171',
+      glowBorder: 'rgba(239, 68, 68, 0.5)',
+      accentBg: 'from-red-950 to-neutral-950',
+      textColor: 'text-red-400',
+      marqueeBg: 'bg-red-900/60'
+    },
+    summary: {
+      nl: 'De definitieve 32-bit remaster van Super Mario Bros. 3! Inclusief Tanooki-vliegpak, kikkerspak, Koopaling luchtschepen, verrijkte stemmen en e-Reader bonuskaarten op het verlichte GBA SP scherm.',
+      en: 'The definitive 32-bit enhancement of Super Mario Bros. 3! Complete with Super Leaf flying, Tanooki suits, Koopaling airships, crisp digitized voice samples, and e-Reader card extras.'
+    },
+    highlights: {
+      nl: [
+        'Volledige 32-bit bewerkte graphics van de NES & SNES klassieker Super Mario Bros. 3',
+        'Tanooki Leaf vliegen, kikker-pak, hammer bros-pak en P-Meter vliegmeter',
+        'Gedigitaliseerde stemgeluiden voor Mario en Luigi ingesproken door Charles Martinet',
+        'Vlaggenschip 2003 lancering voor de Game Boy Advance SP'
+      ],
+      en: [
+        'Complete 32-bit remastered visual overhaul of the All-Stars Super Mario Bros. 3 engine',
+        'Tanooki suit flight meter, Frog Suit swimming, and Hammer Suit projectiles',
+        'Digitized voice clips recorded by Charles Martinet for Mario & Luigi',
+        'Flagship 2003 launch showcase for the Game Boy Advance SP'
+      ]
+    },
+    specs: {
+      resolution: '240×160 TFT LCD (32.768 Kleuren)',
+      fps: '59.7 FPS ARM7TDMI 32-bit RISC Engine',
+      soundChip: 'DirectSound 6-Channel Stereo PCM Audio',
+      media: 'GBA Multi-Cartridge (AGB-AX4E-USA)'
+    },
+    coinPrice: 'Li-Ion Accu'
+  },
+  {
+    id: 'pokemon_emerald',
+    year: 2004,
+    yearDisplay: '2004',
+    yearIcon: '⚡',
+    system: 'gba_sp',
+    systemName: { nl: 'Game Boy Advance SP (32-Bit)', en: 'Game Boy Advance SP (32-Bit)' },
+    genre: 'rpg',
+    genreName: { nl: 'Handheld 32-Bit Monster RPG', en: 'Handheld 32-Bit Monster RPG' },
+    category: 'handheld',
+    categoryName: { nl: 'Handheld & Game Boy', en: 'Handheld & Game Boy' },
+    title: 'POKÉMON EMERALD',
+    subtitle: { nl: 'De Ultieme Hoenn Generatie III Hoofdklasse op GBA SP', en: 'The Definitive Hoenn Gen III Masterpiece on GBA SP' },
+    creator: 'Game Freak • Shigeki Morimoto & Junichi Masuda',
+    cabinetTheme: {
+      primaryColor: '#10b981',
+      secondaryColor: '#047857',
+      neonColor: '#34d399',
+      glowBorder: 'rgba(16, 185, 129, 0.5)',
+      accentBg: 'from-emerald-950 to-neutral-950',
+      textColor: 'text-emerald-400',
+      marqueeBg: 'bg-emerald-900/60'
+    },
+    summary: {
+      nl: 'Het kroonjuweel van de 32-bit Pokémon spellen! Verken de Hoenn regio, tem de legendarische draak Rayquaza om het gevecht tussen Kyogre en Groudon te sussen, en verover de Battle Frontier!',
+      en: 'The crown jewel of 32-bit Pokémon adventures! Explore Hoenn, summon legendary Rayquaza to stop the clash between Kyogre and Groudon, and conquer the Battle Frontier!'
+    },
+    highlights: {
+      nl: [
+        'Geanimeerde 32-bit Pokémon battle-sprites en de legendarische Rayquaza Sootopolis cutscene',
+        'Team Magma vs Team Aqua dubbele verhaallijn en de uitdagende Battle Frontier',
+        'Kies Treecko, Torchic of Mudkip en vang alle Hoenn & Kanto legendes',
+        'Prachtige stereo DirectSound blaas- en gevechtmuziek van Junichi Masuda'
+      ],
+      en: [
+        'Animated 32-bit battle intro sprites & the climactic Rayquaza cutscene at Sootopolis City',
+        'Simultaneous Team Magma & Team Aqua conflict plus the post-game Battle Frontier',
+        'Select Treecko, Torchic or Mudkip and catch legendary Hoenn & Kanto Pokémon',
+        'Rich DirectSound stereo trumpet tracks composed by Junichi Masuda'
+      ]
+    },
+    specs: {
+      resolution: '240×160 TFT LCD (Animated Battle Sprites)',
+      fps: '59.7 FPS ARM7TDMI 32-bit RISC Engine',
+      soundChip: 'DirectSound 6-Channel Stereo PCM Audio',
+      media: 'GBA Multi-Cartridge + Clock SRAM (AGB-BPEE-USA)'
+    },
+    coinPrice: 'Li-Ion Accu'
+  },
+  {
+    id: 'zelda_minish',
+    year: 2004,
+    yearDisplay: '2004',
+    yearIcon: '🗡️',
+    system: 'gba_sp',
+    systemName: { nl: 'Game Boy Advance SP (32-Bit)', en: 'Game Boy Advance SP (32-Bit)' },
+    genre: 'adventure',
+    genreName: { nl: 'Top-Down 32-Bit Actie Avontuur', en: 'Top-Down 32-Bit Action Adventure' },
+    category: 'handheld',
+    categoryName: { nl: 'Handheld & Game Boy', en: 'Handheld & Game Boy' },
+    title: 'THE LEGEND OF ZELDA: THE MINISH CAP',
+    subtitle: { nl: 'Krimp tot het Picori-Formaat met Ezlo op GBA SP', en: 'Shrink to Picori Size with Ezlo on GBA SP' },
+    creator: 'Capcom / Flagship • Hidemaro Fujibayashi & Keiji Inafune',
+    cabinetTheme: {
+      primaryColor: '#eab308',
+      secondaryColor: '#ca8a04',
+      neonColor: '#facc15',
+      glowBorder: 'rgba(234, 179, 8, 0.5)',
+      accentBg: 'from-yellow-950 to-neutral-950',
+      textColor: 'text-yellow-400',
+      marqueeBg: 'bg-yellow-900/60'
+    },
+    summary: {
+      nl: 'Een visueel meesterwerk op de Game Boy Advance SP! Zet de pratende vogelhoed Ezlo op, krimp tot microscopisch Minish-formaat om grassprieten te transformeren in gigantische oerwouden, en smeed het Four Sword.',
+      en: 'A pixel-art masterpiece on Game Boy Advance SP! Wear the magical talking cap Ezlo to shrink to microscopic Minish size, explore tiny secret worlds, and forge the legendary Four Sword.'
+    },
+    highlights: {
+      nl: [
+        'Baanbrekende krimpmechaniek die Hyrule in twee unieke dimensies laat verkennen',
+        'Prachtige verzadigde 32-bit pixel-art ontwikkeld door Capcom & Flagship',
+        'Kinstone fusiesysteem met inwoners van Hyrule om geheime schatten te onthullen',
+        'Machtige kerkers met unieke items zoals de Gust Jar en Mole Gloves'
+      ],
+      en: [
+        'Innovative size-shifting mechanic uncovering two distinct perspectives of Hyrule',
+        'Gorgeous 32-bit pixel-art tilesets co-developed by Capcom and Flagship',
+        'Kinstone fusion system with Hyrule citizens unlocking secrets across the world',
+        'Inventive dungeons featuring the Gust Jar vacuum and Mole Gloves'
+      ]
+    },
+    specs: {
+      resolution: '240×160 TFT LCD (Rich Pixel Art & Parallax)',
+      fps: '59.7 FPS ARM7TDMI 32-bit RISC Engine',
+      soundChip: 'DirectSound 6-Channel Stereo PCM Audio',
+      media: 'GBA Multi-Cartridge + Battery SRAM (AGB-BZME-USA)'
+    },
+    coinPrice: 'Li-Ion Accu'
   }
 ];
 
 export const LOBBY_TRANSLATIONS = {
   nl: {
     badge: 'RETRO ARCADE VAULT',
-    activeGamesBadge: '35 KLASSIEKERS ACTIEF • FREE PLAY',
-    headerSub: 'Gouden Tijdperk Retro Speelhal & PC Klassiekers • Atari Vector, Sinclair ZX81 & Spectrum, BBC Micro, C64, IBM PC, Amiga, Namco & iOS 3D',
+    activeGamesBadge: '47 KLASSIEKERS ACTIEF • FREE PLAY',
+    headerSub: 'Gouden Tijdperk Retro Speelhal, Game Boy Bibliotheek & PC Klassiekers • 10 Game Boy Klassiekers, GBA SP, Atari, Sinclair, BBC Micro, C64 & DOS',
     mainTitle: 'De Ultieme Retro Speelhal',
-    mainDesc: 'Stap binnen in de gouden eeuw van videogames (1972 – 2011). Speel 35 iconische arcademeesterwerken, vector klassiekers, 3D games en grafische avonturen in authentieke resolutie, 60 FPS snelheid en originele geluidssynthese.',
+    mainDesc: 'Stap binnen in de gouden eeuw van videogames (1972 – 2011). Speel 47 iconische arcademeesterwerken, complete 10-game Game Boy bibliotheek, handheld klassiekers en pc-avonturen in authentieke resolutie, 60 FPS snelheid en originele chiptune-synthese.',
     
     // Views
     views: {
@@ -1524,6 +2406,7 @@ export const LOBBY_TRANSLATIONS = {
     filterLabel: 'Sorteer & Filter:',
     allCategories: 'Alle Categorieën',
     categoryArcade: 'Arcade Hal Klassiekers',
+    categoryHandheld: 'Handheld & Game Boy',
     categoryAdventure: 'Grafische Avonturen (Sierra)',
     categoryC64: 'Commodore 64 Klassiekers',
     categorySpectrum: 'ZX Spectrum Klassiekers',
@@ -1555,8 +2438,8 @@ export const LOBBY_TRANSLATIONS = {
     quickLaunch: 'Direct naar kast:',
 
     // Timeline section
-    timelineEraTitle: 'Chronologische Tijdlijn van de Speelhal (1978 - 1985)',
-    timelineEraDesc: 'Van de eerste 8-bit discrete geluidscircuits in Japan tot baanbrekende 3D-fysica op Britse homecomputers.',
+    timelineEraTitle: 'Chronologische Tijdlijn van de Speelhal (1972 - 2011)',
+    timelineEraDesc: 'Van de eerste discrete schakelingen in Pong tot baanbrekende 8-bit handhelds en 3D pc-engines.',
 
     // Upcoming votes
     upcomingTitle: 'Volgende Kasten in Ontwikkeling',
@@ -1570,10 +2453,10 @@ export const LOBBY_TRANSLATIONS = {
   },
   en: {
     badge: 'RETRO ARCADE VAULT',
-    activeGamesBadge: '35 CLASSICS IN VAULT • FREE PLAY',
-    headerSub: 'Golden Era Retro Arcade Collection & PC Classics • Atari Vector, Sinclair ZX81 & Spectrum, BBC Micro, C64, IBM PC, Amiga, Namco & iOS 3D',
+    activeGamesBadge: '47 CLASSICS IN VAULT • FREE PLAY',
+    headerSub: 'Golden Era Retro Arcade Collection, Complete Game Boy Library & PC Classics • 10 Game Boy Classics, GBA SP, Atari Vector, Sinclair, BBC Micro, C64 & DOS',
     mainTitle: 'The Ultimate Retro Arcade Hall',
-    mainDesc: 'Step into the golden age of video games (1972 – 2011). Play 35 iconic arcade masterpieces, vector classics, 3D games and graphic adventures in authentic resolution, 60 FPS performance, and original synthesized chiptune audio.',
+    mainDesc: 'Step into the golden age of video games (1972 – 2011). Play 47 iconic arcade masterpieces, full 10-game Game Boy library, handheld classics, vector games and graphic adventures in authentic resolution, 60 FPS performance, and original synthesized chiptune audio.',
 
     // Views
     views: {
@@ -1591,6 +2474,7 @@ export const LOBBY_TRANSLATIONS = {
     filterLabel: 'Sort & Filter:',
     allCategories: 'All Categories',
     categoryArcade: 'Arcade Hall Classics',
+    categoryHandheld: 'Handheld & Game Boy',
     categoryAdventure: 'Graphic Adventures (Sierra)',
     categoryC64: 'Commodore 64 Classics',
     categorySpectrum: 'ZX Spectrum Classics',
@@ -1622,8 +2506,8 @@ export const LOBBY_TRANSLATIONS = {
     quickLaunch: 'Jump to Cabinet:',
 
     // Timeline section
-    timelineEraTitle: 'Chronological Arcade Timeline (1978 - 1985)',
-    timelineEraDesc: 'From the first Japanese 8-bit discrete audio chips to pioneering 3D Newtonian physics on British microcomputers.',
+    timelineEraTitle: 'Chronological Arcade Timeline (1972 - 2011)',
+    timelineEraDesc: 'From the first discrete logic gates in Pong to pioneering 8-bit handhelds and 3D PC engines.',
 
     // Upcoming votes
     upcomingTitle: 'Next Cabinets in Development',

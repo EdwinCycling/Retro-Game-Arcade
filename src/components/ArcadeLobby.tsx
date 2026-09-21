@@ -70,6 +70,10 @@ import { RocketRaidHistoryModal } from './RocketRaidHistoryModal';
 import { QbertHistoryModal } from './QbertHistoryModal';
 import { OutrunHistoryModal } from './OutrunHistoryModal';
 import { ExileHistoryModal } from './ExileHistoryModal';
+import { ImpossibleMissionHistoryModal } from './ImpossibleMissionHistoryModal';
+import { GameBoyHistoryModal } from './GameBoyHistoryModal';
+import { GbaHistoryModal } from './GbaHistoryModal';
+import { Ps1HistoryModal } from './Ps1HistoryModal';
 import { GamepadGuideModal } from './GamepadGuideModal';
 import { TiltTouchGuideModal } from './TiltTouchGuideModal';
 import { ProjectInfoModal } from './ProjectInfoModal';
@@ -113,6 +117,8 @@ import { getDonkeyKongHighScores } from '../game/donkeyKongHighScores';
 import { getDoubleDragonScores } from '../game/doubleDragonHighScores';
 import { getNokiaSnakeScores } from '../game/nokiaSnakeHighScores';
 import { getExileHighScores } from '../game/exileHighScores';
+import { getImpossibleMissionScores } from '../game/impossibleMissionHighScores';
+import { getMarioLandScores, getTetrisScores } from '../game/gameBoyHighScores';
 import { retroAudio } from '../game/audio';
 import { spaceAudio } from '../game/spaceInvadersAudio';
 import { demonAudio } from '../game/demonAttackAudio';
@@ -147,6 +153,9 @@ import { rocketRaidAudio } from '../game/rocketRaidAudio';
 import { qbertAudio } from '../game/qbertAudio';
 import { outrunAudio } from '../game/outrunAudio';
 import { exileAudio } from '../game/exileAudio';
+import { impossibleMissionAudio } from '../game/impossibleMissionAudio';
+import { gbaAudio } from '../game/gbaAudio';
+import { ps1Audio } from '../game/ps1Audio';
 import { haptics } from '../utils/haptics';
 
 interface ArcadeLobbyProps {
@@ -193,6 +202,10 @@ export const ArcadeLobby: React.FC<ArcadeLobbyProps> = ({
   const [isQbertHistoryOpen, setIsQbertHistoryOpen] = useState(false);
   const [isOutrunHistoryOpen, setIsOutrunHistoryOpen] = useState(false);
   const [isExileHistoryOpen, setIsExileHistoryOpen] = useState(false);
+  const [isImpossibleMissionHistoryOpen, setIsImpossibleMissionHistoryOpen] = useState(false);
+  const [isGameBoyHistoryOpen, setIsGameBoyHistoryOpen] = useState(false);
+  const [isGbaHistoryOpen, setIsGbaHistoryOpen] = useState(false);
+  const [isPs1HistoryOpen, setIsPs1HistoryOpen] = useState(false);
 
   // Xbox & Controller Support
   const [isGamepadConnected, setIsGamepadConnected] = useState(false);
@@ -360,6 +373,18 @@ export const ArcadeLobby: React.FC<ArcadeLobbyProps> = ({
   const exileScores = getExileHighScores();
   const exileTopScore = exileScores.length > 0 ? exileScores[0].score : 32500;
   const exileTopInitials = exileScores.length > 0 ? exileScores[0].name : 'FINN';
+
+  const impossibleMissionScores = getImpossibleMissionScores();
+  const impossibleMissionTopScore = impossibleMissionScores.length > 0 ? `${impossibleMissionScores[0].remainingSeconds}s` : '16820s';
+  const impossibleMissionTopInitials = impossibleMissionScores.length > 0 ? impossibleMissionScores[0].initials : 'EPX';
+
+  const marioLandScores = getMarioLandScores();
+  const marioLandTopScore = marioLandScores.length > 0 ? marioLandScores[0].score : 28500;
+  const marioLandTopInitials = marioLandScores.length > 0 ? marioLandScores[0].initials : 'MAR';
+
+  const tetrisDmgScores = getTetrisScores();
+  const tetrisDmgTopScore = tetrisDmgScores.length > 0 ? tetrisDmgScores[0].score : 54200;
+  const tetrisDmgTopInitials = tetrisDmgScores.length > 0 ? tetrisDmgScores[0].initials : 'ALX';
 
   const handleLaunchPacman = () => {
     haptics.powerPellet();
@@ -571,6 +596,34 @@ export const ArcadeLobby: React.FC<ArcadeLobbyProps> = ({
     onSelectGame('exile');
   };
 
+  const handleLaunchImpossibleMission = () => {
+    haptics.powerPellet();
+    impossibleMissionAudio.playElvinWelcome();
+    onSelectGame('impossible_mission');
+  };
+
+  const handleLaunchMarioLand = () => {
+    haptics.powerPellet();
+    onSelectGame('mario_land');
+  };
+
+  const handleLaunchTetrisDmg = () => {
+    haptics.powerPellet();
+    onSelectGame('tetris_dmg');
+  };
+
+  const handleLaunchGbaSp = () => {
+    haptics.powerPellet();
+    gbaAudio.playGbaBootChime();
+    onSelectGame('gba_sp');
+  };
+
+  const handleLaunchPs1 = () => {
+    haptics.powerPellet();
+    ps1Audio.playPs1BootChime();
+    onSelectGame('ps1');
+  };
+
   const highScoresMap: Record<string, { score: number | string; initials: string }> = useMemo(() => ({
     space_invaders: { score: spaceTopScore, initials: spaceTopInitials },
     pacman: { score: pacmanTopScore, initials: pacmanTopInitials },
@@ -607,6 +660,24 @@ export const ArcadeLobby: React.FC<ArcadeLobbyProps> = ({
     qbert: { score: qbertTopScore, initials: qbertTopInitials },
     outrun: { score: outrunTopScore, initials: outrunTopInitials },
     exile: { score: exileTopScore, initials: exileTopInitials },
+    impossible_mission: { score: impossibleMissionTopScore, initials: impossibleMissionTopInitials },
+    mario_land: { score: marioLandTopScore, initials: marioLandTopInitials },
+    tetris_dmg: { score: tetrisDmgTopScore, initials: tetrisDmgTopInitials },
+    dr_mario: { score: 48500, initials: 'DOC' },
+    metroid_2: { score: '39 MT', initials: 'SAM' },
+    kirby_dream_land: { score: 62400, initials: 'KBY' },
+    mario_land_2: { score: 99990, initials: 'MAR' },
+    zelda_links_awakening: { score: '8 INSTR', initials: 'LNK' },
+    donkey_kong_94: { score: 101000, initials: 'DKG' },
+    pokemon_red: { score: '151 PK', initials: 'RED' },
+    wario_land_2: { score: 99999, initials: 'WAR' },
+    gba_sp: { score: 9999, initials: 'GBA' },
+    pokemon_emerald: { score: '386 PK', initials: 'EME' },
+    mario_advance: { score: 999990, initials: 'MAR' },
+    zelda_minish: { score: 'FOUR SWORD', initials: 'LNK' },
+    ps1: { score: '100% CD', initials: 'PS1' },
+    crash_bandicoot: { score: '100% GEM', initials: 'CRH' },
+    ridge_racer: { score: "1'12\"45", initials: 'RAC' },
   }), [
     spaceTopScore, spaceTopInitials, pacmanTopScore, pacmanTopInitials,
     donkeyKongTopScore, donkeyKongTopInitials,
@@ -630,7 +701,10 @@ export const ArcadeLobby: React.FC<ArcadeLobbyProps> = ({
     rocketRaidTopScore, rocketRaidTopInitials,
     qbertTopScore, qbertTopInitials,
     outrunTopScore, outrunTopInitials,
-    exileTopScore, exileTopInitials
+    exileTopScore, exileTopInitials,
+    impossibleMissionTopScore, impossibleMissionTopInitials,
+    marioLandTopScore, marioLandTopInitials,
+    tetrisDmgTopScore, tetrisDmgTopInitials
   ]);
 
   const filteredGames = useMemo(() => {
@@ -643,14 +717,17 @@ export const ArcadeLobby: React.FC<ArcadeLobbyProps> = ({
           const microIds = new Set(['arcadians', 'rocket_raid', 'qbert', 'chuckie_egg', 'frak', 'repton', 'eindeloos', 'monster_maze', 'manic_miner', 'exile']);
           if (!microIds.has(game.id)) return false;
         } else if (selectedCategory === 'adventure') {
-          const advIds = new Set(['kings_quest', 'space_quest', 'tetris', 'wolfenstein', 'prince', 'doom', 'exile']);
+          const advIds = new Set(['kings_quest', 'space_quest', 'tetris', 'wolfenstein', 'prince', 'doom', 'exile', 'impossible_mission']);
           if (!advIds.has(game.id)) return false;
         } else if (selectedCategory === 'c64') {
-          const c64Ids = new Set(['battle_chess', 'c64_pinball', 'lemmings']);
+          const c64Ids = new Set(['battle_chess', 'c64_pinball', 'lemmings', 'impossible_mission']);
           if (!c64Ids.has(game.id)) return false;
         } else if (selectedCategory === 'console') {
           const consoleIds = new Set(['demon_attack', 'super_mario']);
           if (!consoleIds.has(game.id)) return false;
+        } else if (selectedCategory === 'handheld' || selectedCategory === 'portable') {
+          const handheldIds = new Set(['mario_land', 'tetris_dmg', 'dr_mario', 'metroid_2', 'kirby_dream_land', 'mario_land_2', 'zelda_links_awakening', 'donkey_kong_94', 'pokemon_red', 'wario_land_2', 'snake', 'gba_sp', 'ps1']);
+          if (!handheldIds.has(game.id)) return false;
         } else if (selectedCategory === 'mobile') {
           if (game.id !== 'temple_run') return false;
         }
@@ -740,6 +817,33 @@ export const ArcadeLobby: React.FC<ArcadeLobbyProps> = ({
       case 'zaxxon': handleLaunchZaxxon(); break;
       case 'outrun': handleLaunchOutrun(); break;
       case 'exile': handleLaunchExile(); break;
+      case 'impossible_mission': handleLaunchImpossibleMission(); break;
+      case 'mario_land': handleLaunchMarioLand(); break;
+      case 'tetris_dmg': handleLaunchTetrisDmg(); break;
+      case 'dr_mario':
+      case 'metroid_2':
+      case 'kirby_dream_land':
+      case 'mario_land_2':
+      case 'zelda_links_awakening':
+      case 'donkey_kong_94':
+      case 'pokemon_red':
+      case 'wario_land_2':
+        haptics.powerPellet();
+        onSelectGame(gameId);
+        break;
+      case 'gba_sp': handleLaunchGbaSp(); break;
+      case 'pokemon_emerald':
+      case 'mario_advance':
+      case 'zelda_minish':
+        haptics.powerPellet();
+        onSelectGame(gameId);
+        break;
+      case 'ps1': handleLaunchPs1(); break;
+      case 'crash_bandicoot':
+      case 'ridge_racer':
+        haptics.powerPellet();
+        onSelectGame(gameId);
+        break;
     }
   };
 
@@ -780,6 +884,30 @@ export const ArcadeLobby: React.FC<ArcadeLobbyProps> = ({
       case 'zaxxon': setIsZaxxonHistoryOpen(true); break;
       case 'outrun': setIsOutrunHistoryOpen(true); break;
       case 'exile': setIsExileHistoryOpen(true); break;
+      case 'impossible_mission': setIsImpossibleMissionHistoryOpen(true); break;
+      case 'mario_land':
+      case 'tetris_dmg':
+      case 'dr_mario':
+      case 'metroid_2':
+      case 'kirby_dream_land':
+      case 'mario_land_2':
+      case 'zelda_links_awakening':
+      case 'donkey_kong_94':
+      case 'pokemon_red':
+      case 'wario_land_2':
+        setIsGameBoyHistoryOpen(true);
+        break;
+      case 'gba_sp':
+      case 'pokemon_emerald':
+      case 'mario_advance':
+      case 'zelda_minish':
+        setIsGbaHistoryOpen(true);
+        break;
+      case 'ps1':
+      case 'crash_bandicoot':
+      case 'ridge_racer':
+        setIsPs1HistoryOpen(true);
+        break;
     }
   };
 
@@ -1329,8 +1457,31 @@ export const ArcadeLobby: React.FC<ArcadeLobbyProps> = ({
       glow: "hover:shadow-[0_0_26px_rgba(6,182,212,0.85)]",
       badgeColor: "bg-cyan-500 text-black font-black",
       onClick: handleLaunchExile,
+    },
+    {
+      id: 'impossible_mission',
+      title: "IMPOSSIBLE MISSION",
+      year: 1984,
+      tag: "C64 '84",
+      genre: "Epyx • Stay Forever!",
+      icon: "🕵️",
+      iconAnim: "group-hover:scale-125 group-hover:-translate-y-1 group-hover:rotate-6",
+      cabinetType: 'c64_amiga' as const,
+      gradient: "from-blue-950 via-indigo-950/90 to-black/95",
+      border: "border-blue-500/80 hover:border-blue-300",
+      glow: "hover:shadow-[0_0_26px_rgba(59,130,246,0.85)]",
+      badgeColor: "bg-blue-500 text-white font-black",
+      onClick: handleLaunchImpossibleMission,
     }
-  ], []);
+  ], [
+    handleLaunchKingsQuest, handleLaunchSpaceQuest, handleLaunchTetris, handleLaunchWolfenstein,
+    handleLaunchPong, handleLaunchSpaceInvaders, handleLaunchAsteroids, handleLaunchMario,
+    handleLaunchChuckieEgg, handleLaunchManicMiner, handleLaunchFrak, handleLaunchRepton,
+    handleLaunchC64Pinball, handleLaunchLemmings, handleLaunchTempleRun, handleLaunchPrince,
+    handleLaunchDoubleDragon, handleLaunchSnake, handleLaunchDoom, handleLaunchDuke,
+    handleLaunchHalfLife, handleLaunchOutrun, handleLaunchExile, handleLaunchImpossibleMission,
+    handleLaunchQbert
+  ]);
 
   const displayQuickCards = useMemo(() => {
     const list = [...quickCardsList];
@@ -1565,11 +1716,12 @@ export const ArcadeLobby: React.FC<ArcadeLobbyProps> = ({
                 >
                   <option value="all">🏷️ {lang === 'nl' ? 'Alle Categorieën' : 'All Categories'}</option>
                   <option value="arcade">🕹️ {lang === 'nl' ? 'Speelhal Coin-Op' : 'Arcade Coin-Op'}</option>
-                  <option value="micro">🇬🇧 {lang === 'nl' ? '8-Bit Micro Computers (BBC/Spectrum/ZX81)' : '8-Bit Micro Computers (BBC/Spectrum/ZX81)'}</option>
+                  <option value="handheld">📱 {lang === 'nl' ? 'Portables & Handhelds (Game Boy, GBA, PS1 & Mobiel)' : 'Portables & Handhelds (Game Boy, GBA, PS1 & Mobile)'}</option>
+                  <option value="portable">🎮 {lang === 'nl' ? 'Portable Players (Game Boy, GBA, PS1)' : 'Portable Players (Game Boy, GBA, PS1)'}</option>
+                  <option value="micro">💻 {lang === 'nl' ? '8-Bit Micro Computers (BBC & ZX)' : '8-Bit Micro Computers (BBC & ZX)'}</option>
                   <option value="adventure">👑 {lang === 'nl' ? 'Sierra Quests & DOS' : 'Sierra Quests & DOS'}</option>
                   <option value="c64">💾 {lang === 'nl' ? 'Commodore 64 & Amiga' : 'C64 & Amiga Classics'}</option>
                   <option value="console">🎮 {lang === 'nl' ? 'Consoles: NES & Atari' : 'Consoles: NES & Atari'}</option>
-                  <option value="mobile">📱 {lang === 'nl' ? 'Mobile & Nokia' : 'Mobile & Nokia'}</option>
                 </select>
                 <ChevronDown className="w-3.5 h-3.5 text-neutral-400 absolute right-2.5 top-1/2 -translate-y-1/2 pointer-events-none" />
               </div>
@@ -1601,11 +1753,16 @@ export const ArcadeLobby: React.FC<ArcadeLobbyProps> = ({
                   <option value="1986">1986 • OutRun (Sega Yu Suzuki) &amp; Space Quest I</option>
                   <option value="1987">1987 • Double Dragon (Technos Japan)</option>
                   <option value="1988">1988 • Exile (BBC Micro) &amp; Battle Chess</option>
-                  <option value="1989">1989 • 3D Pinball & Prince of Persia</option>
-                  <option value="1991">1991 • Lemmings (DMA Design)</option>
-                  <option value="1992">1992 • Wolfenstein 3D (id Software)</option>
-                  <option value="1993">1993 • DOOM (id Software)</option>
+                  <option value="1989">1989 • Game Boy DMG, Super Mario Land, Tetris &amp; C64 Pinball</option>
+                  <option value="1990">1990 • Dr. Mario &amp; Prince of Persia</option>
+                  <option value="1991">1991 • Lemmings &amp; Metroid II</option>
+                  <option value="1992">1992 • Wolfenstein 3D, Kirby &amp; Mario Land 2</option>
+                  <option value="1993">1993 • DOOM &amp; Zelda: Link's Awakening</option>
+                  <option value="1994">1994 • Sony PlayStation 1 &amp; Donkey Kong '94</option>
+                  <option value="1996">1996 • Pokémon Red &amp; Blue &amp; Duke Nukem 3D</option>
                   <option value="1997">1997 • Nokia Snake (Taneli Armanto)</option>
+                  <option value="1998">1998 • Half-Life &amp; Wario Land II</option>
+                  <option value="2003">2003 • Game Boy Advance SP (32-Bit)</option>
                   <option value="2011">2011 • Temple Run 3D (Mobile)</option>
                 </select>
                 <ChevronDown className="w-3.5 h-3.5 text-neutral-400 absolute right-2.5 top-1/2 -translate-y-1/2 pointer-events-none" />
@@ -5019,6 +5176,233 @@ export const ArcadeLobby: React.FC<ArcadeLobbyProps> = ({
             </div>
             )}
 
+            {/* GAME 36: IMPOSSIBLE MISSION (1984) - EPYX / DENNIS CASWELL / COMMODORE 64 */}
+            {filteredGameIds.has('impossible_mission') && (
+            <div className="group relative rounded-3xl bg-neutral-900/90 border-2 border-blue-500/80 shadow-[0_0_35px_rgba(59,130,246,0.25)] overflow-hidden transition-all duration-300 hover:shadow-[0_0_50px_rgba(59,130,246,0.45)] flex flex-col justify-between">
+              <div className="absolute inset-0 bg-[radial-gradient(#3b82f6_1px,transparent_1px)] [background-size:24px_24px] opacity-15 pointer-events-none" />
+
+              <div className="relative z-10 p-6 sm:p-7 space-y-5">
+                {/* Header tags */}
+                <div className="flex flex-wrap items-center justify-between gap-2">
+                  <div className="flex items-center gap-2">
+                    <span className="px-2.5 py-0.5 rounded-full text-[11px] font-black bg-gradient-to-r from-blue-500 to-cyan-400 text-black shadow-[0_0_12px_rgba(59,130,246,0.5)]">
+                      🕵️ NIEUW: GAME 36
+                    </span>
+                    <span className="px-2 py-0.5 rounded-full text-[10px] font-mono font-bold bg-neutral-800 text-blue-300 border border-neutral-700">
+                      COMMODORE 64 • SID 6581 • 1984
+                    </span>
+                  </div>
+                  <span className="text-xs font-mono text-amber-400 font-bold">
+                    RECORD: {impossibleMissionTopScore.toLocaleString()} ({impossibleMissionTopInitials})
+                  </span>
+                </div>
+
+                {/* Title & Preview Graphic */}
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <h4 className="text-2xl sm:text-3xl font-black font-mono text-white tracking-tight flex items-center gap-2">
+                        <span>IMPOSSIBLE MISSION</span>
+                        <span className="text-xs px-2 py-0.5 rounded bg-blue-950 text-blue-300 border border-blue-800">
+                          STEALTH &amp; SOMERSAULT
+                        </span>
+                      </h4>
+                      <p className="text-xs text-neutral-400 font-mono mt-0.5">
+                        Dennis Caswell • Epyx • "Another visitor... Stay a while, stay forever!"
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Retro Impossible Mission Simulation Visual */}
+                  <div className="relative h-44 rounded-2xl overflow-hidden border border-blue-500/40 bg-neutral-950 p-2 font-mono flex flex-col justify-between group-hover:border-blue-400 transition-colors select-none">
+                    {/* Top HUD */}
+                    <div className="flex justify-between items-center bg-neutral-900/80 rounded px-2 py-1 text-[11px] border border-neutral-800">
+                      <span className="text-blue-300 font-bold">AGENT 4125</span>
+                      <span className="text-amber-400 font-bold flex items-center gap-1">
+                        <span>TIME:</span>
+                        <span>05:42:19</span>
+                      </span>
+                      <span className="text-emerald-400 font-bold">PUZZLE: 14/36 🧩</span>
+                    </div>
+
+                    {/* Sector Chamber Simulation */}
+                    <div className="relative flex-1 flex flex-col items-center justify-center overflow-hidden py-1">
+                      <div className="w-full flex justify-between px-6 text-xs font-bold text-neutral-400 mb-1">
+                        <span className="text-cyan-400">SECTOR 03: MAINFRAME LAB</span>
+                        <span className="text-red-400 animate-pulse">⚡ ROBOT PATROL ACTIVE</span>
+                      </div>
+                      <div className="flex items-center gap-4 text-xs font-mono">
+                        <span className="text-white font-bold bg-blue-950 px-2 py-1 rounded border border-blue-600">
+                          🏃 360° SOMERSAULT JUMP
+                        </span>
+                        <span className="text-neutral-500">━━ ⚡ ━━</span>
+                        <span className="text-amber-300 font-bold bg-amber-950/80 px-2 py-1 rounded border border-amber-600">
+                          🤖 SNOOZE ROBOTS
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Bottom Status Banner */}
+                    <div className="flex justify-between items-center text-[10px] text-neutral-400 bg-neutral-900/60 rounded px-2 py-1">
+                      <span className="text-yellow-300">POCKET COMPUTER: SNOOZE + LIFT CODES</span>
+                      <span className="text-cyan-300">SID 6581 + ESS SPEECH CHIP</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Badges */}
+                <div className="flex flex-wrap gap-2 text-[11px] font-mono">
+                  <span className="px-2 py-0.8 rounded-lg bg-neutral-800 text-blue-300 border border-neutral-700 flex items-center gap-1">
+                    <Zap className="w-3 h-3 text-blue-400" />
+                    <span>Gymnastieke Salto &amp; Fysica</span>
+                  </span>
+                  <span className="px-2 py-0.8 rounded-lg bg-neutral-800 text-amber-300 border border-neutral-700 flex items-center gap-1">
+                    <Volume2 className="w-3 h-3 text-amber-400" />
+                    <span>Gedigitaliseerde ESS Spraak</span>
+                  </span>
+                  <span className="px-2 py-0.8 rounded-lg bg-neutral-800 text-emerald-300 border border-neutral-700 flex items-center gap-1">
+                    <Sparkles className="w-3 h-3 text-emerald-400" />
+                    <span>36 Ponskaart Puzzelstukken</span>
+                  </span>
+                  <span className="px-2 py-0.8 rounded-lg bg-neutral-800 text-purple-300 border border-neutral-700 flex items-center gap-1">
+                    <Tv className="w-3 h-3 text-purple-400" />
+                    <span>8 Ondergrondse Sectoren &amp; Liftschacht</span>
+                  </span>
+                </div>
+              </div>
+
+              {/* Action Buttons */}
+              <div className="p-6 pt-0 flex gap-2.5">
+                <button
+                  type="button"
+                  onClick={() => setIsImpossibleMissionHistoryOpen(true)}
+                  className="px-4 py-3 rounded-xl bg-neutral-800 hover:bg-neutral-700 text-neutral-200 text-xs font-bold border border-neutral-700 transition-all flex items-center justify-center gap-1.5 cursor-pointer active:scale-95"
+                >
+                  <BookOpen className="w-4 h-4 text-cyan-400" />
+                  <span>Dossier</span>
+                </button>
+                <button
+                  type="button"
+                  onClick={handleLaunchImpossibleMission}
+                  className="flex-1 py-3 rounded-xl bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-500 hover:from-blue-500 hover:to-indigo-500 text-white text-xs font-black tracking-wider shadow-[0_0_25px_rgba(59,130,246,0.7)] transition-all transform active:scale-95 flex items-center justify-center gap-2 cursor-pointer"
+                >
+                  <Play className="w-4 h-4 fill-white" />
+                  <span>START IMPOSSIBLE MISSION (C64 1984)</span>
+                </button>
+              </div>
+            </div>
+            )}
+
+            {/* SONY PLAYSTATION 1 (1994) - KEN KUTARAGI / SONY */}
+            {filteredGameIds.has('ps1') && (
+            <div className="group relative rounded-3xl bg-neutral-900/90 border-2 border-indigo-500/80 shadow-[0_0_35px_rgba(99,102,241,0.25)] overflow-hidden transition-all duration-300 hover:shadow-[0_0_50px_rgba(99,102,241,0.45)] flex flex-col justify-between">
+              <div className="absolute inset-0 bg-[radial-gradient(#6366f1_1px,transparent_1px)] [background-size:24px_24px] opacity-15 pointer-events-none" />
+
+              <div className="relative z-10 p-6 sm:p-7 space-y-5">
+                {/* Header tags */}
+                <div className="flex flex-wrap items-center justify-between gap-2">
+                  <div className="flex items-center gap-2">
+                    <span className="px-2.5 py-0.5 rounded-full text-[11px] font-black bg-gradient-to-r from-indigo-500 to-purple-500 text-white shadow-[0_0_12px_rgba(99,102,241,0.5)]">
+                      💿 32-BIT CD-ROM
+                    </span>
+                    <span className="px-2 py-0.5 rounded-full text-[10px] font-mono font-bold bg-neutral-800 text-indigo-300 border border-neutral-700">
+                      SONY &amp; KEN KUTARAGI • 1994
+                    </span>
+                  </div>
+                  <span className="text-xs font-mono text-indigo-300 font-bold">
+                    RECORD: 100% CD (PS1)
+                  </span>
+                </div>
+
+                {/* Title & Preview Graphic */}
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <h4 className="text-2xl sm:text-3xl font-black font-mono text-white tracking-tight flex items-center gap-2">
+                        <span>SONY PLAYSTATION 1</span>
+                        <span className="text-xs px-2 py-0.5 rounded bg-indigo-950 text-indigo-300 border border-indigo-800">
+                          CRASH &amp; RIDGE RACER
+                        </span>
+                      </h4>
+                      <p className="text-xs text-neutral-400 font-mono mt-0.5">
+                        Ken Kutaragi • 32-Bit CD-ROM Console • Crash Bandicoot &amp; Ridge Racer
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* PS1 Visual Preview */}
+                  <div className="relative h-44 rounded-2xl overflow-hidden border border-indigo-500/40 bg-neutral-950 p-2 font-mono flex flex-col justify-between group-hover:border-indigo-400 transition-colors select-none">
+                    <div className="flex justify-between items-center bg-neutral-900/80 rounded px-2 py-1 text-[11px] border border-neutral-800">
+                      <span className="text-indigo-400 font-bold">SONY PS1 CONSOLE</span>
+                      <span className="text-yellow-400 font-bold flex items-center gap-1">
+                        <span>DISC:</span>
+                        <span>CRASH BANDICOOT 3D</span>
+                      </span>
+                      <span className="text-emerald-400 font-bold">CD-ROM 2X 💿</span>
+                    </div>
+
+                    <div className="relative flex-1 flex flex-col items-center justify-center overflow-hidden py-1">
+                      <div className="w-full flex justify-between px-6 text-xs font-bold text-neutral-400 mb-1">
+                        <span className="text-indigo-300">3D CORRIDOR PLATFORMER</span>
+                        <span className="text-purple-400 animate-pulse">🎮 DUALSHOCK RUMBLE</span>
+                      </div>
+                      <div className="flex items-center gap-4 text-xs font-mono">
+                        <span className="text-white font-bold bg-indigo-950 px-2 py-1 rounded border border-indigo-600">
+                          🌪️ CRASH SPIN ATTACK
+                        </span>
+                        <span className="text-neutral-500">━━ 📦 ━━</span>
+                        <span className="text-amber-300 font-bold bg-amber-950/80 px-2 py-1 rounded border border-amber-600">
+                          🏎️ RIDGE RACER 3D
+                        </span>
+                      </div>
+                    </div>
+
+                    <div className="flex justify-between items-center text-[10px] text-neutral-400 bg-neutral-900/60 rounded px-2 py-1">
+                      <span className="text-indigo-300">PS1 BOOT JINGLE AUDIO</span>
+                      <span className="text-cyan-300">CD-SPINDLE ANIMATION</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Badges */}
+                <div className="flex flex-wrap gap-2 text-[11px] font-mono">
+                  <span className="px-2 py-0.8 rounded-lg bg-neutral-800 text-indigo-300 border border-neutral-700 flex items-center gap-1">
+                    <Zap className="w-3 h-3 text-indigo-400" />
+                    <span>Crash Bandicoot &amp; Ridge Racer</span>
+                  </span>
+                  <span className="px-2 py-0.8 rounded-lg bg-neutral-800 text-purple-300 border border-neutral-700 flex items-center gap-1">
+                    <Volume2 className="w-3 h-3 text-purple-400" />
+                    <span>Sony Boot Chime Audio</span>
+                  </span>
+                  <span className="px-2 py-0.8 rounded-lg bg-neutral-800 text-emerald-300 border border-neutral-700 flex items-center gap-1">
+                    <Gamepad2 className="w-3 h-3 text-emerald-400" />
+                    <span>DualShock Analog Xbox Control</span>
+                  </span>
+                </div>
+              </div>
+
+              {/* Action Buttons */}
+              <div className="p-6 pt-0 flex gap-2.5">
+                <button
+                  type="button"
+                  onClick={() => setIsPs1HistoryOpen(true)}
+                  className="px-4 py-3 rounded-xl bg-neutral-800 hover:bg-neutral-700 text-neutral-200 text-xs font-bold border border-neutral-700 transition-all flex items-center justify-center gap-1.5 cursor-pointer active:scale-95"
+                >
+                  <BookOpen className="w-4 h-4 text-indigo-400" />
+                  <span>Dossier</span>
+                </button>
+                <button
+                  type="button"
+                  onClick={handleLaunchPs1}
+                  className="flex-1 py-3 rounded-xl bg-gradient-to-r from-indigo-600 via-purple-600 to-slate-600 hover:from-indigo-500 hover:to-purple-500 text-white text-xs font-black tracking-wider shadow-[0_0_25px_rgba(99,102,241,0.7)] transition-all transform active:scale-95 flex items-center justify-center gap-2 cursor-pointer"
+                >
+                  <Play className="w-4 h-4 fill-white" />
+                  <span>START PLAYSTATION 1 (PS1 1994)</span>
+                </button>
+              </div>
+            </div>
+            )}
+
               </div>
             )}
           </section>
@@ -5033,7 +5417,7 @@ export const ArcadeLobby: React.FC<ArcadeLobbyProps> = ({
               Retro Arcade Vault • Volledig responsief voor mobiel &amp; desktop
             </div>
             <div className="flex items-center gap-4">
-              <span>35 Klassiekers (1972–2011) • 0 External ROMs</span>
+              <span>36 Klassiekers (1972–2011) • 0 External ROMs</span>
               {onOpenLeaderboard && (
                 <button
                   type="button"
@@ -5353,6 +5737,44 @@ export const ArcadeLobby: React.FC<ArcadeLobbyProps> = ({
         isOpen={isExileHistoryOpen}
         onClose={() => setIsExileHistoryOpen(false)}
         onPlay={handleLaunchExile}
+      />
+
+      {/* Impossible Mission (1984) Dennis Caswell / Epyx C64 History Modal */}
+      <ImpossibleMissionHistoryModal
+        isOpen={isImpossibleMissionHistoryOpen}
+        onClose={() => setIsImpossibleMissionHistoryOpen(false)}
+        onPlay={handleLaunchImpossibleMission}
+        lang={lang}
+      />
+
+      {/* Nintendo Game Boy (1989) DMG-01 History Modal */}
+      <GameBoyHistoryModal
+        isOpen={isGameBoyHistoryOpen}
+        onClose={() => setIsGameBoyHistoryOpen(false)}
+        onPlayMario={handleLaunchMarioLand}
+        onPlayTetris={handleLaunchTetrisDmg}
+        onLaunchGame={(id) => handleLaunchGameById(id as any)}
+        lang={lang}
+      />
+
+      {/* Nintendo Game Boy Advance SP (2003) History Modal */}
+      <GbaHistoryModal
+        isOpen={isGbaHistoryOpen}
+        onClose={() => setIsGbaHistoryOpen(false)}
+        onPlay={() => {
+          setIsGbaHistoryOpen(false);
+          handleLaunchGbaSp();
+        }}
+        onPlayGame={(id) => handleLaunchGameById(id as any)}
+        lang={lang}
+      />
+
+      {/* Sony PlayStation 1 (1994) History Modal */}
+      <Ps1HistoryModal
+        isOpen={isPs1HistoryOpen}
+        onClose={() => setIsPs1HistoryOpen(false)}
+        onPlayGame={(id) => handleLaunchGameById(id as any)}
+        lang={lang}
       />
     </div>
   );

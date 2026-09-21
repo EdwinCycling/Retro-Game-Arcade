@@ -88,36 +88,44 @@ export const ArcadeTimelineView: React.FC<ArcadeTimelineViewProps> = ({
           : '1988: Newtonian Physics Sandbox (Exile & Peter Irvin) & Animated Chess Battles (Battle Chess)';
       case 1989:
         return lang === 'nl'
-          ? '1989: Baanbrekende Perspectief Flipperkasten op de C64 (3D Pinball Power)'
-          : '1989: Groundbreaking Oblique Perspective Pinball on C64 (3D Pinball Power)';
+          ? '1989: Nintendo Game Boy DMG-01 Handheld Revolutie (Super Mario Land, Tetris) & C64 3D Pinball'
+          : '1989: Nintendo Game Boy DMG-01 Handheld Revolution (Super Mario Land, Tetris) & C64 3D Pinball';
       case 1990:
         return lang === 'nl'
-          ? '1990: De Rotoscoped Cinematic Platformer Revolutie (Prince of Persia & Jordan Mechner)'
-          : '1990: The Rotoscoped Cinematic Platformer Revolution (Prince of Persia & Jordan Mechner)';
+          ? '1990: Rotoscoped Cinematic Platformer (Prince of Persia) & Game Boy Virus Puzzel (Dr. Mario)'
+          : '1990: Rotoscoped Cinematic Platformer (Prince of Persia) & Game Boy Virus Puzzle (Dr. Mario)';
       case 1991:
         return lang === 'nl'
-          ? '1991: De Baanbrekende Realtime Puzzelrevolutie & Lemmings Fysica (DMA Design & Psygnosis)'
-          : '1991: The Groundbreaking Real-Time Puzzle Revolution & Lemmings Physics (DMA Design & Psygnosis)';
+          ? '1991: Realtime Puzzelrevolutie (Lemmings) & Handheld Sci-Fi Metroidvania (Metroid II)'
+          : '1991: Real-Time Puzzle Revolution (Lemmings) & Handheld Sci-Fi Metroidvania (Metroid II)';
       case 1992:
         return lang === 'nl'
-          ? '1992: De Raycasting 3D Revolutie & Geboorte van de FPS (Wolfenstein 3D)'
-          : '1992: The Raycasting 3D Revolution & Dawn of the FPS (Wolfenstein 3D)';
+          ? '1992: Raycasting 3D FPS (Wolfenstein 3D) & Game Boy Meesterwerken (Kirby’s Dream Land & Mario Land 2)'
+          : '1992: Raycasting 3D FPS (Wolfenstein 3D) & Game Boy Masterpieces (Kirby’s Dream Land & Mario Land 2)';
       case 1993:
         return lang === 'nl'
-          ? '1993: De Ultieme 3D First-Person Shooter Revolutie (DOOM & id Software)'
-          : '1993: The Ultimate 3D First-Person Shooter Revolution (DOOM & id Software)';
+          ? '1993: 3D First-Person Shooter Revolutie (DOOM) & Koholint Island Avontuur (Zelda: Link’s Awakening)'
+          : '1993: 3D First-Person Shooter Revolution (DOOM) & Koholint Island Adventure (Zelda: Link’s Awakening)';
+      case 1994:
+        return lang === 'nl'
+          ? '1994: Sony PlayStation 1 3D CD-ROM Revolutie (PS1 Console, Crash Bandicoot & Ridge Racer) & Donkey Kong ’94'
+          : '1994: Sony PlayStation 1 3D CD-ROM Revolution (PS1 Console, Crash Bandicoot & Ridge Racer) & Donkey Kong ’94';
       case 1996:
         return lang === 'nl'
-          ? '1996: De Interactieve Build Engine 3D Revolutie (Duke Nukem 3D & 3D Realms)'
-          : '1996: The Interactive Build Engine 3D Revolution (Duke Nukem 3D & 3D Realms)';
+          ? '1996: 3D Build Engine (Duke Nukem 3D) & Mondiale Game Boy RPG Sensatie (Pokémon Red & Blue)'
+          : '1996: 3D Build Engine (Duke Nukem 3D) & Global Game Boy RPG Sensation (Pokémon Red & Blue)';
       case 1997:
         return lang === 'nl'
           ? '1997: De Mobiele Gaming Revolutie op Nokia LCD (Snake & Taneli Armanto)'
           : '1997: The Mobile Gaming Revolution on Nokia LCD (Snake & Taneli Armanto)';
       case 1998:
         return lang === 'nl'
-          ? '1998: De Verhalende 3D PC Revolutie & Black Mesa (Half-Life & Valve Software)'
-          : '1998: The Story-Driven 3D PC Revolution & Black Mesa (Half-Life & Valve Software)';
+          ? '1998: Verhalende 3D PC Revolutie (Half-Life) & Onsterfelijke Game Boy Actie (Wario Land II)'
+          : '1998: Story-Driven 3D PC Revolution (Half-Life) & Immortal Game Boy Action (Wario Land II)';
+      case 2003:
+        return lang === 'nl'
+          ? '2003: Game Boy Advance SP 32-Bit Inklapbare Handheld Revolutie (GBA SP, Pokémon Emerald, Mario & Zelda)'
+          : '2003: Game Boy Advance SP 32-Bit Clamshell Handheld Revolution (GBA SP, Pokémon Emerald, Mario & Zelda)';
       case 2011:
         return lang === 'nl'
           ? '2011: De Mobiele 3D Endless Runner Sensatie (Temple Run 3D)'
@@ -140,13 +148,13 @@ export const ArcadeTimelineView: React.FC<ArcadeTimelineViewProps> = ({
         </div>
         <h3 className="text-2xl sm:text-3xl font-black font-mono tracking-tight text-white">
           {lang === 'nl'
-            ? 'Chronologische Tijdlijn van de Speelhal'
-            : 'Chronological Arcade Timeline'}
+            ? 'Chronologische Tijdlijn van de Speelhal & Consoles'
+            : 'Chronological Arcade & Console Timeline'}
         </h3>
-        <p className="text-xs sm:text-sm text-neutral-400 font-mono max-w-3xl">
+        <p className="text-xs sm:text-sm text-neutral-400 font-mono max-w-3xl leading-relaxed">
           {lang === 'nl'
-            ? 'Reis door 7 bepalende jaren in de gamegeschiedenis. Zie hoe arcadekasten evolueerden van monochrome circuits naar complexe 3D-fysica op homecomputers.'
-            : 'Journey through 7 defining years of gaming history. Watch arcade machines evolve from monochrome circuits to complex 3D Newtonian physics on microcomputers.'}
+            ? 'Reis door 4 decennia aan gamegeschiedenis (1972–2011). Zie hoe de industrie evolueerde van monochrome arcade-circuits en 8-bit microcomputers naar iconische Game Boy handhelds, 32-bit PlayStation 1 CD-ROM 3D-werelden en mobiele klassiekers.'
+            : 'Journey through 4 decades of gaming history (1972–2011). Watch gaming evolve from monochrome arcade circuits and 8-bit microcomputers to iconic Game Boy handhelds, 32-bit PlayStation 1 3D CD-ROM worlds, and mobile classics.'}
         </p>
       </div>
 

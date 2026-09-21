@@ -273,6 +273,26 @@ class GamepadManager {
 
     // Specific game logic
     switch (gameId) {
+      case 'ps1': {
+        // D-pad / Left Stick
+        this.updateAxisKey('ps1_up', dpadUp, 'ArrowUp', 'ArrowUp');
+        this.updateAxisKey('ps1_down', dpadDown, 'ArrowDown', 'ArrowDown');
+        this.updateAxisKey('ps1_left', dpadLeft, 'ArrowLeft', 'ArrowLeft');
+        this.updateAxisKey('ps1_right', dpadRight, 'ArrowRight', 'ArrowRight');
+
+        // A / Cross (0) -> Jump / Accelerate (Space / ArrowUp)
+        // B / Circle (1) -> Brake / Spin (ArrowDown / z)
+        // X / Square (2) -> Spin (x)
+        // RT / LT -> Accelerate / Brake
+        const jumpAcc = btn(0) || btn(7);
+        const spinBrake = btn(1) || btn(2) || btn(6);
+
+        this.updateButtonKey(0, jumpAcc, ' ', 'Space');
+        this.updateButtonKey(1, spinBrake, 'z', 'KeyZ');
+        this.updateButtonKey(2, btn(2), 'x', 'KeyX');
+        break;
+      }
+
       case 'outrun': {
         // Accelerate: RT (Right Trigger) or A button or D-pad/Stick Up
         const gas = btn(7) || btn(0) || dpadUp;

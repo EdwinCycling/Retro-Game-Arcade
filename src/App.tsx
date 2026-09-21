@@ -39,12 +39,16 @@ import { HalfLifeCabinet } from './components/HalfLifeCabinet';
 import { ZaxxonCabinet } from './components/ZaxxonCabinet';
 import { OutrunCabinet } from './components/OutrunCabinet';
 import { ExileCabinet } from './components/ExileCabinet';
+import { ImpossibleMissionCabinet } from './components/ImpossibleMissionCabinet';
+import { GameBoyCabinet } from './components/GameBoyCabinet';
+import { GbaSpCabinet } from './components/GbaSpCabinet';
+import { Ps1Cabinet } from './components/Ps1Cabinet';
 import { ArcadeLobby } from './components/ArcadeLobby';
 import { LeaderboardModal } from './components/LeaderboardModal';
 import { gamepadManager } from './utils/gamepadManager';
 
 export default function App() {
-  const [activeScreen, setActiveScreen] = useState<'lobby' | 'pacman' | 'space_invaders' | 'donkey_kong' | 'demon_attack' | 'repton' | 'eindeloos' | 'frogger' | 'chuckie_egg' | 'frak' | 'arcadians' | 'rocket_raid' | 'qbert' | 'outrun' | 'tetris' | 'kings_quest' | 'space_quest' | 'pong' | 'battle_chess' | 'mario' | 'super_mario' | 'wolfenstein' | 'doom' | 'duke' | 'half_life' | 'zaxxon' | 'c64_pinball' | 'temple_run' | 'lemmings' | 'manic_miner' | 'monster_maze' | 'asteroids' | 'prince' | 'double_dragon' | 'snake' | 'exile'>('lobby');
+  const [activeScreen, setActiveScreen] = useState<'lobby' | 'pacman' | 'space_invaders' | 'donkey_kong' | 'demon_attack' | 'repton' | 'eindeloos' | 'frogger' | 'chuckie_egg' | 'frak' | 'arcadians' | 'rocket_raid' | 'qbert' | 'outrun' | 'tetris' | 'kings_quest' | 'space_quest' | 'pong' | 'battle_chess' | 'mario' | 'super_mario' | 'wolfenstein' | 'doom' | 'duke' | 'half_life' | 'zaxxon' | 'c64_pinball' | 'temple_run' | 'lemmings' | 'manic_miner' | 'monster_maze' | 'asteroids' | 'prince' | 'double_dragon' | 'snake' | 'exile' | 'impossible_mission' | 'mario_land' | 'tetris_dmg' | 'dr_mario' | 'metroid_2' | 'kirby_dream_land' | 'mario_land_2' | 'zelda_links_awakening' | 'donkey_kong_94' | 'pokemon_red' | 'wario_land_2' | 'gba_sp' | 'ps1' | 'pokemon_emerald' | 'mario_advance' | 'zelda_minish' | 'crash_bandicoot' | 'ridge_racer'>('lobby');
   const [isLeaderboardOpen, setIsLeaderboardOpen] = useState(false);
 
   useEffect(() => {
@@ -277,6 +281,129 @@ export default function App() {
 
       {activeScreen === 'exile' && (
         <ExileCabinet
+          onBackToLobby={() => setActiveScreen('lobby')}
+        />
+      )}
+
+      {activeScreen === 'impossible_mission' && (
+        <ImpossibleMissionCabinet
+          onBackToLobby={() => setActiveScreen('lobby')}
+        />
+      )}
+
+      {activeScreen === 'mario_land' && (
+        <GameBoyCabinet
+          initialCartridge="mario_land"
+          onBackToLobby={() => setActiveScreen('lobby')}
+        />
+      )}
+
+      {activeScreen === 'tetris_dmg' && (
+        <GameBoyCabinet
+          initialCartridge="tetris_dmg"
+          onBackToLobby={() => setActiveScreen('lobby')}
+        />
+      )}
+
+      {activeScreen === 'dr_mario' && (
+        <GameBoyCabinet
+          initialCartridge="dr_mario"
+          onBackToLobby={() => setActiveScreen('lobby')}
+        />
+      )}
+
+      {activeScreen === 'metroid_2' && (
+        <GameBoyCabinet
+          initialCartridge="metroid_2"
+          onBackToLobby={() => setActiveScreen('lobby')}
+        />
+      )}
+
+      {activeScreen === 'kirby_dream_land' && (
+        <GameBoyCabinet
+          initialCartridge="kirby_dream_land"
+          onBackToLobby={() => setActiveScreen('lobby')}
+        />
+      )}
+
+      {activeScreen === 'mario_land_2' && (
+        <GameBoyCabinet
+          initialCartridge="mario_land_2"
+          onBackToLobby={() => setActiveScreen('lobby')}
+        />
+      )}
+
+      {activeScreen === 'zelda_links_awakening' && (
+        <GameBoyCabinet
+          initialCartridge="zelda_links_awakening"
+          onBackToLobby={() => setActiveScreen('lobby')}
+        />
+      )}
+
+      {activeScreen === 'donkey_kong_94' && (
+        <GameBoyCabinet
+          initialCartridge="donkey_kong_94"
+          onBackToLobby={() => setActiveScreen('lobby')}
+        />
+      )}
+
+      {activeScreen === 'pokemon_red' && (
+        <GameBoyCabinet
+          initialCartridge="pokemon_red"
+          onBackToLobby={() => setActiveScreen('lobby')}
+        />
+      )}
+
+      {activeScreen === 'wario_land_2' && (
+        <GameBoyCabinet
+          initialCartridge="wario_land_2"
+          onBackToLobby={() => setActiveScreen('lobby')}
+        />
+      )}
+
+      {activeScreen === 'gba_sp' && (
+        <GbaSpCabinet
+          onBackToLobby={() => setActiveScreen('lobby')}
+        />
+      )}
+
+      {activeScreen === 'pokemon_emerald' && (
+        <GbaSpCabinet
+          initialGame="pokemon_emerald"
+          onBackToLobby={() => setActiveScreen('lobby')}
+        />
+      )}
+
+      {activeScreen === 'mario_advance' && (
+        <GbaSpCabinet
+          initialGame="mario_advance"
+          onBackToLobby={() => setActiveScreen('lobby')}
+        />
+      )}
+
+      {activeScreen === 'zelda_minish' && (
+        <GbaSpCabinet
+          initialGame="zelda_minish"
+          onBackToLobby={() => setActiveScreen('lobby')}
+        />
+      )}
+
+      {activeScreen === 'ps1' && (
+        <Ps1Cabinet
+          onBackToLobby={() => setActiveScreen('lobby')}
+        />
+      )}
+
+      {activeScreen === 'crash_bandicoot' && (
+        <Ps1Cabinet
+          initialDisc="crash_bandicoot"
+          onBackToLobby={() => setActiveScreen('lobby')}
+        />
+      )}
+
+      {activeScreen === 'ridge_racer' && (
+        <Ps1Cabinet
+          initialDisc="ridge_racer"
           onBackToLobby={() => setActiveScreen('lobby')}
         />
       )}
