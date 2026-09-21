@@ -71,6 +71,8 @@ import { QbertHistoryModal } from './QbertHistoryModal';
 import { OutrunHistoryModal } from './OutrunHistoryModal';
 import { ExileHistoryModal } from './ExileHistoryModal';
 import { GamepadGuideModal } from './GamepadGuideModal';
+import { TiltTouchGuideModal } from './TiltTouchGuideModal';
+import { ProjectInfoModal } from './ProjectInfoModal';
 import { ArcadeFloorView } from './ArcadeFloorView';
 import { ArcadeTimelineView } from './ArcadeTimelineView';
 import { GAMES_METADATA, GameMetadata, LOBBY_TRANSLATIONS, Language } from '../i18n/lobbyTranslations';
@@ -194,6 +196,8 @@ export const ArcadeLobby: React.FC<ArcadeLobbyProps> = ({
   // Xbox & Controller Support
   const [isGamepadConnected, setIsGamepadConnected] = useState(false);
   const [showGamepadGuide, setShowGamepadGuide] = useState(false);
+  const [showTiltTouchGuide, setShowTiltTouchGuide] = useState(false);
+  const [showProjectInfo, setShowProjectInfo] = useState(false);
 
   useEffect(() => {
     return gamepadManager.subscribe((state) => {
@@ -201,13 +205,14 @@ export const ArcadeLobby: React.FC<ArcadeLobbyProps> = ({
     });
   }, []);
 
-  // Localization & Arcade Hall Controls
+  // Localization & Arcade Hall Controls (Default to English)
   const [lang, setLang] = useState<Language>(() => {
     try {
-      const saved = localStorage.getItem('arcade_vault_lang');
-      return (saved === 'en' || saved === 'nl') ? saved : 'nl';
+      const saved = localStorage.getItem('arcade_vault_lang_v2');
+      if (saved === 'en' || saved === 'nl') return saved;
+      return 'en';
     } catch {
-      return 'nl';
+      return 'en';
     }
   });
 
@@ -684,6 +689,7 @@ export const ArcadeLobby: React.FC<ArcadeLobbyProps> = ({
     arcadeHallAudio.playSwitch();
     setLang(newLang);
     try {
+      localStorage.setItem('arcade_vault_lang_v2', newLang);
       localStorage.setItem('arcade_vault_lang', newLang);
     } catch {}
   };
@@ -1432,10 +1438,27 @@ export const ArcadeLobby: React.FC<ArcadeLobbyProps> = ({
             </span>
           </button>
 
-          <span className="hidden lg:flex px-2.5 py-1 rounded-lg bg-purple-950/60 border border-purple-800/80 text-purple-300 text-[11px] font-semibold items-center gap-1">
-            <Smartphone className="w-3 h-3 text-purple-400" />
-            <span>Tilt &amp; Touch</span>
-          </span>
+          {/* Mobile Tilt & Touch Controls Guide Button */}
+          <button
+            type="button"
+            onClick={() => setShowTiltTouchGuide(true)}
+            className="px-2.5 py-1.5 rounded-xl border border-purple-600/80 bg-purple-950/70 hover:bg-purple-900/80 text-purple-200 hover:text-white text-xs font-mono font-bold flex items-center gap-1.5 transition-all cursor-pointer active:scale-95 shadow-[0_0_12px_rgba(168,85,247,0.3)] hover:shadow-[0_0_18px_rgba(168,85,247,0.5)]"
+            title={lang === 'en' ? 'Mobile Tilt & Touch Controls Guide - Click to view' : 'Kantel- & Aanraakbediening Handleiding (Mobiel/Tablet) - Klik om te bekijken'}
+          >
+            <Smartphone className="w-3.5 h-3.5 text-purple-400 animate-pulse" />
+            <span className="hidden sm:inline">Tilt &amp; Touch</span>
+          </button>
+
+          {/* GitHub & Project Dossier Modal Button */}
+          <button
+            type="button"
+            onClick={() => setShowProjectInfo(true)}
+            className="px-2.5 py-1.5 rounded-xl border border-cyan-700/80 bg-cyan-950/70 hover:bg-cyan-900/80 text-cyan-200 hover:text-white text-xs font-mono font-bold flex items-center gap-1.5 transition-all cursor-pointer active:scale-95 shadow-[0_0_12px_rgba(6,182,212,0.25)] hover:shadow-[0_0_18px_rgba(6,182,212,0.45)]"
+            title={lang === 'en' ? 'Project Dossier & GitHub Documentation' : 'Project Dossier & GitHub Documentatie'}
+          >
+            <Info className="w-3.5 h-3.5 text-cyan-400" />
+            <span className="hidden md:inline">Docs</span>
+          </button>
         </div>
       </header>
 
@@ -5057,6 +5080,20 @@ export const ArcadeLobby: React.FC<ArcadeLobbyProps> = ({
       <GamepadGuideModal
         isOpen={showGamepadGuide}
         onClose={() => setShowGamepadGuide(false)}
+        lang={lang}
+      />
+
+      {/* Mobile Tilt & Touch Controls Guide Modal */}
+      <TiltTouchGuideModal
+        isOpen={showTiltTouchGuide}
+        onClose={() => setShowTiltTouchGuide(false)}
+        lang={lang}
+      />
+
+      {/* Project Dossier & GitHub Documentation Modal */}
+      <ProjectInfoModal
+        isOpen={showProjectInfo}
+        onClose={() => setShowProjectInfo(false)}
         lang={lang}
       />
 
