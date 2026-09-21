@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
-  Info,
   X,
   Code,
   Layers,
@@ -11,7 +10,12 @@ import {
   GitBranch,
   Terminal,
   Cpu,
-  Sparkles
+  Sparkles,
+  Scale,
+  ShieldCheck,
+  Mail,
+  Cookie,
+  Database
 } from 'lucide-react';
 import { Language, GAMES_METADATA } from '../i18n/lobbyTranslations';
 
@@ -19,14 +23,22 @@ interface ProjectInfoModalProps {
   isOpen: boolean;
   onClose: () => void;
   lang?: Language;
+  initialTab?: 'overview' | 'tech' | 'games' | 'github' | 'legal';
 }
 
 export const ProjectInfoModal: React.FC<ProjectInfoModalProps> = ({
   isOpen,
   onClose,
   lang = 'en',
+  initialTab = 'overview',
 }) => {
-  const [activeTab, setActiveTab] = useState<'overview' | 'tech' | 'games' | 'github'>('overview');
+  const [activeTab, setActiveTab] = useState<'overview' | 'tech' | 'games' | 'github' | 'legal'>(initialTab);
+
+  useEffect(() => {
+    if (isOpen) {
+      setActiveTab(initialTab);
+    }
+  }, [isOpen, initialTab]);
 
   if (!isOpen) return null;
 
@@ -124,6 +136,19 @@ export const ProjectInfoModal: React.FC<ProjectInfoModalProps> = ({
           >
             <GitBranch className="w-3.5 h-3.5 text-emerald-400" />
             <span>{isEn ? 'GitHub & Commands' : 'GitHub & Commando\'s'}</span>
+          </button>
+
+          <button
+            type="button"
+            onClick={() => setActiveTab('legal')}
+            className={`px-3 sm:px-4 py-2.5 rounded-t-xl border-t border-x transition-all flex items-center gap-1.5 whitespace-nowrap cursor-pointer ${
+              activeTab === 'legal'
+                ? 'bg-neutral-950 border-rose-500 text-rose-300 shadow-sm'
+                : 'border-transparent text-neutral-400 hover:text-neutral-200'
+            }`}
+          >
+            <Scale className="w-3.5 h-3.5 text-rose-400" />
+            <span>{isEn ? 'Legal & IP Notice' : 'Juridische Kennisgeving'}</span>
           </button>
         </div>
 
@@ -296,6 +321,125 @@ export const ProjectInfoModal: React.FC<ProjectInfoModalProps> = ({
                   <div>npm run dev      <span className="text-neutral-500"># Start local Vite server on port 3000</span></div>
                   <div>npm run build    <span className="text-neutral-500"># Production compile to dist/</span></div>
                   <div>npm run lint     <span className="text-neutral-500"># Full TypeScript strict validation</span></div>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {activeTab === 'legal' && (
+            <div className="space-y-4 animate-in fade-in duration-150">
+              <div className="p-4 rounded-2xl bg-rose-950/30 border border-rose-800/60 space-y-2">
+                <div className="font-mono font-bold text-rose-300 text-sm flex items-center gap-2">
+                  <ShieldCheck className="w-4 h-4 text-rose-400" />
+                  <span>{isEn ? 'Legal & Intellectual Property Notice' : 'Juridische Kennisgeving & Intellectueel Eigendom'}</span>
+                </div>
+                <p className="text-xs text-neutral-300 leading-relaxed">
+                  {isEn
+                    ? 'Retro Game Arcade is an independent, non-commercial educational and historical project created as a tribute to the evolution of video games and computer-game engineering.'
+                    : 'Retro Game Arcade is een onafhankelijk, niet-commercieel educatief en historisch project, gecreëerd als eerbetoon aan de evolutie van videogames en computer game engineering.'}
+                </p>
+              </div>
+
+              {/* Exact user legal text paragraphs */}
+              <div className="p-4 rounded-xl bg-neutral-900 border border-neutral-800 space-y-3 text-xs text-neutral-300 leading-relaxed font-sans">
+                <div className="flex items-start gap-2.5">
+                  <CheckCircle2 className="w-4 h-4 text-rose-400 shrink-0 mt-0.5" />
+                  <p>
+                    {isEn
+                      ? 'The software implementations in this project have been independently created for this project. No original commercial game ROMs or executable binaries are distributed.'
+                      : 'De software-implementaties in dit project zijn onafhankelijk voor dit project gecreëerd. Er worden geen originele commerciële game-ROMs of uitvoerbare binaire bestanden gedistribueerd.'}
+                  </p>
+                </div>
+
+                <div className="flex items-start gap-2.5">
+                  <CheckCircle2 className="w-4 h-4 text-rose-400 shrink-0 mt-0.5" />
+                  <p>
+                    {isEn
+                      ? 'Names of historical video games, companies, systems, characters and other trademarks may be referenced for identification, historical commentary and educational context. These names and trademarks remain the property of their respective rights holders.'
+                      : 'Namen van historische videogames, bedrijven, systemen, personages en andere handelsmerken kunnen worden genoemd ter identificatie, historisch commentaar en educatieve context. Deze namen en handelsmerken blijven eigendom van hun respectieve rechthebbenden.'}
+                  </p>
+                </div>
+
+                <div className="flex items-start gap-2.5">
+                  <CheckCircle2 className="w-4 h-4 text-rose-400 shrink-0 mt-0.5" />
+                  <p>
+                    {isEn
+                      ? 'This project is not affiliated with, sponsored by, approved by, or endorsed by Nintendo, Atari, Namco, Sega, Taito, id Software, Valve, Konami, Sierra, Electronic Arts, or any other referenced rights holder.'
+                      : 'Dit project is niet gelieerd aan, gesponsord door, goedgekeurd door of ondersteund door Nintendo, Atari, Namco, Sega, Taito, id Software, Valve, Konami, Sierra, Electronic Arts, of enige andere genoemde rechthebbende.'}
+                  </p>
+                </div>
+
+                <div className="flex items-start gap-2.5">
+                  <CheckCircle2 className="w-4 h-4 text-rose-400 shrink-0 mt-0.5" />
+                  <p>
+                    {isEn
+                      ? 'The project is provided free of charge and is not monetised. Its purpose is to document, demonstrate and celebrate significant developments in video-game design and engineering.'
+                      : 'Het project wordt kosteloos aangeboden en wordt niet gemonetiseerd. Het doel is het documenteren, demonstreren en vieren van belangrijke ontwikkelingen in videogameontwerp en -engineering.'}
+                  </p>
+                </div>
+
+                <div className="flex items-start gap-2.5">
+                  <CheckCircle2 className="w-4 h-4 text-rose-400 shrink-0 mt-0.5" />
+                  <p>
+                    {isEn
+                      ? 'Copyrights, trademarks and other intellectual-property rights relating to the original commercial games remain with their respective owners.'
+                      : 'Auteursrechten, handelsmerken en andere intellectuele eigendomsrechten met betrekking tot de originele commerciële spellen blijven bij hun respectievelijke eigenaren.'}
+                  </p>
+                </div>
+              </div>
+
+              {/* Takedown & Contact Point */}
+              <div className="p-4 rounded-xl bg-neutral-900 border border-neutral-800 space-y-2 text-xs">
+                <div className="font-bold text-white flex items-center gap-2">
+                  <Mail className="w-4 h-4 text-cyan-400" />
+                  <span>{isEn ? 'Rights Holder Contact & Review' : 'Contactpunt voor Rechthebbenden'}</span>
+                </div>
+                <p className="text-neutral-300">
+                  {isEn
+                    ? 'If you are a rights holder and believe that material in this project infringes your rights, please contact the project maintainer so that the relevant material can be reviewed and, where appropriate, modified or removed:'
+                    : 'Als u een rechthebbende bent en meent dat materiaal in dit project inbreuk maakt op uw rechten, neem dan contact op met de projectbeheerder zodat het betreffende materiaal kan worden beoordeeld en, waar nodig, gewijzigd of verwijderd:'}
+                </p>
+                <div className="p-2.5 rounded-lg bg-black border border-neutral-800 font-mono text-cyan-300 font-bold flex items-center justify-between">
+                  <span>edwin@editsolutions.nl</span>
+                  <span className="text-[10px] text-neutral-400 font-normal">Notice & Takedown Point</span>
+                </div>
+              </div>
+
+              {/* Cookie & Local Storage Transparency Policy */}
+              <div className="p-4 rounded-xl bg-neutral-900 border border-neutral-800 space-y-3 text-xs">
+                <div className="font-bold text-white flex items-center gap-2">
+                  <Cookie className="w-4 h-4 text-amber-400" />
+                  <span>{isEn ? 'Cookie & Local Storage Policy (GDPR / ePrivacy)' : 'Cookie- & Lokale Opslagbeleid (AVG / ePrivacy)'}</span>
+                </div>
+                
+                <p className="text-neutral-300 leading-relaxed">
+                  {isEn
+                    ? 'This website does NOT use tracking cookies, advertising beacons, or third-party profiling trackers. Under the EU ePrivacy Directive and GDPR, we only use purely functional, on-device local browser storage (localStorage) for core application utility:'
+                    : 'Deze website gebruikt GEEN tracking cookies, advertentietrackers of externe profielen. Conform de Europese ePrivacy Richtlijn en de AVG gebruiken we uitsluitend strikt noodzakelijke, functionele lokale browseropslag (localStorage) voor de basiswerking van de app:'}
+                </p>
+
+                <div className="p-3 rounded-lg bg-black/60 border border-neutral-800 space-y-1.5 font-mono text-[11px] text-neutral-300">
+                  <div className="flex items-center justify-between">
+                    <span className="text-cyan-300">arcade_vault_lang_v2</span>
+                    <span className="text-neutral-400">{isEn ? 'Selected language (EN / NL)' : 'Gekozen taal (EN / NL)'}</span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-cyan-300">arcade_cookie_consent_v1</span>
+                    <span className="text-neutral-400">{isEn ? 'Consent acknowledgement' : 'Bevestiging kennisgeving'}</span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-cyan-300">pacman_haptics_enabled</span>
+                    <span className="text-neutral-400">{isEn ? 'Mobile vibration preference' : 'Mobiele trillingsvoorkeur'}</span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-cyan-300">*__high_scores / saves</span>
+                    <span className="text-neutral-400">{isEn ? 'High scores & adventure saves (100% on device)' : 'Lokale scores & savegames (100% op eigen toestel)'}</span>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-2 text-[11px] text-emerald-400 font-mono">
+                  <Database className="w-3.5 h-3.5" />
+                  <span>{isEn ? 'Zero bytes of private user data are transmitted to external servers.' : 'Er worden nul bytes aan persoonsgegevens naar externe servers verzonden.'}</span>
                 </div>
               </div>
             </div>

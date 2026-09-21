@@ -73,6 +73,7 @@ import { ExileHistoryModal } from './ExileHistoryModal';
 import { GamepadGuideModal } from './GamepadGuideModal';
 import { TiltTouchGuideModal } from './TiltTouchGuideModal';
 import { ProjectInfoModal } from './ProjectInfoModal';
+import { CookieConsentBanner } from './CookieConsentBanner';
 import { ArcadeFloorView } from './ArcadeFloorView';
 import { ArcadeTimelineView } from './ArcadeTimelineView';
 import { GAMES_METADATA, GameMetadata, LOBBY_TRANSLATIONS, Language } from '../i18n/lobbyTranslations';
@@ -198,6 +199,7 @@ export const ArcadeLobby: React.FC<ArcadeLobbyProps> = ({
   const [showGamepadGuide, setShowGamepadGuide] = useState(false);
   const [showTiltTouchGuide, setShowTiltTouchGuide] = useState(false);
   const [showProjectInfo, setShowProjectInfo] = useState(false);
+  const [projectInfoTab, setProjectInfoTab] = useState<'overview' | 'tech' | 'games' | 'github' | 'legal'>('overview');
 
   useEffect(() => {
     return gamepadManager.subscribe((state) => {
@@ -1452,7 +1454,10 @@ export const ArcadeLobby: React.FC<ArcadeLobbyProps> = ({
           {/* GitHub & Project Dossier Modal Button */}
           <button
             type="button"
-            onClick={() => setShowProjectInfo(true)}
+            onClick={() => {
+              setProjectInfoTab('overview');
+              setShowProjectInfo(true);
+            }}
             className="px-2.5 py-1.5 rounded-xl border border-cyan-700/80 bg-cyan-950/70 hover:bg-cyan-900/80 text-cyan-200 hover:text-white text-xs font-mono font-bold flex items-center gap-1.5 transition-all cursor-pointer active:scale-95 shadow-[0_0_12px_rgba(6,182,212,0.25)] hover:shadow-[0_0_18px_rgba(6,182,212,0.45)]"
             title={lang === 'en' ? 'Project Dossier & GitHub Documentation' : 'Project Dossier & GitHub Documentatie'}
           >
@@ -5022,21 +5027,43 @@ export const ArcadeLobby: React.FC<ArcadeLobbyProps> = ({
 
 
         {/* Footer info */}
-        <footer className="w-full pt-4 pb-8 border-t border-neutral-800/60 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-neutral-500 font-mono">
-          <div>
-            Retro Arcade Vault • Volledig responsief voor mobiel & desktop
+        <footer className="w-full pt-6 pb-10 border-t border-neutral-800/60 flex flex-col items-center justify-between gap-4 text-xs text-neutral-500 font-mono">
+          <div className="flex flex-col sm:flex-row items-center justify-between w-full gap-3">
+            <div>
+              Retro Arcade Vault • Volledig responsief voor mobiel &amp; desktop
+            </div>
+            <div className="flex items-center gap-4">
+              <span>35 Klassiekers (1972–2011) • 0 External ROMs</span>
+              {onOpenLeaderboard && (
+                <button
+                  type="button"
+                  onClick={onOpenLeaderboard}
+                  className="text-yellow-400 hover:underline cursor-pointer"
+                >
+                  Bekijk Leaderboard
+                </button>
+              )}
+            </div>
           </div>
-          <div className="flex items-center gap-4">
-            <span>Rocket Raid (1982) • Zaxxon (1982) • Half-Life (1998) • Duke Nukem 3D (1996) • DOOM (1993) • 3D Pinball (1989) • Wolfenstein 3D (1992) • Super Mario Bros. (1985) • Mario Bros. (1983) • Battle Chess (1988) • Pong (1972) • Space Quest (1986) • King&apos;s Quest (1984) • Tetris (1984) • Eindeloos (1985) • OutRun (1986) • Repton (1985) • Pac-Man (1980)</span>
-            {onOpenLeaderboard && (
-              <button
-                type="button"
-                onClick={onOpenLeaderboard}
-                className="text-yellow-400 hover:underline cursor-pointer"
-              >
-                Bekijk Leaderboard
-              </button>
-            )}
+
+          {/* Legal Notice Footer Line */}
+          <div className="w-full pt-3 border-t border-neutral-900 flex flex-col sm:flex-row items-center justify-between gap-2 text-[11px] text-neutral-500">
+            <p className="text-center sm:text-left">
+              {lang === 'nl'
+                ? 'Onafhankelijk, niet-commercieel educatief en historisch project. Er worden geen commerciële ROMs gedistribueerd.'
+                : 'Independent, non-commercial educational tribute project. No commercial ROMs distributed.'}
+            </p>
+            <button
+              type="button"
+              onClick={() => {
+                setProjectInfoTab('legal');
+                setShowProjectInfo(true);
+              }}
+              className="text-rose-400/90 hover:text-rose-300 hover:underline flex items-center gap-1 cursor-pointer transition-colors"
+            >
+              <span>⚖️</span>
+              <span>{lang === 'nl' ? 'Juridische Kennisgeving & Intellectueel Eigendom' : 'Legal & Intellectual Property Notice'}</span>
+            </button>
           </div>
         </footer>
       </main>
@@ -5095,6 +5122,16 @@ export const ArcadeLobby: React.FC<ArcadeLobbyProps> = ({
         isOpen={showProjectInfo}
         onClose={() => setShowProjectInfo(false)}
         lang={lang}
+        initialTab={projectInfoTab}
+      />
+
+      {/* Cookie & Local Storage Consent Banner */}
+      <CookieConsentBanner
+        lang={lang}
+        onOpenPrivacyDetails={() => {
+          setProjectInfoTab('legal');
+          setShowProjectInfo(true);
+        }}
       />
 
       {/* Pac-Man History & Trivia Modal */}

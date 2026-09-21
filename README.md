@@ -209,8 +209,29 @@ Feel free to open an issue or submit a Pull Request.
 
 ---
 
-## ⚖️ License & Disclaimers
+## ⚖️ License & Legal Notice
 
 Distributed under the **MIT License**. See `LICENSE` for more information.
 
-*Disclaimer: All game names, character designs, logos, and historical trademarks belong to their respective original copyright holders (Namco, Taito, Atari, Nintendo, Sega, Sierra, id Software, Valve, Konami, Superior Software, Acornsoft, Imangi Studios, etc.). This project is an educational, non-commercial museum preservation and reverse-engineered procedural recreation honoring the engineering pioneers of computer science and video game history.*
+## Legal & Intellectual Property Notice
+
+Retro Game Arcade is an independent, non-commercial educational and historical project created as a tribute to the evolution of video games and computer-game engineering.
+
+The software implementations in this project have been independently created for this project. No original commercial game ROMs or executable binaries are distributed.
+
+Names of historical video games, companies, systems, characters and other trademarks may be referenced for identification, historical commentary and educational context. These names and trademarks remain the property of their respective rights holders.
+
+This project is not affiliated with, sponsored by, approved by, or endorsed by Nintendo, Atari, Namco, Sega, Taito, id Software, Valve, Konami, Sierra, Electronic Arts, or any other referenced rights holder.
+
+The project is provided free of charge and is not monetised. Its purpose is to document, demonstrate and celebrate significant developments in video-game design and engineering.
+
+Copyrights, trademarks and other intellectual-property rights relating to the original commercial games remain with their respective owners.
+
+If you are a rights holder and believe that material in this project infringes your rights, please contact the project maintainer so that the relevant material can be reviewed and, where appropriate, modified or removed.
+
+For inquiries or takedown requests, please open an issue or contact: `edwin@editsolutions.nl`
+
+### Privacy & Cookies
+This project operates with **zero tracking cookies**, zero advertisements, and zero third-party telemetry. All preferences (language, audio settings, high scores) are stored strictly on-device via browser `localStorage`. See [LEGAL.md](LEGAL.md) for our complete privacy policy.
+
+
