@@ -46,6 +46,67 @@ An interactive, browser-native **Retro Arcade & Historic Computer Museum** featu
 
 ---
 
+## 🤖 Built with Artificial Intelligence (AI-Engineered)
+
+This entire retro vault — including all **35 clean-room game engines**, sub-stepped physics pipelines, procedural Web Audio chip synthesizers, CRT shaders, and the 3D WebGL arcade hall — was conceptualized, structured, and **coded in collaboration with modern AI models (Google AI Studio / Gemini)**.
+
+It serves as an educational and technical exploration of how modern generative AI coding tools can reconstruct computer gaming history in pure, browser-native web standards (TypeScript, Canvas 2D, Three.js, and Web Audio API) with **zero external ROM dependencies**.
+
+---
+
+## 🕹️ Game Implementation Status & Maturity Levels
+
+Because all 35 games are custom-engineered from scratch with AI assistance, **the depth and fidelity vary naturally across titles**:
+
+### 🟢 Tier 1: Highly Detailed & Multi-Level Re-creations
+These titles feature deep, faithful game loops, accurate physics, sound synthesis, multi-stage progression, and full high-score saving:
+- **Pac-Man (1980)**: Authentic 4-ghost AI state machines (Blinky chaser/Cruise Elroy, Pinky ambusher, Inky vector flanker, Clyde coward), scatter/chase/frightened cycles, fruit bonuses, eating animations, and high scores.
+- **OutRun (1986)**: Pseudo-3D road projection with curve scaling and undulating hills, Ferrari Testarossa Spider, traffic AI, manual Low/High gear shifting up to 293 km/h, and real-time FM radio tracks (*Passing Breeze*, *Magical Sound Shower*, *Splash Wave*).
+- **Space Invaders (1978)**: 55-alien marching army with dynamic speed acceleration, destructible bunker erosion, flying mystery saucers, and gyroscope tilt aiming.
+- **Exile (1988)**: Peter Irvin & Jeremy Smith's legendary Newtonian gravitational physics sandbox on planet Phoebus, directional jetpack thruster, momentum, particle blaster, equipment teleporter, and gravity-defying boulder lifting.
+- **Asteroids (1979)**: Authentic Atari vector DVG cathode-ray wireframe aesthetics, true Newtonian inertia, screen wrap-around, hyperspace jump, and splitting rock physics.
+- **Repton (1985)**: Full physics for falling rocks and cascades, earth digging, diamonds, cages & keys, time bombs, and all 12 original level passwords (A through L).
+- **Tetris (1984)**: All 7 official tetrominoes, Super Rotation System (SRS) wall kicks, ghost piece guide, accelerating drop gravity, and line clearing.
+- **King's Quest I & Space Quest I (1984/1986)**: Rich AGI text-parser adventure games supporting both English and Dutch natural language commands, room navigation, inventory items, puzzles, and save/load slots.
+- **Double Dragon, C64 Pinball Power, Frogger, Chuckie Egg, Eindeloos, Q\*bert, Zaxxon, 3D Monster Maze**: Rich mechanics, sub-step physics, and authentic hardware palettes.
+
+### 🟡 Tier 2: Core Gameplay / Prototype & Stylized Tributes
+Some titles are currently in a more **basic, stylized, or prototype phase**. While fully playable, they focus on capturing the core gameplay loop and historic feel rather than achieving 100% visual parity or the extensive content scale of the original multi-megabyte commercial releases:
+- **3D Shooters (Wolfenstein 3D, DOOM, Duke Nukem 3D, Half-Life)**: Rebuilt with modern WebGL and raycasting engines. They provide fast-paced 3D shooting, iconic weapons, and retro enemies, but feature streamlined single-mission labyrinth layouts rather than the massive multi-episode commercial campaigns.
+- **Super Mario Bros. & Prince of Persia**: Capture the iconic physics, running jumps, and level hazards in a streamlined showcase format, with graphical styling adapted for lightweight browser rendering.
+- **Continuous Improvement**: As an open, educational AI-driven project, these implementations continue to be expanded, refined, and polished over time.
+
+---
+
+## 🎮 Controller & Hardware Support: PC Xbox & Mobile
+
+The arcade vault features comprehensive, universal controller support across both desktop computers and mobile devices:
+
+### 💻 PC / Desktop with Xbox Controller
+- **Plug & Play Xbox Support**: Connect any official **Xbox Series X/S, Xbox One, or Xbox 360 controller** (via USB cable or Bluetooth). It is instantly recognized through the browser HTML5 Gamepad API without needing any external software or drivers.
+- **PlayStation & Generic Controllers**: Also fully supports PS5 DualSense, PS4 DualShock, 8BitDo, and standard PC USB gamepads.
+- **Control Layout**:
+  - **Left Analog Stick & D-Pad**: 8-way character and vehicle steering.
+  - **Button A (Xbox) / Cross (PS)**: Primary Action (Jump, Fire, Throw, Accelerator).
+  - **Button B (Xbox) / Circle (PS)**: Secondary Action (Kick, Brake, Gear Shift, Back).
+  - **Triggers (RT / LT)**: Gas & Brakes in OutRun; primary/secondary fire in FPS games.
+  - **Live Visual Telemetry**: Click the **🎮 Xbox** button in the header to open the interactive controller dashboard, where every button press and stick tilt lights up in real time.
+
+### 📱 Mobile & Tablet Optimization (iOS & Android)
+- **Gyroscope Tilt Motion Steering**:
+  - In supported games (Pac-Man, Space Invaders, Demon Attack, OutRun, Temple Run, C64 Pinball), tap the **Tilt & Touch** button to enable phone tilt steering.
+  - Steer your ship or car simply by tilting your phone left or right, with built-in deadzone filtering to ignore normal hand tremors.
+  - Includes a one-tap **Calibrate** button to set your comfortable resting angle as the neutral center.
+  - In *3D Pinball Power*, a physical bump or nudge to the phone triggers the classic pinball nudge tilt!
+- **Touchscreen Swipe Gestures**:
+  - Swipe directly across the game canvas in any direction to turn immediately in *Pac-Man*, *Frogger*, *Q\*bert*, and *Temple Run 3D*.
+- **On-Screen Virtual Arcade Controls**:
+  - Ergonomic virtual D-Pads and large tactile action buttons appear automatically on touchscreens.
+- **Haptic Vibration**:
+  - Provides subtle tactile vibrations on supported mobile devices when taking turns, firing lasers, or eating dots.
+
+---
+
 ## 🕹️ Complete Catalog of 35 Playable Games
 
 | # | Game | Year | Original Creator / Publisher | Hardware Platform | Engine & Mechanics |

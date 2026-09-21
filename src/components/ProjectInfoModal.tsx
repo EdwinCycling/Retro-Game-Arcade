@@ -210,8 +210,54 @@ export const ProjectInfoModal: React.FC<ProjectInfoModalProps> = ({
                   <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
                   <div>
                     <strong className="text-white">{isEn ? 'Universal Input: ' : 'Universele Besturing: '}</strong>
-                    <span className="text-neutral-300">{isEn ? 'Keyboard, Xbox/PS4 gamepads, mobile gyroscope tilt steering, and touch swipe gestures.' : 'Toetsenbord, Xbox/PS gamepads, mobiel kantelen (gyro) en aanraakvegen.'}</span>
+                    <span className="text-neutral-300">{isEn ? 'Keyboard, Xbox/PS4 gamepads on PC, mobile gyroscope tilt steering, and touch swipe gestures.' : 'Toetsenbord, Xbox/PS gamepads op PC, mobiel kantelen (gyro) en aanraakvegen.'}</span>
                   </div>
+                </div>
+              </div>
+
+              {/* AI & Game Maturity Status Callout */}
+              <div className="p-4 rounded-xl bg-neutral-900 border border-neutral-800 space-y-2.5 text-xs">
+                <div className="font-mono font-bold text-amber-300 text-xs flex items-center gap-2">
+                  <Sparkles className="w-4 h-4 text-amber-400" />
+                  <span>{isEn ? '100% AI-Engineered & Game Maturity Tiers' : '100% AI-Ontwikkeld & Game Volwassenheidsniveaus'}</span>
+                </div>
+                <p className="text-neutral-300 leading-relaxed">
+                  {isEn
+                    ? 'All 35 games, physics engines, and audio synthesizers were created from scratch with AI coding models. As a result, implementation depth naturally varies across titles:'
+                    : 'Alle 35 games, fysica-engines en audiosynthesizers zijn vanaf nul opgebouwd in samenwerking met AI-modellen. Daardoor verschilt de diepgang en het detailniveau per spel:'}
+                </p>
+                <div className="grid sm:grid-cols-2 gap-2 text-[11px] font-sans">
+                  <div className="p-2.5 rounded-lg bg-black/60 border border-emerald-900/50 space-y-1">
+                    <span className="font-bold text-emerald-400 font-mono">🟢 {isEn ? 'Deep & Multi-Level' : 'Volledig & Meerdere Niveaus'}</span>
+                    <p className="text-neutral-400">
+                      {isEn
+                        ? 'Pac-Man, OutRun, Space Invaders, Asteroids, Exile, Repton & Tetris feature rich multi-stage mechanics, authentic physics, and full high-score tracking.'
+                        : 'Pac-Man, OutRun, Space Invaders, Asteroids, Exile, Repton & Tetris bevatten diepgaande multi-level gameplay, authentieke fysica en topscores.'}
+                    </p>
+                  </div>
+                  <div className="p-2.5 rounded-lg bg-black/60 border border-amber-900/50 space-y-1">
+                    <span className="font-bold text-amber-400 font-mono">🟡 {isEn ? 'Basic & Stylized Tributes' : 'Basis & Gestileerde Eerbetonen'}</span>
+                    <p className="text-neutral-400">
+                      {isEn
+                        ? 'Some titles (like the 3D FPS tributes and early prototypes) focus on core mechanics and arcade loops, without the full visual fidelity or megabyte campaign scale of the commercial originals.'
+                        : 'Sommige titels (zoals de 3D FPS eerbetonen) zijn meer basis prototypes die de speelstijl vangen, maar grafisch nog niet het niveau of de schaal van het origineel bereiken.'}
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Hardware & Controller Banner */}
+              <div className="p-3.5 rounded-xl bg-cyan-950/30 border border-cyan-800/50 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs">
+                <div className="space-y-0.5">
+                  <div className="font-mono font-bold text-cyan-300 flex items-center gap-1.5">
+                    <Gamepad2 className="w-4 h-4 text-cyan-400" />
+                    <span>{isEn ? 'Xbox on PC & Full Mobile Optimization' : 'Xbox Controller op PC & Volledig Mobiel'}</span>
+                  </div>
+                  <p className="text-neutral-300 text-[11px]">
+                    {isEn
+                      ? 'Plug & play Xbox/PS controller support on PC with live telemetry, plus phone gyroscope tilt steering, virtual touch D-pads & haptics on mobile.'
+                      : 'Plug & play Xbox/PS controller ondersteuning op PC met live weergave, plus gyroscopisch sturen via kantelen, virtuele D-pads en trillingen op mobiel.'}
+                  </p>
                 </div>
               </div>
             </div>
