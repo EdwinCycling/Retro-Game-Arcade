@@ -8,7 +8,7 @@
 [![Web Audio API](https://img.shields.io/badge/Audio-Chiptune_Synthesizers-orange.svg?style=flat-square)](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](LICENSE)
 
-An interactive, browser-native **Retro Arcade, Handheld & Computer Museum** featuring **53 fully playable classic games and consoles** spanning 1972 through 2011. Includes arcade cabinets, microcomputers, the **1989 Nintendo Game Boy (DMG-01)**, the **2003 Game Boy Advance SP (32-Bit)**, and the **1994 Sony PlayStation 1 (PS1 32-Bit)**. Built from scratch with zero external game ROM dependencies using pure TypeScript, React 19, Canvas 2D, Three.js WebGL, and real-time Web Audio API sound synthesizers.
+An interactive, browser-native **Retro Arcade, Handheld & Computer Museum** featuring **62 fully playable classic games and consoles** spanning 1971 through 2011. Includes arcade cabinets, Mastermind, Zeeslag Solitaire, Arkanoid, Galaga, Sudoku, microcomputers, the **1989 Nintendo Game Boy (DMG-01)**, the **2003 Game Boy Advance SP (32-Bit)**, the **1994 Sony PlayStation 1 (PS1 32-Bit)**, and classic PC SCUMM adventure **Spy Fox in "Dry Cereal" (1997)**. Built from scratch with zero external game ROM dependencies using pure TypeScript, React 19, Canvas 2D, Three.js WebGL, and real-time Web Audio API sound synthesizers.
 
 ---
 
@@ -16,7 +16,7 @@ An interactive, browser-native **Retro Arcade, Handheld & Computer Museum** feat
 
 - **🏛️ 3 Interactive Museum Views**:
   - **3D Arcade Floor View**: Walk through a neon-lit arcade hall in first-person 3D (`Three.js`), inspect physical cabinets and consoles, and step up to any machine to play.
-  - **Grid Cards View**: Filterable by genre, release year, hardware platform (Arcade, BBC Micro, Commodore 64, ZX Spectrum, NES, PC/MS-DOS, Game Boy, Game Boy Advance SP, Sony PlayStation 1, Mobile), and keyword search.
+  - **Grid Cards View**: Filterable by genre, release year, hardware platform (Arcade, Apple II, BBC Micro, Commodore 64, ZX Spectrum, NES, PC/MS-DOS, Game Boy, Game Boy Advance SP, Sony PlayStation 1, Mobile), and keyword search.
   - **Chronological Timeline**: Follow the evolution of gaming history from 1972 (Pong) to 2011 (Temple Run 3D) with direct playable dossiers and "Speel Direct" launch shortcuts.
 
 - **🎮 Hardware Controller & Multi-Input Support**:
@@ -37,6 +37,7 @@ An interactive, browser-native **Retro Arcade, Handheld & Computer Museum** feat
     - **Game Boy Advance SP Frontlit / Backlit TFT Screen**
     - **Sony PlayStation 1 Double-Speed CD-ROM 32-Bit Framebuffer**
     - **BBC Micro Mode 5 & Mode 7** (Teletext)
+    - **Apple Monitor II P31 Green Phosphor & Wozniak Hi-Res Color**
     - **Commodore 64 VIC-II 16-Color Palette**
     - **IBM PC CGA & EGA 16-Color**
     - **Sinclair ZX Spectrum 8-Color Color Clash**
@@ -64,16 +65,16 @@ An interactive, browser-native **Retro Arcade, Handheld & Computer Museum** feat
 
 ## 🤖 Built with Artificial Intelligence & GitHub Testing Notice
 
-This entire retro vault — including all **53 clean-room game and console engines**, sub-stepped physics pipelines, procedural Web Audio synthesizers, CRT/LCD shaders, and the 3D WebGL arcade hall — was conceptualized, structured, and **coded in collaboration with modern AI models (Google AI Studio / Gemini)**.
+This entire retro vault — including all **55 clean-room game and console engines**, sub-stepped physics pipelines, procedural Web Audio synthesizers, CRT/LCD shaders, and the 3D WebGL arcade hall — was conceptualized, structured, and **coded in collaboration with modern AI models (Google AI Studio / Gemini)**.
 
 ### 🧪 GitHub Community Testing & AI Instructions Notice
 
 > [!IMPORTANT]
 > **Many games and console engines are in active evolution and require testing!**
-> Because all 53 games are re-engineered from scratch in native TypeScript without original ROM binaries:
+> Because all 55 games are re-engineered from scratch in native TypeScript without original ROM binaries:
 > 1. **Testing Needed**: Several titles (especially newer console additions like PlayStation 1 3D games, Game Boy Advance SP titles, and 3D FPS engines) need community testing across different browsers, mobile devices, and gamepads.
 > 2. **Reporting Issues**: If you encounter a bug, audio glitch, input collision issue, or graphical anomaly, please open a GitHub Issue with reproduction steps.
-> 3. **Additional AI Instructions (`AGENTS.md` & `GEMINI.md`)**: When contributing code or using AI coding assistants (such as Google AI Studio, Gemini, or Claude) to expand games, consult `AGENTS.md` and `GEMINI.md` at the project root. These files contain system instructions and guidelines for game physics, input handling, and clean-room coding standards.
+> 3. **Additional AI Instructions (`AGENTS.md` & `GEMINI.md`)**: When contributing code or using AI coding assistants (such as Google AI Studio, Gemini, or Claude) to expand games, consult `AGENTS.md` and `GEMINI.md` at the project root. These files contain detailed step-by-step instructions on how to add a game from scratch, integrate with the landing page, and maintain clean-room standards.
 
 ---
 
@@ -85,6 +86,7 @@ Because all titles are custom-engineered from scratch with AI assistance, **the 
 These titles feature deep, faithful game loops, accurate physics, sound synthesis, multi-stage progression, and full high-score saving:
 - **Pac-Man (1980)**: Authentic 4-ghost AI state machines (Blinky chaser/Cruise Elroy, Pinky ambusher, Inky vector flanker, Clyde coward), scatter/chase/frightened cycles, fruit bonuses, and high scores.
 - **Game Boy DMG Collection (1989–1998)**: *Super Mario Land*, *Tetris DMG*, *Dr. Mario*, *Metroid II*, *Kirby's Dream Land*, *Super Mario Land 2*, *Zelda: Link's Awakening*, *Donkey Kong '94*, *Pokémon Red & Blue*, and *Wario Land II*.
+- **Spy Fox in "Dry Cereal" (1997)**: Full SCUMM point-and-click engine re-creation with classic action verbs (Look At, Pick Up, Talk To, Use), SPY Watch communicator, Laser Toothpick, inventory management, and dual-language dialogue.
 - **OutRun (1986)**: Pseudo-3D road projection with curve scaling and undulating hills, Ferrari Testarossa Spider, traffic AI, manual gear shifting, and real-time FM radio tracks.
 - **Space Invaders (1978)**: 55-alien marching army with dynamic speed acceleration, destructible bunker erosion, flying mystery saucers, and gyroscope tilt aiming.
 - **Exile (1988)**: Newtonian gravitational physics sandbox on planet Phoebus, directional jetpack thruster, momentum, particle blaster, equipment teleporter, and gravity-defying boulder lifting.
@@ -92,6 +94,7 @@ These titles feature deep, faithful game loops, accurate physics, sound synthesi
 - **Repton (1985)**: Full physics for falling rocks, earth digging, diamonds, cages & keys, time bombs, and all 12 level passwords.
 - **Tetris (1984)**: All 7 official tetrominoes, Super Rotation System (SRS) wall kicks, ghost piece guide, and line clearing.
 - **King's Quest I & Space Quest I (1984/1986)**: Rich AGI text-parser adventure games supporting both English and Dutch natural language commands.
+- **Night Driver (Apple II, 1980/1983)**: Authentic 60 FPS first-person pseudo-3D road perspective engine by Bill Budge with reciprocal depth scaling, Apple Monitor II emerald phosphor green or Steve Wozniak Hi-Res color artifacting, 4-speed manual/automatic transmission, roadside reflector pylons, oncoming traffic, and Web Audio 1-bit speaker pulse emulation.
 
 ### 🟡 Tier 2: Core Gameplay / Prototype & Stylized Tributes (Needs Further Testing)
 Titles in this tier are fully playable showcases capturing the core mechanics and feel:
@@ -166,6 +169,67 @@ Titles in this tier are fully playable showcases capturing the core mechanics an
 | 51 | **Pokémon Emerald** | 2004 | Junichi Masuda / Game Freak | GBA SP 32-Bit | Animated 32-bit battle sprites, Rayquaza, Battle Frontier |
 | 52 | **Zelda: The Minish Cap** | 2004 | Capcom / Flagship / Nintendo | GBA SP 32-Bit | Shrink to Minish size, Ezlo hat, Four Sword quest |
 | 53 | **Temple Run 3D** | 2011 | Keith Shepherd / Imangi | iOS & Android | Full 3D WebGL runner, 90-deg turns, coin magnets |
+| 54 | **Spy Fox in "Dry Cereal"** | 1997 | Ron Gilbert / Humongous Entertainment | PC CD-ROM / SCUMM | SCUMM point & click adventure, SPY Watch, Laser Toothpick, SPY Coins, Dutch/English voice trivia |
+| 55 | **Night Driver** | 1976 / 1980 | Ted Michon (Atari) / Bill Budge (Apple II) | Apple II / Arcade | Eerste-persoons nachtrijder, wegpaaltjes perspectief, 4-traps versnellingsbak, Apple II groen fosfor & amber CRT |
+| 56 | **Topografie Europa** | 1984 | Cees Kramer & Roel Kramer / Radarsoft | Commodore 64 (VIC-II) | Legendarische Nederlandse aardrijkskunde klassieker, blinde kaart van Europa, helikoptervlucht, SID 6581 audio |
+| 57 | **Lode Runner** | 1983 | Doug Smith / Brøderbund Software | Apple II / IIe | Baanbrekende graaf- & puzzel-platformer, 280×192 Apple Hi-Res, 1-bit speaker synthese, Bungeling Empire monniken vangen, eerste ingebouwde level editor |
+| 58 | **Arkanoid** | 1986 | Akira Fujita / Taito | Taito Arcade Board | De ultieme bat & ball steen-sloper, Vaus schip, 7 power-up capsules (Laser, Catch, Expand, Warp), AY-3-8910 PSG |
+| 59 | **Galaga** | 1981 | Shigeru Yokoyama / Namco | Namco 3× Z80 Arcade | Koning der duikvlucht-shooters, Boss Galaga tractor beam capture, Dual Fighter tweelingkanonnen, Challenging Stages |
+| 60 | **Sudoku** | 1984 | Howard Garns / Maki Kaji (Nikoli) | Krant / MS-DOS / Nikoli | Cijferlogica meesterwerk, klassieke houten leestafel met krantenpapier, potloodnotities, 4 niveaus, unieke oplossing |
+| 61 | **Zeeslag Solitaire** | 1982 | Jaime Poniachik / WPC | Juegos & Co. / Bimaru | Maritieme vlootdeductie, marineblauw zeekaart-thema, watergolven & scheepsankers, 8×8 & 10×10, snelheids- & hintaftrek |
+| 62 | **Mastermind** | 1971 | Mordecai Meirowitz / Invicta & Jumbo | Tabletop Board / PC | Legendarische kleur- & deductie-codekraker, vintage plastic bord, 4- en 5-pion Super Mastermind, hint-deductie, Knuth algoritme |
+| 63 | **Patience (Solitaire)** | 1990 | Wes Cherry & Susan Kare / Microsoft | Windows 3.0 / 95 PC | Het meest gespeelde kaartspel ter wereld, 7 kolommen & 4 basisstapels, trek-1 & trek-3, drag-and-drop, Susan Kare kaartruggen, stuiterende kaartenwaterval bij winst |
+| 64 | **Hartenjagen (Hearts)** | 1992 | Richard Rimac / Microsoft | Windows 3.11 / 95 PC | De ultieme multiplayer kantoorklassieker, 4-speler slag-engine tegen Michele, Ben en Paul, 3-kaarten doorgifte, ontwijk de Schoppenvrouw (13 pt), De Maan Schieten |
+| 65 | **FreeCell** | 1991 | Paul Alan Schultz / Microsoft | Windows 3.11 / 95 PC | Het beroemdste wiskundige solitaire-spel, 8 kolommen & 4 vrije parkeervakken, 100% wiskundig oplosbaar, authentieke spelnummers #1 t/m #32.000, inclusief onoplosbaar spel #11982 |
+| 66 | **Spider Solitaire** | 1998 | John A. Blackall / Microsoft | Windows 98 Plus! & XP | De koning der solitaire-spellen met 2 decks (104 kaarten), 10 kolommen, 1 kleur (ontspannend), 2 kleuren & 4 kleuren (expert), 5 stock deals, onbeperkt undo |
+| 67 | **Klaverjassen** | Klassiek / 1985 | Nederlandse Traditie (1890) / PC Recreatie | MS-DOS / Café Tafel | Het nationale troef- en slagenspel van Nederland, Amsterdams én Rotterdams speelsysteem, slimme AI-maat Henk, roemherkenning (20, 50, 100, Stuk), 16 bomen (Boompje) |
+| 68 | **Blackjack / 21** | 1962 / Vegas | Edward O. Thorp / Casino Traditie | Vegas Strip Felt Table | De koning van Las Vegas met splitsen, dubbelen, verzekering, 3:2 uitbetaling en wiskundige basisstrategie |
+| 69 | **Contract Bridge** | 1925 / Club | Harold Vanderbilt / NBB Traditie | Felt Bridge Table / PC | De koning der denksporten met officiële Biedbox, 5-kaart hoog biedsysteem, Leider & Dummy afspelen, Duplicate Bridge puntentelling en meesterstand |
+| 70 | **3D Tic Tac Toe** | 1984 | Cees Kramer & John Vanderaart / Radarsoft | Commodore 64 (MOS 6510) | Radarsoft's historische debuutgame op de C64: 4×4×4 Qubic kubus met 64 cellen, 76 winlijnen, realtime 3D-rotatie, 4-laags tactisch bord en 3-traps AI |
+| 71 | **Stratego** | 1958 | Jacques Johan Mogendorff / Jumbo (Hausemann & Hötte) | Tabletop Board / PC | Nederlands meesterwerk van militaire tactiek & bluf: 10×10 slagveld met 2 meren, 40 reliëf torentjes, volledige Fog of War en verkennende AI |
+| 72 | **Kamertje Verhuren** | 1895 / School | Édouard Lucas (La Pipopipette) / Ruitjespapier | School Notepad & Pen | De ultieme ruitjespapier & balpen klassieker: 3×3 t/m 6×6 rasters, authentieke pen-krasgeluiden, gigantische kettingreacties, en de befaamde dubbele-weggeefzet |
+
+---
+
+## 🤖 AI Instructies: Hoe Voeg Je een Nieuwe Game of Console Toe (Stap-voor-Stap)
+
+Voor ontwikkelaars en AI Coding Assistants (zoals Google AI Studio, Gemini, Claude, Cursor) die een nieuwe retro arcade klassieker, microcomputer game of console willen toevoegen:
+
+### Stap 1: Registreer Game ID en Metadata in `src/i18n/lobbyTranslations.ts`
+1. Voeg je nieuwe `game_id` toe aan de union type `id:` in `GameMetadata`.
+2. Voeg een tweetalig metadata-object toe aan de array `GAMES_METADATA`:
+   - `id`: unieke snake_case identifier (bv. `'space_pilot'`)
+   - `year`: releasejaar (bv. `1983`)
+   - `system`: platform (bv. `'arcade' | 'apple_ii' | 'c64' | 'gameboy' | 'ps1' | 'dos_pc'`)
+   - `title`, `subtitle`, `creator`, `cabinetTheme` (kleurenpalet, neon glows)
+   - `summary`: tweetalige historische toelichting (`nl` en `en`)
+   - `highlights`: 3-4 kenmerkende spelmechanieken
+   - `specs`: resolutie, fps, audiomodule, media
+
+### Stap 2: Bouw de Game Engine in `src/game/`
+1. Maak een pure TypeScript engine (bv. `src/game/myGameEngine.ts`).
+2. **Geen externe ROMs**: implementeer spelregels, rasterisatie (Canvas 2D of Three.js WebGL) en fysica zuiver in wiskundige TypeScript.
+3. **Web Audio API**: genereer alle geluidseffecten procedureel via `AudioContext` oscillatoren en filters.
+
+### Stap 3: Maak het Visuele Cabinet Component in `src/components/`
+1. Maak `src/components/MyGameCabinet.tsx` met een authentieke retro behuizing (marquee, bezel, CRT scanlines, bedieningsknoppen).
+2. Ondersteun toetsenbord (Pijltjes/WASD), gamepad controller (Xbox/PlayStation) en mobiele touch bediening.
+3. Koppel de engine via `useRef` en start/stop de game loop netjes in `useEffect`.
+
+### Stap 4: Routering in `src/App.tsx`
+1. Importeer je cabinet component in `src/App.tsx`.
+2. Voeg de game ID toe aan de `activeScreen` router state union type.
+3. Render je cabinet wanneer `activeScreen === 'my_game_id'`.
+
+### Stap 5: Koppel aan de Landing Page & Dossiers in `src/components/ArcadeLobby.tsx`
+1. Voeg een start-handler toe in de `handleLaunchGame` router switch.
+2. Voeg het dossier-modal toe (of genereer een historisch pop-up venster met specs en controller layouts).
+3. Initialiseer de lokale topscores in `highScoresMap` zodat high-scores worden opgeslagen in `localStorage`.
+4. Voeg een jaartal-mijlpaal toe in `src/components/ArcadeTimelineView.tsx`.
+
+### Stap 6: Update de Documentatie
+1. Voeg het spel toe aan de tabel in `README.md` met het opeenvolgende volgnummer.
+2. Voeg de specificaties toe in `docs/GAMES_CATALOG.md` en besturingsdetails in `docs/CONTROLS.md`.
 
 ---
 
@@ -283,6 +347,7 @@ To encourage visitors to explore, support, and purchase the official commercial 
 | **3D Realms / Apogee** | *Duke Nukem 3D* | [3D Realms Official Portal](https://3drealms.com) |
 | **Technos Japan / Arc System Works** | *Double Dragon* | [Arc System Works](https://www.arcsystemworks.jp/en/) |
 | **Imangi Studios** | *Temple Run 3D* | [Imangi Studios Official](https://imangistudios.com) |
+| **Humongous Entertainment / Tommo Inc.** | *Spy Fox in "Dry Cereal"* | [Humongous Entertainment](https://humongous.com) • [Spy Fox on Steam](https://store.steampowered.com/app/283980/Spy_Fox_in_Dry_Cereal/) |
 | **Historical Computer Museums & Archives** | BBC Micro, Commodore 64, ZX Spectrum, ZX81 | [Internet Archive Software Library](https://archive.org/details/softwarelibrary) • [Center for Computing History](https://www.computinghistory.org.uk) |
 
 ---

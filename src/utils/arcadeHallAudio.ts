@@ -62,6 +62,35 @@ class ArcadeHallAudio {
     } catch {}
   }
 
+  /** Alias for coin sound */
+  public playCoin() {
+    this.playCoinDrop();
+  }
+
+  /** Subtle retro cursor hover blip */
+  public playHover() {
+    try {
+      this.init();
+      if (!this.ctx) return;
+      const t = this.ctx.currentTime;
+      const osc = this.ctx.createOscillator();
+      const gain = this.ctx.createGain();
+
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(1200, t);
+      osc.frequency.exponentialRampToValueAtTime(1800, t + 0.03);
+
+      gain.gain.setValueAtTime(0.04, t);
+      gain.gain.exponentialRampToValueAtTime(0.001, t + 0.03);
+
+      osc.connect(gain);
+      gain.connect(this.ctx.destination);
+
+      osc.start(t);
+      osc.stop(t + 0.03);
+    } catch {}
+  }
+
   /** Retro button click / switch */
   public playSwitch() {
     try {

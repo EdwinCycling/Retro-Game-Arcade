@@ -1,6 +1,6 @@
 # 📚 Games Catalog & Historical Dossiers
 
-A detailed reference for all 53 authentic historic game and console recreations included in the **Classic Retro Arcade, Handheld & Console Vault**.
+A detailed reference for all 55 authentic historic game and console recreations included in the **Classic Retro Arcade, Handheld & Console Vault**.
 
 > [!NOTE]
 > **Educational Research & Rights Holder Notice**
@@ -264,6 +264,233 @@ A detailed reference for all 53 authentic historic game and console recreations 
 
 ---
 
+## 39. Spy Fox in "Dry Cereal" (1997)
+- **Developer**: Ron Gilbert & Humongous Entertainment
+- **Platform**: PC CD-ROM / SCUMM (SPUTM Engine)
+- **Historical Significance**: Created by LucasArts adventure gaming pioneer Ron Gilbert (creator of *The Secret of Monkey Island* and *Maniac Mansion*), Spy Fox introduced an intelligent, satiric secret-agent point-and-click parody with branching puzzle paths that ensured no two playthroughs had the same solutions.
+- **Engine Highlights**:
+  - Evolved SCUMM point-and-click engine featuring classic action verbs: *Look At*, *Pick Up*, *Talk To*, and *Use*.
+  - SPY Corp gadget inventory: Wristwatch videophone communicator with Monkey Penny, high-powered Laser Toothpick, and SPY coins.
+  - Procedural Web Audio 70s secret-agent jazz soundtrack with lively saxophone and brass themes.
+  - Complete historical localization trivia documenting the famous Dutch release voiced by Jan Nonhof (Spy Fox) and Fred Meijer (William the Kid).
+
+---
+
+## 40. Night Driver (1980 / 1983)
+- **Developer**: Bill Budge (Apple II) / Ted Michon (Atari original concept)
+- **Platform**: Apple II / Apple IIe (6502 Assembly & Wozniak Hi-Res Video)
+- **Historical Significance**: Coded by legendary Apple II software engineer Bill Budge (author of *Raster Blaster* and *Pinball Construction Set*), Night Driver on the Apple II was one of the earliest first-person 3D perspective racing games ever produced for a personal microcomputer. In 1982–1983, following the worldwide popularity of the television show *Knight Rider*, European and Dutch microcomputer enthusiasts affectionately nicknamed this game "Night Rider".
+- **Engine Highlights**:
+  - Clean-room 60 FPS first-person pseudo-3D road engine with true reciprocal perspective projection and quadratic curvature arcs.
+  - Dual phosphor monitor display: authentic Apple Monitor II P31 emerald green monochrome phosphor CRT and Steve Wozniak Hi-Res 280×192 color artifact mode.
+  - 4-speed manual transmission or automatic gearbox with gear hysteresis, disc brake friction, and tire squeal physics.
+  - Dynamic roadside reflector pylons, pine trees, and oncoming traffic headlights with collision bounce-back and shoulder rumble audio.
+  - Procedural Web Audio synthesis emulating the authentic 1-bit Apple II motherboard speaker toggle (`$C030`) for engine RPM pulses, pylon whiz sounds, and crunching crash bursts.
+
+---
+
+## 41. Topografie Europa (1984)
+- **Developer**: Cees Kramer & Roel Kramer (Radarsoft)
+- **Platform**: Commodore 64 (MOS 6510, VIC-II Graphics & MOS 6581 SID)
+- **Historical Significance**: Developed in Driebergen/Utrecht by Dutch computing pioneers Cees and Roel Kramer, *Topografie Europa* transformed educational software forever. Rather than boring multiple-choice drills, players navigated a helicopter across a blind, unlabelled map of Europe using rivers, coastlines, and mountain ranges to pinpoint capitals and major cities, receiving real-time distance and compass telemetry. It was a massive success in Dutch schools and on educational television broadcasts (NOT / Teleac).
+- **Engine Highlights**:
+  - Clean-room 60 FPS Commodore 64 VIC-II renderer with accurate European landmass polygons, rivers (Rhine, Danube, Volga, Seine, Thames), mountain ranges (Alps, Pyrenees, Carpathians), and country borders.
+  - Realistic helicopter physics with altitude climb/descent transitions, ground shadow projection, spinning 4-blade rotor, and fuel consumption.
+  - Schiphol home heliport with fuel replenishment beacon and landing pad.
+  - Distance estimation engine calculating real-world kilometer error and 8-way compass direction feedback.
+  - Procedural SID 6581 sound synthesis using filtered noise bursts for rotor beat thuds, takeoffs, touchdowns, and the signature Radarsoft victory arpeggio fanfare.
+
+---
+
+### 57. Lode Runner (1983)
+- **Developer / Publisher**: Doug Smith / Brøderbund Software
+- **Platform**: Apple II / Apple IIe (6502 CPU, 280×192 Hi-Res 6-Color Display)
+- **Historical Significance**: Created in 1983 by University of Washington student Doug Smith on an Apple II, *Lode Runner* was one of the most innovative puzzle-platformers ever conceived and among the very first commercial computer games shipped with an integrated user level editor. The game was universally acclaimed, porting to nearly every 8-bit platform and selling millions of copies worldwide. Smith famously financed the machine-code rewrite by borrowing money from his brother, and Brøderbund immediately recognized the genius of its puzzle design.
+- **Engine Highlights**:
+  - Pixel-perfect Apple II Hi-Res (280×192) tile matrix reproduction with authentic P31 Green Phosphor, Amber, and Apple 6-Color NTSC artifact rendering modes.
+  - Authentic procedural 1-bit speaker audio synthesis replicating the rapid toggling of memory address `$C030` for digging lasers, falling whistles, gold pickups, and death sounds.
+  - Authentic Bungeling Empire guard AI: monks track the player along platforms and ladders, get trapped in dug holes, drop stolen gold chests, and regenerate at the top of the screen if crushed by closing bricks.
+  - Responsive multi-input support: keyboard (Arrows/WASD + Z/C to dig), gamepad triggers/face buttons, and ergonomic mobile on-screen virtual controls.
+
+---
+
+### 58. Arkanoid (1986)
+- **Developer / Publisher**: Akira Fujita & Yasumasa Sasabe / Taito Corporation
+- **Platform**: Taito Arcade PCB (68705 MCU & Z80 CPU, AY-3-8910 PSG)
+- **Historical Significance**: Taito transformed Atari’s foundational 1976 *Breakout* into an electrifying sci-fi arcade blockbuster. Introducing the Vaus starship paddle, falling colored power-up capsules (Laser, Catch, Expand, Slow, Break/Warp, Extra Life, Multi-Ball), and the enigmatic alien guardian DOH (Dimension Organizing Hero).
+- **Engine Highlights**:
+  - Pixel-precise arcade ball physics, paddle contact deflection angles, and dynamic capsule drops.
+  - Authentic AY-3-8910 chiptune sound synthesis for laser beams, bounce pitches, capsule pickups, and stage intros.
+  - Complete multi-input controls: analog mouse/finger drag paddle control, keyboard arrows/WASD, and gamepad analog thumbsticks.
+
+---
+
+### 59. Galaga (1981)
+- **Developer / Publisher**: Shigeru Yokoyama & Nobuyuki Ohnogi / Namco
+- **Platform**: Namco 3× Z80 Custom Arcade Architecture
+- **Historical Significance**: One of the most acclaimed arcade space shooters of all time. Building upon *Galaxian*, Galaga pioneered the daring "Dual Fighter" risk-reward mechanic: players could sacrifice a fighter to the Boss Galaga's blue tractor beam, then shoot down the boss in flight to recapture the trapped ship, doubling firepower.
+- **Engine Highlights**:
+  - Full parametric Bézier curves reproducing the iconic looping entry formations and dive-bombs of Boss Galagas, Goei butterflies, and Zako bees.
+  - Authentic tractor beam capture sequence and Dual Fighter twin-shot weapon mechanics.
+  - Challenging Stages every three rounds featuring bonus point tallying and procedurally synthesized Namco WSG wave chimes.
+
+---
+
+### 60. Sudoku (1984 / 1979)
+- **Developer / Publisher**: Howard Garns (Number Place, 1979) / Maki Kaji (Nikoli, 1984)
+- **Platform**: The Daily Newspaper / Handheld LCD / MS-DOS Logic
+- **Historical Significance**: Conceived by 74-year-old American architect Howard Garns in 1979 as "Number Place" and published in Dell Magazines, the puzzle captured the imagination of Japanese publisher Maki Kaji of Nikoli in 1984, who titled it *Sūji wa dokushin ni kagiru* ("Numbers must remain single"), shortened to **Sudoku**. It triggered a worldwide logical renaissance, inspiring computer software, dedicated electronic handhelds, and newspaper syndication across 100+ countries.
+- **Engine Highlights**:
+  - Clean-room pure TypeScript mathematical 9×9 backtracking board generator with guaranteed unique solvability.
+  - 4 difficulty levels: Makkelijk (Easy, 42 clues), Gemiddeld (Medium, 35 clues), Moeilijk (Hard, 30 clues), and Expert (25 clues).
+  - Authentic "Krantenleestafel" (Vintage Mahogany & Newsprint) visual cabinet theme with tactile pencil notes mode (kandidaatcijfers), eraser tool, undo history, and smart logical hints.
+  - Procedural Web Audio API pencil scratch sound synthesis, soft wooden tile taps, and soothing completion chimes.
+
+### 61. Zeeslag Solitaire (Bimaru / Battleship Solitaire, 1982)
+- **Original Release Year**: 1982
+- **Developer / Publisher**: Jaime Poniachik (Juegos & Co., Buenos Aires, 1982) / World Puzzle Championship (1992)
+- **Platform**: Newspaper Puzzle Book (Denksport / Bimaru) / Maritime Solitaire
+- **Historical Significance**: Invented in 1982 by Argentine puzzle author Jaime Poniachik in *Juegos & Co.* under the name "Batalla Naval", Zeeslag Solitaire transformed the classic two-player naval guessing game into an elegant, deterministic mathematical deduction puzzle. In 1992 it was adopted at the inaugural World Puzzle Championship in New York, and became a beloved national pastime in the Netherlands (Denksport) and across Europe under the name *Bimaru*.
+- **Engine Highlights**:
+  - Pure TypeScript constraint-based naval grid solver and randomized fleet generator.
+  - Strict adjacency isolation: ships cannot touch each other horizontally, vertically, or diagonally.
+  - Authentic nautical naval chart theme with ocean waves, ship hull markers, and brass naval anchors.
+  - Interactive row and column totals with click-to-fill water convenience.
+  - Comprehensive scoring engine mirroring Sudoku: base score per tier (Easy 8×8, Medium 8×8, Expert 10×10), speed decay bonus up to 3,000 pts, penalties for hints (-800), mistakes (-400), and corrections (-100), saved to local high scores.
+
+## 62. Mastermind (1970 / 1971)
+- **Original Release Year**: 1970 (conceived) / 1971 (commercial launch) / 1975 (Super Mastermind)
+- **Developer / Publisher**: Mordecai Meirowitz / Invicta Plastics (UK) / Jumbo (Koninklijke Hausemann & Hötte N.V., Netherlands) / Hasbro Pressman
+- **Platform**: Tabletop Peg Board / Microcomputer Logic Games
+- **Historical Significance**: Invented in 1970 by Israeli postmaster and telecommunications expert Mordecai Meirowitz based on the traditional game *Bulls and Cows*. Meirowitz revolutionized it into an iconic molded plastic game board with colorful code pegs and a secret sliding shield. After discovery by Invicta Plastics, it became an international phenomenon, selling over 55 million sets across 80 countries. In 1977, computer science icon Donald Knuth published a foundational paper proving mathematically that any 4-peg 6-color combination can be solved in at most 5 guesses using minimax entropy reduction.
+- **Engine Highlights**:
+  - Dual game modes: **Classic 4-Pegs (6 colors, 10 attempts)** and **Super Mastermind 5-Pegs (8 colors, 12 attempts)**.
+  - Configurable duplicate color rule toggle.
+  - Tactile vintage plastic board aesthetic with sliding secret shield, snap sockets, and real-time color picker.
+  - Instant Web Audio chiptune feedback for tactile peg insertions, black/white evaluation pins, and win/loss fanfares.
+  - Smart deductive hint system providing provable valid candidates with score penalties.
+  - Career statistics tracking (games played, win rates, current/best winning streaks) and local high-score hall of fame.
+
+## 63. Patience / Solitaire (1990)
+- **Original Release Year**: 1990 (Windows 3.0) / 1995 (Windows 95)
+- **Developer / Publisher**: Wes Cherry (Programming) & Susan Kare (Card Pixel Art) / Microsoft Corporation
+- **Platform**: Microsoft Windows 3.0 / 95 / 98 / 2000 / XP (IBM PC & Compatibles)
+- **Historical Significance**: Written in 1989 by Microsoft intern Wes Cherry during his spare hours, Klondike Solitaire (Patience) was packaged with Windows 3.0 in May 1990. Designed with iconic 16-color pixel art by Susan Kare (who famously designed the sunny palm tree beach and spooky castle card backs), the game served a critical strategic purpose: educating a worldwide generation of corporate workers and home users on how to use a computer mouse for GUI interactions (clicking, dragging, dropping, and double-clicking). It became one of the most frequently used computer applications on Earth.
+- **Engine Highlights**:
+  - Full Klondike Solitaire rules: 7 tableau columns, 4 suit foundation piles (Ace to King), stock pile, and waste pile.
+  - Draw 1 and Draw 3 card deal modes, with standard and Vegas scoring options.
+  - Native HTML5 Drag & Drop, click-to-move, and double-click/double-tap auto-foundation placements.
+  - Authentic Susan Kare card backs: 🌴 Palm Tree Beach, 🏰 Haunted Castle, 🎴 Win95 Hand with Aces, 🤖 1990 Robot, 🔷 Retro Blue, ♠ Emerald Velvet.
+  - Automatic completion trigger when all cards are face-up with smooth animated clearance.
+  - Legendary Windows 95 bouncing card cascade victory animation with real-time physics, gravity, and persistent stamped trails.
+
+## 64. Hartenjagen / Hearts (1992)
+- **Original Release Year**: 1992 (Windows for Workgroups 3.11) / 1995 (Windows 95)
+- **Developer / Publisher**: Richard Rimac / Microsoft Corporation
+- **Platform**: Microsoft Windows 3.11 / 95 / 98 / 2000 / XP / 7 (The Microsoft Hearts Network)
+- **Historical Significance**: Introduced in autumn 1992 with Windows for Workgroups 3.11, *The Microsoft Hearts Network* became a beloved office multiplayer phenomenon. Designed to showcase Network DDE peer-to-peer connectivity, it featured three legendary offline AI opponents (Michele, Ben, and Paul). The objective is to avoid penalty points (each Heart = 1 pt, Queen of Spades = 13 pt) or pull off the daring "Shoot the Moon" (De Maan Schieten) maneuver.
+- **Engine Highlights**:
+  - 4-player trick-taking engine against smart AI bots Michele (West), Ben (North), and Paul (East).
+  - Authentic 4-way passing cycle: Pass Left, Pass Right, Pass Across, and Hold (No Pass).
+  - Real-time legal move validation (lead with ♣2 on trick #1, follow suit, broken hearts rule).
+  - Triumphant "Shoot the Moon" (De Maan Schieten) scoring (+26 to all 3 opponents) with orchestral fanfare.
+  - Full round-by-round score sheet table and local high-score Hall of Fame.
+
+## 65. FreeCell (1991)
+- **Original Release Year**: 1991 (Microsoft Entertainment Pack 2) / 1995 (Windows 95)
+- **Developer / Publisher**: Paul Alan Schultz / Microsoft Corporation
+- **Platform**: Microsoft Windows 3.1 / 95 / 98 / 2000 / XP / 7
+- **Historical Significance**: Created in 1991 by Paul Alan Schultz for Microsoft Entertainment Pack 2 and bundled natively with Windows 95, FreeCell became legendary as the ultimate mathematical solitaire. With all 52 cards dealt face up across 8 columns and 4 temporary storage cells, nearly 100% of deals are solvable. Out of Microsoft's original 32,000 generated deals, crowdsourced testing proved that exactly one deal is unsolvable: Deal #11982!
+- **Engine Highlights**:
+  - Authentic Microsoft CRT PRNG deck generator algorithm for historical game numbers #1 to #32,000.
+  - 8 Cascade columns, 4 Free Cells, and 4 Suit Foundations.
+  - Dynamic stack capacity formula calculation `(1 + emptyFreeCells) * 2^emptyCascades`.
+  - Auto-move safe cards to foundations, smart hints, step-by-step undo, and win streak stats.
+
+## 66. Spider Solitaire (1998)
+- **Original Release Year**: 1998 (Microsoft Plus! 98) / 2001 (Windows XP)
+- **Developer / Publisher**: John A. Blackall / Microsoft Corporation
+- **Platform**: Microsoft Windows 98 / Me / 2000 / XP / Vista / 7
+- **Historical Significance**: Originally distributed in the *Microsoft Plus! 98* expansion pack and later included natively with Windows ME and Windows XP, Spider Solitaire grew into the most played solitaire variant globally next to Klondike. Using two complete 52-card decks (104 cards) across 10 tableau columns, players must assemble descending sequences from King down to Ace in the same suit to remove completed suits from the board.
+- **Engine Highlights**:
+  - 3 Difficulty settings: 1 Suit (Spades - accessible & relaxing), 2 Suits (Spades & Hearts - strategic), and 4 Suits (Grandmaster brain teaser).
+  - 10 Tableau columns (54 cards dealt initially, 50 in reserve stock dealt 10 at a time).
+  - Smart sequence dragging: move descending runs of matching cards between columns.
+  - Unlimited Undo, hints highlighting optimal moves, and comprehensive statistics tracking (win rate, least moves, top score).
+
+## 67. Klaverjassen (1890 / 1985)
+- **Original Release Year**: Traditional ~1890 (Piquet roots) / Digital Recreation 1985+
+- **Developer / Publisher**: Dutch Card Playing Tradition / Digital Computer Recreations
+- **Platform**: Café Tabletop & MS-DOS / PC Card Software
+- **Historical Significance**: Klaverjassen is the undisputed national card game of the Netherlands, deeply rooted in Dutch pub culture and social clubs for well over a century. Played in partnerships of two against two with a 32-card piquet deck, it is celebrated for its deep tactics, suit counting, and the historic rivalry between the **Amsterdam** and **Rotterdam** rule systems.
+- **Engine Highlights**:
+  - Authentic support for both **Amsterdams** (no undertrumping needed when partner controls trick) and **Rotterdams** (mandatory overtrumping/in-trumping at all times).
+  - Complete 4-player AI partner & opponent system: play alongside Henk against Ingrid & Jan.
+  - Automatic detection and scoring of **Roem** (Driekaart 20 pt, Vierkaart 50 pt, Stuk 20 pt, Vier gelijken 100/200 pt).
+  - 16-round Boompje matches (or quick 4-round games), Nat-penalties (162 + all roem to rivals), and Pit/Mars bonuses (+100 pt).
+
+## 68. Blackjack / 21 (1962 / Vegas)
+- **Original Release Year**: Traditional ~1601 (Cervantes *Veintiuna*) / Nevada Legalization 1931 / Edward O. Thorp *Beat the Dealer* 1962
+- **Developer / Publisher**: Casino Tradition / Edward O. Thorp / PC Card Recreations
+- **Platform**: Las Vegas Strip Felt Tabletop & PC
+- **Historical Significance**: Blackjack is the world's most renowned casino card game. First documented by Miguel de Cervantes in 1601 and popularized in 18th-century French royal courts as *Vingt-Un*, it gained its famous moniker in Nevada casinos in 1931 with a promotional 10:1 payout for hands holding the Ace of Spades and a black Jack. In 1962, MIT mathematics professor Edward O. Thorp utilized an IBM 704 mainframe to discover the mathematically optimal Basic Strategy, revolutionizing casino gambling forever.
+- **Engine Highlights**:
+  - Authentic Las Vegas Strip rules: 6-deck shoe with cut card, dealer stands on all 17s.
+  - Natural Blackjack (Ace + 10-value card) pays out at 3:2 (+150%).
+  - Full player decision matrix: Hit, Stand, Double Down, Split pairs, and Insurance against dealer Aces.
+  - Comprehensive Basic Strategy dossier and local High Roller Hall of Fame bankroll tracker.
+
+## 69. Contract Bridge (1925 / Club)
+- **Original Release Year**: 1925 (Harold Vanderbilt aboard SS Finland) / 1930 (NBB Foundation) / PC Mind Sports
+- **Developer / Publisher**: Harold Stirling Vanderbilt / Nederlandse Bridge Bond (NBB) / PC Recreations
+- **Platform**: Bridge Club Felt Tabletop & PC
+- **Historical Significance**: Contract Bridge is universally celebrated as the king of mind sports and the world's premier partnership card game. Conceived on November 1, 1925 by Harold Vanderbilt during a Caribbean cruise through the Panama Canal, it introduced modern vulnerability and game scoring. The game demands profound memory, tactical communication without speech, deep respect for one's partner, and brilliant card play.
+- **Engine Highlights**:
+  - Full Bidding Box auction supporting calls from 1♣ to 7NT, Pass, Double (X), and Redouble (XX).
+  - Modern Standard 5-Card Major system, 1NT (15-17 HCP) balanced opening, suit fit evaluations, and competitive overcalls.
+  - Complete Declarer and Dummy mechanism: when Declarer leads, the Dummy's 13 cards are exposed face-up and piloted by Declarer.
+  - Official Duplicate Bridge scoring: Partscores, Game bonuses (+300/+500), Small/Grand Slams (+500 to +1500), doubled/redoubled down penalties.
+  - High Card Point (HCP) evaluator and Hall of Fame honoring master bridge players and fathers who mastered the game.
+
+## 70. 3D Tic Tac Toe (1984)
+- **Original Release Year**: 1984
+- **Developer / Publisher**: Cees Kramer & John Vanderaart ("Dr. John") / Radarsoft B.V. (Utrecht, Netherlands)
+- **Platform**: Commodore 64 (MOS 6510 CPU, SID 6581 sound)
+- **Historical Significance**: Radarsoft's debut commercial release that marked the birth of one of the Netherlands' most legendary computer software houses. Rather than the trivial 3×3 game, this is full 4×4×4 Qubic with 64 positions and 76 winning vectors.
+- **Engine Highlights**:
+  - Full 4×4×4 Qubic cube with real-time 3D orbit rotation, pitch/yaw controls, zoom, and preset viewing angles.
+  - 76 mathematically verified winning lines: 48 axial lines, 24 planar diagonals, and 4 spatial diagonals.
+  - 4-layer tactical board matrix (Layers 1 to 4) enabling instant direct cell placement with coordinates (e.g. L2-B3).
+  - 3-tier intelligent AI: Novice, Dr. John (fork creation and block heuristic), and Grandmaster (deep positional evaluation).
+  - Authentic Commodore 64 SID 6581 chiptune synthesis and CRT scanline filter.
+
+## 71. Stratego (1947 / 1958)
+- **Original Release Year**: 1947 (Jacques Mogendorff patent) / 1958 (Jumbo launch)
+- **Developer / Publisher**: Jacques Johan Mogendorff / Koninklijke Hausemann & Hötte N.V. (Jumbo Amsterdam)
+- **Platform**: Tabletop Board & PC Mind Sports
+- **Historical Significance**: A crowning jewel of Dutch board game history and one of the world's most famous strategy games. Created by Dutch Holocaust survivor Jacques Johan Mogendorff and launched globally by Jumbo Amsterdam, Stratego combines chess-like positional geometry with the thrilling mystery of imperfect information (*Fog of War*).
+- **Engine Highlights**:
+  - Full 10×10 battlefield with authentic dual 2×2 impassable central lakes creating 3 tactical chokepoints.
+  - Complete 40-piece army per faction: Flag (🚩), 6 Bombs (💣), Marshal (⭐ 10), General (🎖️ 9), 2 Colonels (🦅 8), 3 Majors (⚜️ 7), 4 Captains (⚔️ 6), 4 Lieutenants (🛡️ 5), 4 Sergeants (🪖 4), 5 Miners (⛏️ 3), 8 Scouts (🐎 2), and 1 Spy (🗡️ 1).
+  - True imperfect information engine: AI pieces are concealed with blue tower shields until revealed in combat.
+  - Fair AI: Computer player does not peek; it memorizes moved pieces and combat-revealed ranks using deduction.
+  - 5 tactical formation presets (Balanced, Corner Fortress, Bluff Flag, Miner Blitz, Surprise) plus interactive drag/click unit swapping.
+  - Procedural battlefield sound effects: martial drum rolls, sword clashing duels, bomb defusal clicks, and victory bugles.
+
+## 72. Kamertje Verhuren (Dots and Boxes / 1895)
+- **Original Release Year**: 1895 (Édouard Lucas "La Pipopipette") / School Graph Paper Tradition
+- **Developer / Publisher**: Édouard Lucas / Dutch Classroom Tradition
+- **Platform**: 5mm Graph Paper, Collegeblok & PC Logic
+- **Historical Significance**: The quintessential school pen-and-paper game played on 5mm graph paper by generations of Dutch schoolchildren. Invented in 1895 by French mathematician Édouard Lucas, it was later analyzed in deep combinatorial game theory by John Horton Conway and Elwyn Berlekamp (*Winning Ways*).
+- **Engine Highlights**:
+  - Authentic collegeblok notepad aesthetic with 5mm graph paper texture, red notebook margin line, spiral binding, and royal blue / crimson Bic ballpoint pen ink.
+  - Multi-grid options: 3×3, 4×4, 5×5, and 6×6 rooms with 60 FPS smooth ink rendering and generous touch detection.
+  - Realistic procedural Web Audio pen scratching, paper page turns, room completion scribbles, and rising combo chimes.
+  - 3-tier AI: Schoolmate (Novice), Math Teacher (Tactician), and Édouard Lucas (Master executing the legendary Double-Cross control sacrifice).
+  - 2-Player Pass & Play mode and solo challenge vs computer.
+
+---
+
 ## 🌐 Directory of Official Original Publishers & Rights Holders
 
 For historical reference and to support the original hardware manufacturers, game studios, and copyright holders who created these legendary works, please visit their official web portals:
@@ -277,6 +504,7 @@ For historical reference and to support the original hardware manufacturers, gam
 | **Game Freak Inc.** | *Pokémon Red & Blue*, *Pokémon Emerald* | [Pokémon Official Portal](https://www.pokemon.com) • [Game Freak Japan](https://www.gamefreak.co.jp) |
 | **Capcom Co., Ltd.** | *The Legend of Zelda: The Minish Cap* | [Capcom Official Site](https://www.capcom.com) |
 | **Naughty Dog / Sony** | *Crash Bandicoot 3D* | [Naughty Dog Official](https://www.naughtydog.com) • [Crash Bandicoot Site](https://www.crashbandicoot.com) |
+| **Humongous Entertainment / Tommo Inc.** | *Spy Fox in "Dry Cereal"* | [Humongous Entertainment](https://humongous.com) • [Spy Fox on Steam](https://store.steampowered.com/app/283980/Spy_Fox_in_Dry_Cereal/) |
 | **Taito Corporation / Square Enix** | *Space Invaders* | [Taito Official Website](https://www.taito.co.jp/en) • [Square Enix Portal](https://www.square-enix.com) |
 | **id Software / Bethesda / Microsoft** | *Wolfenstein 3D*, *DOOM* | [id Software Official](https://www.idsoftware.com) • [Bethesda.net](https://bethesda.net) |
 | **Valve Corporation** | *Half-Life* | [Valve Corporation](https://www.valvesoftware.com) • [Half-Life on Steam](https://store.steampowered.com/app/70/HalfLife/) |

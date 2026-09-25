@@ -248,6 +248,7 @@ class GamepadManager {
   }
 
   private processGamepadInput(gp: Gamepad, gameId: string) {
+    if (gameId === 'sudoku') return;
     const btn = (index: number) => gp.buttons[index]?.pressed || (gp.buttons[index]?.value || 0) > 0.5;
     const axis = (index: number) => gp.axes[index] || 0;
 
@@ -265,8 +266,10 @@ class GamepadManager {
     // Default direction mapping (Arrow keys)
     this.updateAxisKey('up', dpadUp, 'ArrowUp', 'ArrowUp');
     this.updateAxisKey('down', dpadDown, 'ArrowDown', 'ArrowDown');
-    this.updateAxisKey('left', dpadLeft, 'ArrowLeft', 'ArrowLeft');
-    this.updateAxisKey('right', dpadRight, 'ArrowRight', 'ArrowRight');
+    if (gameId !== 'arkanoid' && gameId !== 'galaga') {
+      this.updateAxisKey('left', dpadLeft, 'ArrowLeft', 'ArrowLeft');
+      this.updateAxisKey('right', dpadRight, 'ArrowRight', 'ArrowRight');
+    }
 
     // Start / Menu button (Pause / Start)
     this.updateButtonKey(9, btn(9), 'p', 'KeyP');
@@ -457,6 +460,16 @@ class GamepadManager {
         break;
       }
 
+      case 'lode_runner': {
+        // Dig Left: X / Square (btn 2) or LB / LT (btn 4, 6) -> 'z' / 'KeyZ'
+        const digL = btn(2) || btn(4) || btn(6);
+        // Dig Right: B / Circle (btn 1) or A / Cross (btn 0) or RB / RT (btn 5, 7) -> 'c' / 'KeyC'
+        const digR = btn(1) || btn(0) || btn(5) || btn(7);
+        this.updateButtonKey(2, digL, 'z', 'KeyZ');
+        this.updateButtonKey(1, digR, 'c', 'KeyC');
+        break;
+      }
+
       case 'demon_attack':
       case 'space_invaders': {
         // Arrows = Move, Space = Fire (A / RT)
@@ -525,6 +538,53 @@ class GamepadManager {
         this.updateButtonKey(4, cycleWpn, 'q', 'KeyQ');
         this.updateButtonKey(8, map, 'm', 'KeyM');
         this.updateButtonKey(9, pause, 'p', 'KeyP');
+        break;
+      }
+
+      case 'arkanoid': {
+        // A / RT / X = Fire Lasers or Release Ball (Space)
+        const launchFire = btn(0) || btn(7) || btn(2);
+        this.updateButtonKey(0, launchFire, ' ', 'Space');
+        break;
+      }
+
+      case 'mastermind': {
+        // D-Pad / Left Stick for slot navigation and color cycling
+        const dpadUp = btn(12) || gp.axes[1] < -0.4;
+        const dpadDown = btn(13) || gp.axes[1] > 0.4;
+        const dpadLeft = btn(14) || gp.axes[0] < -0.4;
+        const dpadRight = btn(15) || gp.axes[0] > 0.4;
+
+        this.updateAxisKey('mm_left', dpadLeft, 'ArrowLeft', 'ArrowLeft');
+        this.updateAxisKey('mm_right', dpadRight, 'ArrowRight', 'ArrowRight');
+        this.updateAxisKey('mm_up', dpadUp, 'ArrowUp', 'ArrowUp');
+        this.updateAxisKey('mm_down', dpadDown, 'ArrowDown', 'ArrowDown');
+
+        // A / Cross = Place current color / Cycle peg color (Space)
+        const select = btn(0);
+        // B / Circle = Clear current slot (Backspace)
+        const clearSlot = btn(1);
+        // X / Square = Clear current row (c)
+        const clearRow = btn(2);
+        // Y / Triangle = Hint (h)
+        const hint = btn(3);
+        // LB = Previous Color (q)
+        const prevCol = btn(4);
+        // RB = Next Color (e)
+        const nextCol = btn(5);
+        // RT / Start = Check guess (Enter)
+        const submit = btn(7) || btn(9);
+        // Select / View = New Game (n)
+        const newGame = btn(8);
+
+        this.updateButtonKey(0, select, ' ', 'Space');
+        this.updateButtonKey(1, clearSlot, 'Backspace', 'Backspace');
+        this.updateButtonKey(2, clearRow, 'c', 'KeyC');
+        this.updateButtonKey(3, hint, 'h', 'KeyH');
+        this.updateButtonKey(4, prevCol, 'q', 'KeyQ');
+        this.updateButtonKey(5, nextCol, 'e', 'KeyE');
+        this.updateButtonKey(7, submit, 'Enter', 'Enter');
+        this.updateButtonKey(8, newGame, 'n', 'KeyN');
         break;
       }
 

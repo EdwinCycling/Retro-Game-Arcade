@@ -50,11 +50,11 @@ To make the game visible on the **Landing Page / Arcade Lobby**, in the search f
      year: 1985,
      yearDisplay: '1985',
      yearIcon: '🚀',
-     system: 'arcade', // Choose: 'arcade' | 'c64' | 'bbc_micro' | 'gameboy' | 'gba_sp' | 'ps1' | 'msdos' | 'zx_spectrum'
+     system: 'arcade', // Choose: 'arcade' | 'c64' | 'bbc_micro' | 'apple_ii' | 'gameboy' | 'gba_sp' | 'ps1' | 'msdos' | 'zx_spectrum'
      systemName: { nl: 'Arcade Hal', en: 'Arcade Cabinets' },
      genre: 'shooter', // Choose: 'action' | 'platform' | 'puzzle' | 'racer' | 'shooter' | 'sports' | 'adventure'
      genreName: { nl: 'Shooter', en: 'Shooter' },
-     category: 'arcade', // Choose: 'arcade' | 'computer' | 'portable' | 'adventure'
+     category: 'arcade', // Choose: 'arcade' | 'computer' | 'portable' | 'adventure' | 'apple_ii'
      title: 'MY NEW GAME',
      subtitle: { nl: 'Een legendarische retro ruimte-shooter', en: 'A legendary retro space shooter' },
      creator: 'Developer Name / Publisher Name',

@@ -68,8 +68,8 @@ export const ProjectInfoModal: React.FC<ProjectInfoModalProps> = ({
               </div>
               <p className="text-xs font-mono text-neutral-400 mt-0.5">
                 {isEn
-                  ? '35 historic games, custom engines & Web Audio synthesizers'
-                  : '35 historische games, eigen engines & Web Audio synthesizers'}
+                  ? `${GAMES_METADATA.length} historic games, custom engines & Web Audio synthesizers`
+                  : `${GAMES_METADATA.length} historische games, eigen engines & Web Audio synthesizers`}
               </p>
             </div>
           </div>
@@ -122,7 +122,7 @@ export const ProjectInfoModal: React.FC<ProjectInfoModalProps> = ({
             }`}
           >
             <Gamepad2 className="w-3.5 h-3.5 text-amber-400" />
-            <span>{isEn ? '35 Games (1972-2011)' : '35 Games (1972-2011)'}</span>
+            <span>{`${GAMES_METADATA.length} Games (1972-2011)`}</span>
           </button>
 
           <button
@@ -171,7 +171,7 @@ export const ProjectInfoModal: React.FC<ProjectInfoModalProps> = ({
               {/* 4 Stat Badges */}
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 font-mono text-center">
                 <div className="p-3 rounded-xl bg-neutral-900 border border-neutral-800">
-                  <div className="text-xl font-black text-yellow-400">35</div>
+                  <div className="text-xl font-black text-yellow-400">{GAMES_METADATA.length}</div>
                   <div className="text-[10px] text-neutral-400 uppercase mt-0.5">{isEn ? 'Playable Games' : 'Speelbare Games'}</div>
                 </div>
                 <div className="p-3 rounded-xl bg-neutral-900 border border-neutral-800">
@@ -223,8 +223,8 @@ export const ProjectInfoModal: React.FC<ProjectInfoModalProps> = ({
                 </div>
                 <p className="text-neutral-300 leading-relaxed">
                   {isEn
-                    ? 'All 35 games, physics engines, and audio synthesizers were created from scratch with AI coding models. As a result, implementation depth naturally varies across titles:'
-                    : 'Alle 35 games, fysica-engines en audiosynthesizers zijn vanaf nul opgebouwd in samenwerking met AI-modellen. Daardoor verschilt de diepgang en het detailniveau per spel:'}
+                    ? `All ${GAMES_METADATA.length} games, physics engines, and audio synthesizers were created from scratch with AI coding models. As a result, implementation depth naturally varies across titles:`
+                    : `Alle ${GAMES_METADATA.length} games, fysica-engines en audiosynthesizers zijn vanaf nul opgebouwd in samenwerking met AI-modellen. Daardoor verschilt de diepgang en het detailniveau per spel:`}
                 </p>
                 <div className="grid sm:grid-cols-2 gap-2 text-[11px] font-sans">
                   <div className="p-2.5 rounded-lg bg-black/60 border border-emerald-900/50 space-y-1">
@@ -317,7 +317,7 @@ export const ProjectInfoModal: React.FC<ProjectInfoModalProps> = ({
           {activeTab === 'games' && (
             <div className="space-y-3 animate-in fade-in duration-150">
               <div className="flex items-center justify-between font-mono text-xs text-neutral-400">
-                <span>{isEn ? '35 Playable Historic Recreations' : '35 Speelbare Historische Recreaties'}</span>
+                <span>{isEn ? `${GAMES_METADATA.length} Playable Historic Recreations` : `${GAMES_METADATA.length} Speelbare Historische Recreaties`}</span>
                 <span className="text-amber-400 font-bold">1972 — 2011</span>
               </div>
 

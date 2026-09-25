@@ -126,6 +126,9 @@ export class DonkeyKongEngine {
   public facing: 'left' | 'right' = 'right';
   public isGrounded: boolean = true;
   public isJumping: boolean = false;
+  public jumpTakeoffY: number = 236;
+  public fallStartY: number = 236;
+  public currentElevator: Elevator | null = null;
   public isClimbing: boolean = false;
   public climbingLadder: Ladder | null = null;
   public isHammerActive: boolean = false;
@@ -356,11 +359,14 @@ export class DonkeyKongEngine {
       { x1: 0, y1: 184, x2: 64, y2: 184 },
       // Left side mid-high platform
       { x1: 0, y1: 126, x2: 64, y2: 126 },
+      // Center stepping girders between the two elevator shafts
+      { x1: 88, y1: 184, x2: 100, y2: 184 },
+      { x1: 88, y1: 126, x2: 100, y2: 126 },
       // Pauline perch top left
       { x1: 16, y1: 34, x2: 74, y2: 34 },
       // Right side mid-platforms
-      { x1: 140, y1: 184, x2: 224, y2: 184 },
-      { x1: 140, y1: 126, x2: 224, y2: 126 },
+      { x1: 126, y1: 184, x2: 224, y2: 184 },
+      { x1: 126, y1: 126, x2: 224, y2: 126 },
       // Top DK catwalk
       { x1: 120, y1: 68, x2: 224, y2: 68 },
     ];
@@ -595,8 +601,8 @@ export class DonkeyKongEngine {
 
   private updateMario(keys: { left: boolean; right: boolean; up: boolean; down: boolean; jump: boolean; hammer: boolean }) {
     const moveSpeed = 1.25;
-    const gravity = 0.32;
-    const jumpPower = -4.8;
+    const gravity = 0.28;
+    const jumpPower = -3.2; // Authentic arcade jump height: ~18px (cannot leap to tier 34px above)
 
     // Check if on ladder
     const ladderUnderneath = this.findLadderNear(this.px, this.py);
@@ -604,6 +610,7 @@ export class DonkeyKongEngine {
     if (this.isClimbing) {
       this.pvx = 0;
       this.pvy = 0;
+      this.currentElevator = null;
 
       if (keys.up) {
         this.py -= 0.9;
@@ -640,6 +647,7 @@ export class DonkeyKongEngine {
         this.px = ladderUnderneath.x;
         this.pvx = 0;
         this.pvy = 0;
+        this.currentElevator = null;
         return;
       } else if (keys.down && this.py < ladderUnderneath.bottomY - 4) {
         this.isClimbing = true;
@@ -647,6 +655,7 @@ export class DonkeyKongEngine {
         this.px = ladderUnderneath.x;
         this.pvx = 0;
         this.pvy = 0;
+        this.currentElevator = null;
         return;
       }
     }
@@ -680,18 +689,15 @@ export class DonkeyKongEngine {
       }
     }
 
-    // Jumping
+    // Jumping (Hammer prohibits jumping)
     if (keys.jump && this.isGrounded && !this.isHammerActive) {
       this.pvy = jumpPower;
       this.isGrounded = false;
       this.isJumping = true;
+      this.jumpTakeoffY = this.py;
+      this.fallStartY = this.py;
+      this.currentElevator = null;
       donkeyKongAudio.playJump();
-    }
-
-    // Apply Gravity
-    if (!this.isGrounded) {
-      this.pvy += gravity;
-      if (this.pvy > 6) this.pvy = 6;
     }
 
     // Move X
@@ -699,17 +705,74 @@ export class DonkeyKongEngine {
     if (this.px < 8) this.px = 8;
     if (this.px > VIRTUAL_WIDTH - 8) this.px = VIRTUAL_WIDTH - 8;
 
-    // Move Y & Floor Collision
-    this.py += this.pvy;
+    // Check elevator detachment if player walked horizontally off the elevator
+    if (this.currentElevator) {
+      if (Math.abs(this.px - this.currentElevator.x) > 13) {
+        this.currentElevator = null;
+      }
+    }
 
-    const floor = this.getFloorHeightAt(this.px, this.py);
-    if (floor !== null && this.py >= floor - 1 && this.py <= floor + 6 && this.pvy >= 0) {
-      this.py = floor;
-      this.pvy = 0;
-      this.isGrounded = true;
-      this.isJumping = false;
-    } else if (floor !== null && this.py < floor - 1) {
-      this.isGrounded = false;
+    // Follow Elevator if grounded on one
+    if (this.isGrounded && this.currentElevator && this.stage === '75m') {
+      this.py = this.currentElevator.y;
+    }
+
+    // Check if player walked off a ledge or elevator into thin air
+    if (this.isGrounded) {
+      if (this.currentElevator) {
+        if (Math.abs(this.px - this.currentElevator.x) > 13) {
+          this.currentElevator = null;
+          this.isGrounded = false;
+          this.fallStartY = this.py;
+          this.pvy = 0.5; // Start falling immediately!
+        }
+      } else {
+        const floorCheck = this.getFloorHeightAt(this.px, this.py);
+        if (floorCheck === null || Math.abs(floorCheck - this.py) > 5) {
+          this.isGrounded = false;
+          this.fallStartY = this.py;
+          this.currentElevator = null;
+          this.pvy = 0.5; // Start falling immediately!
+        } else {
+          // Snap tightly to sloped girder while walking
+          this.py = floorCheck;
+        }
+      }
+    }
+
+    // Apply Gravity and Vertical Movement
+    if (!this.isGrounded) {
+      this.pvy += gravity;
+      if (this.pvy > 5) this.pvy = 5;
+      this.py += this.pvy;
+
+      // Check Floor Collision when descending
+      if (this.pvy >= 0) {
+        const floor = this.getFloorHeightAt(this.px, this.py, this.isJumping, this.jumpTakeoffY);
+
+        if (floor !== null && this.py >= floor - 4 && this.py <= floor + 6) {
+          // Check lethal fall distance: in arcade DK, falling > 40px is fatal!
+          const fallDistance = this.py - this.fallStartY;
+          if (fallDistance > 40 && !this.isJumping) {
+            this.py = floor;
+            this.killMario();
+            return;
+          }
+
+          this.py = floor;
+          this.pvy = 0;
+          this.isGrounded = true;
+          this.isJumping = false;
+
+          // Check if landed on an elevator (75m)
+          if (this.stage === '75m') {
+            const elev = this.elevators.find(e => Math.abs(this.px - e.x) <= 13 && Math.abs(floor - e.y) < 4);
+            this.currentElevator = elev || null;
+          } else {
+            this.currentElevator = null;
+          }
+        }
+      }
     }
 
     // Fall death below screen
@@ -877,23 +940,33 @@ export class DonkeyKongEngine {
 
   private updateElevators() {
     for (const e of this.elevators) {
-      e.y += e.dir * 0.8;
+      e.y += e.dir * 0.75;
+
+      // Handle wrapping and crush/pit fatalities
       if (e.dir === -1 && e.y < e.minY) {
+        if (this.currentElevator === e) {
+          this.killMario(); // Crushed against top beam!
+          return;
+        }
         e.y = e.maxY;
       } else if (e.dir === 1 && e.y > e.maxY) {
+        if (this.currentElevator === e) {
+          this.killMario(); // Plunged into the pit!
+          return;
+        }
         e.y = e.minY;
       }
 
-      // If Mario is standing on this elevator, move him with it
+      // If Mario is standing on this elevator, keep his vertical position locked to the platform
       if (
         this.isGrounded &&
-        Math.abs(this.px - e.x) < 14 &&
-        Math.abs(this.py - e.y) < 5
+        this.currentElevator === e
       ) {
-        this.py = e.y;
-        // If elevator reaches top/bottom extremes, Mario falls off
-        if (e.y <= e.minY + 2 || e.y >= e.maxY - 2) {
-          this.isGrounded = false;
+        // If Mario walked off the platform horizontally, detach him
+        if (Math.abs(this.px - e.x) > 13) {
+          this.currentElevator = null;
+        } else {
+          this.py = e.y;
         }
       }
     }
@@ -1111,19 +1184,57 @@ export class DonkeyKongEngine {
     });
   }
 
-  public getFloorHeightAt(x: number, y: number): number | null {
-    let closestFloor: number | null = null;
-    let minDiff = 999;
+  public getFloorHeightAt(x: number, y: number, isJumping: boolean = false, jumpTakeoffY: number = 0): number | null {
+    // 1. In Stage 100m, check if over a removed rivet (gap in girder)
+    if (this.stage === '100m') {
+      for (const r of this.rivets) {
+        if (r.removed && Math.abs(x - r.x) < 8 && Math.abs(y - r.y) < 10) {
+          return null; // Empty hole where rivet was popped!
+        }
+      }
+    }
 
+    let closestFloor: number | null = null;
+    let minDistance = 999;
+
+    // 2. Check Static platforms
     for (const p of this.platforms) {
-      if (x >= Math.min(p.x1, p.x2) - 2 && x <= Math.max(p.x1, p.x2) + 2) {
+      if (x >= Math.min(p.x1, p.x2) - 1 && x <= Math.max(p.x1, p.x2) + 1) {
         const ratio = (x - p.x1) / (p.x2 - p.x1 || 1);
         const floorY = p.y1 + ratio * (p.y2 - p.y1);
 
-        const diff = floorY - y;
-        if (diff >= -4 && diff < minDiff && diff <= 16) {
-          minDiff = diff;
-          closestFloor = floorY;
+        // Crucial anti-ceiling rule: during a jump, Mario can NEVER land on a girder above his takeoff point!
+        if (isJumping && floorY < jumpTakeoffY - 3) {
+          continue;
+        }
+
+        const verticalDist = floorY - y;
+        // Accept floor if it's within realistic landing/standing range (-6px penetrated to +12px below feet)
+        if (verticalDist >= -6 && verticalDist <= 14) {
+          const absDist = Math.abs(verticalDist);
+          if (absDist < minDistance) {
+            minDistance = absDist;
+            closestFloor = floorY;
+          }
+        }
+      }
+    }
+
+    // 3. Check Elevators (75m moving platforms)
+    if (this.stage === '75m') {
+      for (const e of this.elevators) {
+        if (x >= e.x - 12 && x <= e.x + 12) {
+          if (isJumping && e.y < jumpTakeoffY - 3) {
+            continue;
+          }
+          const verticalDist = e.y - y;
+          if (verticalDist >= -6 && verticalDist <= 14) {
+            const absDist = Math.abs(verticalDist);
+            if (absDist < minDistance) {
+              minDistance = absDist;
+              closestFloor = e.y;
+            }
+          }
         }
       }
     }

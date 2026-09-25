@@ -5,7 +5,7 @@
 
 import React, { useState } from 'react';
 import { GameMetadata, Language } from '../i18n/lobbyTranslations';
-import { Play, Sparkles, Trophy, Info, Eye } from 'lucide-react';
+import { Play, Sparkles, Trophy, Info, Eye, Calendar } from 'lucide-react';
 import { arcadeHallAudio } from '../utils/arcadeHallAudio';
 import { haptics } from '../utils/haptics';
 
@@ -14,7 +14,8 @@ interface ArcadeFloorViewProps {
   lang: Language;
   onLaunchGame: (gameId: GameMetadata['id']) => void;
   onOpenDossier: (gameId: GameMetadata['id']) => void;
-  highScores: Record<string, { score: number | string; initials: string }>;
+  highScores: Record<string, { score: number | string; initials: string; date?: string }>;
+  highlightedGameId?: string | null;
 }
 
 export const ArcadeFloorView: React.FC<ArcadeFloorViewProps> = ({
@@ -22,9 +23,16 @@ export const ArcadeFloorView: React.FC<ArcadeFloorViewProps> = ({
   lang,
   onLaunchGame,
   onOpenDossier,
-  highScores
+  highScores,
+  highlightedGameId
 }) => {
-  const [selectedCabinet, setSelectedCabinet] = useState<GameMetadata['id']>(games[0]?.id || 'pacman');
+  const [selectedCabinet, setSelectedCabinet] = React.useState<GameMetadata['id']>(games[0]?.id || 'pacman');
+
+  React.useEffect(() => {
+    if (highlightedGameId) {
+      setSelectedCabinet(highlightedGameId);
+    }
+  }, [highlightedGameId]);
 
   const selectedGame = games.find(g => g.id === selectedCabinet) || games[0];
   const scoreInfo = selectedGame ? highScores[selectedGame.id] : null;
@@ -283,10 +291,29 @@ export const ArcadeFloorView: React.FC<ArcadeFloorViewProps> = ({
                 <span className="text-neutral-400">Framerate:</span>
                 <span className="text-emerald-400 font-bold">{selectedGame.specs.fps}</span>
               </div>
-              <div className="flex justify-between">
+              <div className="flex justify-between border-b border-neutral-850 pb-1">
                 <span className="text-neutral-400">Audio:</span>
                 <span className="text-yellow-300 font-bold">{selectedGame.specs.soundChip}</span>
               </div>
+              {highScores[selectedGame.id] && (
+                <div className="flex justify-between items-center pt-0.5">
+                  <span className="text-neutral-400 flex items-center gap-1">
+                    <Trophy className="w-3 h-3 text-amber-400" />
+                    Record:
+                  </span>
+                  <div className="flex items-center gap-1.5">
+                    <span className="text-amber-400 font-bold">
+                      {highScores[selectedGame.id].score.toLocaleString()} ({highScores[selectedGame.id].initials})
+                    </span>
+                    {highScores[selectedGame.id].date && (
+                      <span className="text-[9px] text-neutral-500 font-mono flex items-center gap-0.5">
+                        <Calendar className="w-2.5 h-2.5 text-neutral-600" />
+                        {highScores[selectedGame.id].date}
+                      </span>
+                    )}
+                  </div>
+                </div>
+              )}
             </div>
 
             <div className="flex items-center gap-2 pt-2">

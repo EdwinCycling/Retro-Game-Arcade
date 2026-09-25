@@ -1,15 +1,15 @@
 export type Language = 'nl' | 'en';
 
 export interface GameMetadata {
-  id: 'pacman' | 'space_invaders' | 'donkey_kong' | 'demon_attack' | 'repton' | 'eindeloos' | 'frogger' | 'chuckie_egg' | 'frak' | 'arcadians' | 'rocket_raid' | 'qbert' | 'outrun' | 'tetris' | 'kings_quest' | 'space_quest' | 'pong' | 'battle_chess' | 'mario' | 'super_mario' | 'wolfenstein' | 'doom' | 'duke' | 'half_life' | 'c64_pinball' | 'temple_run' | 'lemmings' | 'manic_miner' | 'monster_maze' | 'asteroids' | 'prince' | 'double_dragon' | 'snake' | 'zaxxon' | 'exile' | 'impossible_mission' | 'mario_land' | 'tetris_dmg' | 'dr_mario' | 'metroid_2' | 'kirby_dream_land' | 'mario_land_2' | 'zelda_links_awakening' | 'donkey_kong_94' | 'pokemon_red' | 'wario_land_2' | 'gba_sp' | 'ps1' | 'pokemon_emerald' | 'mario_advance' | 'zelda_minish' | 'crash_bandicoot' | 'ridge_racer';
+  id: 'pacman' | 'space_invaders' | 'donkey_kong' | 'demon_attack' | 'repton' | 'eindeloos' | 'frogger' | 'chuckie_egg' | 'frak' | 'arcadians' | 'rocket_raid' | 'qbert' | 'outrun' | 'tetris' | 'kings_quest' | 'space_quest' | 'pong' | 'battle_chess' | 'mario' | 'super_mario' | 'wolfenstein' | 'doom' | 'duke' | 'half_life' | 'c64_pinball' | 'temple_run' | 'lemmings' | 'manic_miner' | 'monster_maze' | 'asteroids' | 'prince' | 'double_dragon' | 'snake' | 'zaxxon' | 'exile' | 'impossible_mission' | 'mario_land' | 'tetris_dmg' | 'dr_mario' | 'metroid_2' | 'kirby_dream_land' | 'mario_land_2' | 'zelda_links_awakening' | 'donkey_kong_94' | 'pokemon_red' | 'wario_land_2' | 'gba_sp' | 'ps1' | 'pokemon_emerald' | 'mario_advance' | 'zelda_minish' | 'crash_bandicoot' | 'ridge_racer' | 'spy_fox' | 'night_driver' | 'topografie_europa' | 'lode_runner' | 'arkanoid' | 'galaga' | 'sudoku' | 'battleship' | 'mastermind' | 'patience' | 'hearts' | 'freecell' | 'spider_solitaire' | 'klaverjassen' | 'blackjack' | 'bridge' | 'radarsoft_3d_ttt' | 'stratego' | 'kamertje_verhuren' | 'connect_four' | 'hangman';
   year: number;
   yearDisplay: string;
   yearIcon: string;
-  system: 'bbc_micro' | 'arcade' | 'c64' | 'atari_2600' | 'ibm_pc' | 'mobile' | 'zx_spectrum' | 'zx81' | 'dos_pc' | 'gameboy' | 'gba_sp' | 'ps1';
+  system: 'bbc_micro' | 'arcade' | 'c64' | 'atari_2600' | 'ibm_pc' | 'mobile' | 'zx_spectrum' | 'zx81' | 'dos_pc' | 'gameboy' | 'gba_sp' | 'ps1' | 'apple_ii';
   systemName: { nl: string; en: string };
   genre: 'space' | 'maze' | 'platform' | 'simulation' | 'puzzle' | 'adventure' | 'runner' | 'horror' | 'cinematic_platform' | 'beat_em_up' | 'snake' | 'racing' | 'physics_sandbox' | 'rpg' | 'action';
   genreName: { nl: string; en: string };
-  category?: 'arcade' | 'adventure' | 'c64' | 'mobile' | 'spectrum' | 'zx81' | 'handheld' | 'portable';
+  category?: 'arcade' | 'adventure' | 'c64' | 'mobile' | 'spectrum' | 'zx81' | 'handheld' | 'portable' | 'brain_logic' | 'card_games';
   categoryName?: { nl: string; en: string };
   title: string;
   subtitle: { nl: string; en: string };
@@ -728,8 +728,8 @@ export const GAMES_METADATA: GameMetadata[] = [
     systemName: { nl: 'MS-DOS EGA / Amiga (1988)', en: 'MS-DOS EGA / Amiga (1988)' },
     genre: 'puzzle',
     genreName: { nl: 'Geanimeerd Schaak / Strategie', en: 'Animated Chess / Strategy' },
-    category: 'arcade',
-    categoryName: { nl: 'Arcade Hal', en: 'Arcade Hall' },
+    category: 'brain_logic',
+    categoryName: { nl: 'Denksport, Bord- & Logica', en: 'Brain, Board & Logic' },
     title: 'BATTLE CHESS',
     subtitle: { nl: 'De Legendarische Geanimeerde Schaak Oorlog • Brian Fargo & Todd Camasta', en: 'The Legendary Animated Chess Battle • Brian Fargo & Todd Camasta' },
     creator: 'Interplay • Brian Fargo',
@@ -2379,16 +2379,1067 @@ export const GAMES_METADATA: GameMetadata[] = [
       media: 'GBA Multi-Cartridge + Battery SRAM (AGB-BZME-USA)'
     },
     coinPrice: 'Li-Ion Accu'
+  },
+  {
+    id: 'spy_fox',
+    year: 1997,
+    yearDisplay: '1997',
+    yearIcon: '🦊',
+    system: 'dos_pc',
+    systemName: { nl: 'PC CD-ROM & SCUMM', en: 'PC CD-ROM & SCUMM' },
+    genre: 'adventure',
+    genreName: { nl: 'Point & Click Avontuur', en: 'Point & Click Adventure' },
+    category: 'adventure',
+    categoryName: { nl: 'Grafische Avonturen & SCUMM', en: 'Graphic Adventures & SCUMM' },
+    title: 'SPY FOX in "Dry Cereal"',
+    subtitle: { nl: 'Operatie Melkzuur • Humongous Entertainment • Ron Gilbert', en: 'Operation Dry Cereal • Humongous Entertainment • Ron Gilbert' },
+    creator: 'Ron Gilbert & Humongous Entertainment',
+    cabinetTheme: {
+      primaryColor: '#0284c7',
+      secondaryColor: '#0369a1',
+      neonColor: '#38bdf8',
+      glowBorder: 'rgba(56, 189, 248, 0.5)',
+      accentBg: 'from-sky-950 via-slate-900 to-black',
+      textColor: 'text-sky-400',
+      marqueeBg: 'bg-sky-900/60'
+    },
+    summary: {
+      nl: 'De ultieme humoristische point-and-click spionagedetective van Ron Gilbert (bedenker van Monkey Island en SCUMM). Infiltreer het Griekse eiland Acidophilus als de onberispelijk geklede Spy Fox, ontmasker William the Kid en red alle gekidnapte melkkoeien met ingenieuze spionage-gadgets!',
+      en: 'The definitive witty point-and-click spy detective by Ron Gilbert (creator of Monkey Island and SCUMM). Infiltrate the Greek isle of Acidophilus as the dapper Spy Fox in his crisp white tuxedo, foil William the Kid\'s dairy conspiracy, and rescue the world\'s milk with high-tech spy gadgets!'
+    },
+    highlights: {
+      nl: [
+        'Geëvolueerde SCUMM-engine met klassieke werkwoorden: Kijk Naar, Pak Op, Praat Met & Gebruik',
+        'Iconische spionage-gadgets: Spy Watch communicator, Laser-Tandenstoker en Spionagemunten',
+        'Legendarische Nederlandse nasynchronisatie door stemacteur Jan Nonhof als Spy Fox',
+        'Funky 70s geheime agenten jazz-synthesizer en levendige handgetekende VGA-animaties'
+      ],
+      en: [
+        'Evolved SCUMM adventure engine with classic action verbs: Look At, Pick Up, Talk To & Use',
+        'Iconic spy gadgetry: SPY Watch communicator, high-powered Laser Toothpick and SPY Coins',
+        'Humorous voice acting, witty environmental commentary, and charming character portraits',
+        'Funky 70s spy jazz soundtrack and vibrant hand-drawn VGA cartoon animation'
+      ]
+    },
+    specs: {
+      resolution: '320×200 256-Color VGA SCUMM Engine',
+      fps: '60 FPS Ultra-Vloeiende Point & Click Interactie',
+      soundChip: 'Procedural Web Audio Spy Jazz & Sound Effects',
+      media: 'Windows 95/98 / DOS CD-ROM (Humongous)'
+    },
+    coinPrice: '1 Spy Coin'
+  },
+  {
+    id: 'night_driver',
+    year: 1980,
+    yearDisplay: '1980 / 1983',
+    yearIcon: '🏎️',
+    system: 'apple_ii',
+    systemName: { nl: 'Apple IIe Computer', en: 'Apple IIe Computer' },
+    genre: 'racing',
+    genreName: { nl: '3D Nachtracer', en: '3D Night Racing' },
+    category: 'arcade',
+    categoryName: { nl: 'Microcomputer & Klassiekers', en: 'Microcomputer & Classics' },
+    title: 'NIGHT DRIVER',
+    subtitle: { nl: 'De Legendarische First-Person 3D Nachtracer op de Apple II', en: 'The Legendary First-Person 3D Night Racer on Apple II' },
+    creator: 'Bill Budge • Softape & California Pacific',
+    cabinetTheme: {
+      primaryColor: '#eab308',
+      secondaryColor: '#ca8a04',
+      neonColor: '#fde047',
+      glowBorder: 'rgba(234, 179, 8, 0.5)',
+      accentBg: 'from-amber-950 via-stone-900 to-black',
+      textColor: 'text-amber-400',
+      marqueeBg: 'bg-stone-800'
+    },
+    summary: {
+      nl: 'De legendarische first-person nachtelijke racer geprogrammeerd door de beroemde Bill Budge voor de Apple II. Scheur in het holst van de nacht over kronkelende wegen gemarkeerd door felle witte reflectorpalen. Vanwege de wereldwijde rage rondom de tv-serie Knight Rider in 1982/1983 noemden spelers in Nederland en Europa dit spel steevast "Night Rider"!',
+      en: 'The legendary first-person night driving game coded by famous Apple II engineer Bill Budge. Blast through the dark on twisting roads guided only by glowing roadside reflector pylons. When the TV show Knight Rider became an international sensation in 1982/1983, kids across Europe famously dubbed this beloved game "Night Rider"!'
+    },
+    highlights: {
+      nl: [
+        'Baanbrekende 60 FPS first-person 3D road physics geprogrammeerd in 6502 assembly',
+        'Iconische motorkap-cockpit, handgeschakelde 4-versnellingsbak en nachtelijke tegenliggers',
+        'Keuze tussen authentieke Apple Monitor II (P31 groen-fosfor) en Steve Wozniak\'s Hi-Res composite kleuren',
+        'Volledig nagebouwde Apple II 1-bit luidspreker physics voor motorgeluiden, bandengegier en crash-effecten'
+      ],
+      en: [
+        'Groundbreaking 60 FPS first-person pseudo-3D road physics in pure 6502 assembly',
+        'Iconic muscle-car hood cockpit, 4-speed manual gearbox, and oncoming headlights to dodge',
+        'Authentic toggle switch between Apple Monitor II (P31 green phosphor) and Hi-Res composite color',
+        'Procedural Web Audio synthesis replicating Apple II 1-bit speaker toggles for engine buzz, tire screech, and crunching crashes'
+      ]
+    },
+    specs: {
+      resolution: '280×192 Apple II Hi-Res Graphics (Green / Color)',
+      fps: '60.0 FPS Fixed 6502 Assembly Road Loop',
+      soundChip: 'Apple II 1-Bit Speaker Toggle ($C030)',
+      media: '5.25" Floppy Disk (Apple DOS 3.3)'
+    },
+    coinPrice: 'Apple IIe'
+  },
+  {
+    id: 'topografie_europa',
+    year: 1984,
+    yearDisplay: '1984',
+    yearIcon: '🚁',
+    system: 'c64',
+    systemName: { nl: 'Commodore 64', en: 'Commodore 64' },
+    genre: 'simulation',
+    genreName: { nl: 'Topografie Simulatie', en: 'Topography Simulation' },
+    category: 'c64',
+    categoryName: { nl: 'Commodore 64 & Amiga', en: 'Commodore 64 & Amiga' },
+    title: 'TOPOGRAFIE EUROPA',
+    subtitle: { nl: 'De Legendarische C64 Helikopter Topografie van Radarsoft', en: 'The Legendary C64 Helicopter Geography Classic by Radarsoft' },
+    creator: 'Cees Kramer & Roel Kramer • Radarsoft',
+    cabinetTheme: {
+      primaryColor: '#3b82f6',
+      secondaryColor: '#1d4ed8',
+      neonColor: '#60a5fa',
+      glowBorder: 'rgba(59, 130, 246, 0.5)',
+      accentBg: 'from-blue-950 via-slate-900 to-black',
+      textColor: 'text-blue-400',
+      marqueeBg: 'bg-blue-900'
+    },
+    summary: {
+      nl: 'De ultieme Nederlandse klassieker van Radarsoft (Cees Kramer & Roel Kramer) voor de Commodore 64! Stap in de helikopter op de heliport, stijg op en vlieg in vogelvlucht over de blinde kaart van Europa. Volg de instructies op je C64-scherm om steden, hoofdsteden, rivieren en gebergten te lokaliseren en land precies op het doelwit! Een generatie Nederlandse scholieren en C64-bezitters leerde hiermee aardrijkskunde.',
+      en: 'The quintessential Dutch classic by Radarsoft (Cees Kramer & Roel Kramer) for the Commodore 64! Step into your helicopter on the heliport, take off, and fly high over the unlabeled map of Europe. Follow the C64 mission teleprompter to locate European capitals, major cities, rivers, and mountains, and land precisely on target! A generation of 80s kids learned European geography playing this masterpiece.'
+    },
+    highlights: {
+      nl: [
+        'Volledig natuurgetrouwe C64 VIC-II kaart van Europa met getekende kusten, landsgrenzen, bergketens en rivieren',
+        'Vlieg met de helikopter, beheer je kerosinevoorraad en maak precisielandingen op steden of heliports',
+        'Authentieke Commodore 64 SID 6581 sound-effecten voor wiekgeronk, opstijgen, landen en de klassieke Radarsoft overwinningsfanfare',
+        'Vier spelmodi: Hoofdsteden van Europa, Belangrijke Havens & Steden, Rivieren & Natuur, en Vrije Vlucht Verkenning'
+      ],
+      en: [
+        'Faithfully recreated C64 VIC-II European map with hand-drawn coastlines, borders, mountain peaks, and flowing rivers',
+        'Pilot the helicopter, manage fuel consumption, and perform precision landings directly onto cities and heliports',
+        'Authentic Commodore 64 SID 6581 procedural sound effects for blade chops, takeoffs, touchdowns, and the Radarsoft victory fanfare',
+        'Four game modes: European Capitals, Major Ports & Cities, Rivers & Geography, and Free Flight Exploration'
+      ]
+    },
+    specs: {
+      resolution: '320×200 C64 VIC-II Hi-Res / Multicolor Display',
+      fps: '50.0 / 60.0 FPS PAL/NTSC Flight Engine',
+      soundChip: 'MOS Technology 6581 SID Sound Synthesizer',
+      media: '5.25" Commodore 1541 Floppy Disk / Datassette'
+    },
+    coinPrice: 'C64 Tape'
+  },
+  {
+    id: 'lode_runner',
+    year: 1983,
+    yearDisplay: '1983',
+    yearIcon: '🏃',
+    system: 'apple_ii',
+    systemName: { nl: 'Apple IIe Computer', en: 'Apple IIe Computer' },
+    genre: 'puzzle',
+    genreName: { nl: 'Puzzel-Platformer', en: 'Puzzle-Platformer' },
+    category: 'arcade',
+    categoryName: { nl: 'Apple II Klassiekers', en: 'Apple II Classics' },
+    title: 'LODE RUNNER',
+    subtitle: {
+      nl: 'De Baanbrekende Apple II Graaf- & Puzzel-Platformer van Doug Smith',
+      en: 'Doug Smith’s Groundbreaking Apple II Digging & Puzzle Platformer'
+    },
+    creator: 'Doug Smith • Brøderbund Software',
+    cabinetTheme: {
+      primaryColor: '#22c55e',
+      secondaryColor: '#15803d',
+      neonColor: '#4ade80',
+      glowBorder: 'rgba(34, 197, 94, 0.5)',
+      accentBg: 'from-emerald-950 via-slate-900 to-black',
+      textColor: 'text-emerald-400',
+      marqueeBg: 'bg-emerald-900'
+    },
+    summary: {
+      nl: 'Het meesterwerk van Doug Smith voor de Apple II uit 1983, uitgegeven door Brøderbund! Ren over platforms, klim langs ladders en slinger over stangen om al het goud van het Bungeling Rijk te stelen. Graaf tactische gaten links en rechts om monniken in de val te lokken, loop over hun hoofden heen en ontsnap via de geheime ladder. Een van de allereerste computerspellen met een ingebouwde level editor!',
+      en: 'Doug Smith’s 1983 Apple II tour-de-force, published by Brøderbund! Sprint across platforms, scale ladders, and swing hand-over-hand across overhead bars to reclaim the stolen gold from the Bungeling Empire. Vaporize brick floors left and right to trap pursuing guards, walk across their heads, and climb the escape ladder. One of the first games in computer history featuring a built-in level editor!'
+    },
+    highlights: {
+      nl: [
+        'Volledig natuurgetrouwe Apple II Hi-Res 280×192 graphics met NTSC kleurmodi (Groen Phosphor, Amber en 6-Color)',
+        'Graaf gaten links (Z) en rechts (C) in bakstenen vloeren met authentieke 1-bits Apple II speaker geluidssynthese',
+        'Slimme Bungeling monniken die goud meedragen, in gaten vallen en verpletterd worden wanneer stenen regenereren',
+        'Verschillende iconische puzzellevels en ondersteuning voor Gamepad, Touch controls en toetsenbord'
+      ],
+      en: [
+        'Faithfully recreated Apple II Hi-Res 280×192 graphics with P31 Green Phosphor, Amber, and Apple 6-Color modes',
+        'Tactical digging beams left (Z) and right (C) with authentic 1-bit Apple II speaker procedural sound effects',
+        'Bungeling guards that carry gold chests, fall into dug traps, and get crushed as bricks regenerate',
+        'Multiple iconic puzzle levels with full support for Gamepads, touch controls, and keyboards'
+      ]
+    },
+    specs: {
+      resolution: '280×192 Apple II Hi-Res Graphic Display',
+      fps: '60.0 FPS Fixed 6502 Machine Loop',
+      soundChip: 'Apple II 1-Bit Soft-Switch Speaker ($C030)',
+      media: '5.25" Apple Disk II Floppy Disk (DOS 3.3)'
+    },
+    coinPrice: 'Apple Disk'
+  },
+  {
+    id: 'arkanoid',
+    year: 1986,
+    yearDisplay: '1986',
+    yearIcon: '🧱',
+    system: 'arcade',
+    systemName: { nl: 'Speelhal Coin-Op', en: 'Arcade Coin-Op' },
+    genre: 'action',
+    genreName: { nl: 'Bat & Ball / Brick Breaker', en: 'Bat & Ball / Brick Breaker' },
+    category: 'arcade',
+    categoryName: { nl: 'Arcade Hal Klassiekers', en: 'Arcade Hall Classics' },
+    title: 'ARKANOID',
+    subtitle: {
+      nl: 'De Ultieme Taito Steen-Sloper & Steve Jobs/Wozniak Breakout Erfgenaam',
+      en: 'The Ultimate Taito Brick Breaker & Steve Jobs/Wozniak Breakout Heir'
+    },
+    creator: 'Taito (1986) • Akira Fujita & Yasumasa Sasabe | Atari Breakout (1976) • Steve Wozniak & Steve Jobs',
+    cabinetTheme: {
+      primaryColor: '#06b6d4',
+      secondaryColor: '#0891b2',
+      neonColor: '#22d3ee',
+      glowBorder: 'rgba(6, 182, 212, 0.5)',
+      accentBg: 'from-cyan-950 via-slate-900 to-black',
+      textColor: 'text-cyan-400',
+      marqueeBg: 'bg-cyan-950'
+    },
+    summary: {
+      nl: 'De koning aller bat-and-ball spellen! Bestuur het Vaus ruimteschip om de energiebal tegen kleurrijke muren van stenen te kaatsen. Vang de 7 legendarische power-up capsules (Laser, Expand, Catch, Slow, Disruption, Break en Player), vernietig dalende geometrische aliens en vecht je een weg naar de mysterieuze eindbaas DOH!',
+      en: 'The undisputed king of the brick-breaking genre! Pilot the Vaus energy vessel to bounce cosmic spheres against layered walls of chromatic bricks. Snag all 7 iconic power-up capsules (Laser, Expand, Catch, Slow, Disruption, Break, Player), blast descending alien minions, and smash your way to the enigmatic final boss DOH!'
+    },
+    highlights: {
+      nl: [
+        'Vaus ruimteschip met dynamische bal-kaatshoeken en sublieme precisiebesturing',
+        '7 Iconische Power-Up capsules: Laser kanonnen (L), Peddel vergroten (E), Sticky Catch (C), Vertraging (S), Multi-ball (D), Warp (B) en Extra Leven (P)',
+        'Verschillende lagen met normale stenen, 2-hit zilveren blokken en onverwoestbaar goud',
+        'Authentieke procedurale Web Audio effecten en volledige ondersteuning voor Xbox controller, muis/touch en toetsenbord'
+      ],
+      en: [
+        'Vaus spacecraft featuring dynamic collision angle physics and razor-sharp steering',
+        '7 Iconic Power-Up pills: Laser cannons (L), Expand width (E), Sticky catch (C), Slowdown (S), Multi-ball (D), Warp portal (B), and Extra life (P)',
+        'Layered challenges with chromatic bricks, 2-hit silver blocks, and indestructible gold barriers',
+        'Authentic procedural Web Audio synthesis with full support for Xbox gamepads, mouse drag, touch swipes, and keyboards'
+      ]
+    },
+    specs: {
+      resolution: '224×256 Arcade Raster CRT Layout',
+      fps: '60.0 FPS Fixed Hardware Cycle',
+      soundChip: 'General Instrument AY-3-8910 PSG Chip',
+      media: 'Taito Arcade ROM Board'
+    },
+    coinPrice: '1 Coin / Play'
+  },
+  {
+    id: 'galaga',
+    year: 1981,
+    yearDisplay: '1981',
+    yearIcon: '🚀',
+    system: 'arcade',
+    systemName: { nl: 'Speelhal Coin-Op', en: 'Arcade Coin-Op' },
+    genre: 'space',
+    genreName: { nl: 'Fixed Shooter / Space Invader', en: 'Fixed Shooter / Space Invader' },
+    category: 'arcade',
+    categoryName: { nl: 'Arcade Hal Klassiekers', en: 'Arcade Hall Classics' },
+    title: 'GALAGA',
+    subtitle: {
+      nl: 'De Onbetwiste Koning van de Duikvlucht-Shooters & Dual Fighter Tractor Beam',
+      en: 'The Undisputed King of Dive-Bombing Space Shooters & Dual Fighter Tractor Beam'
+    },
+    creator: 'Namco (1981) • Shigeru Yokoyama & Nobuyuki Ohnogi',
+    cabinetTheme: {
+      primaryColor: '#ef4444',
+      secondaryColor: '#3b82f6',
+      neonColor: '#fbbf24',
+      glowBorder: 'rgba(239, 68, 68, 0.5)',
+      accentBg: 'from-blue-950 via-slate-900 to-black',
+      textColor: 'text-red-400',
+      marqueeBg: 'bg-red-950'
+    },
+    summary: {
+      nl: 'Het revolutionaire vervolg op Galaxian en een van de meest geliefde arcade-shooters aller tijden! Bestuur de Fighter tegen zwermen insectoïde buitenaardse wezens (Zako-bijen, Goei-vlinders en Boss Galaga’s) die in adembenemende formaties en duikvluchten aanvallen. Laat je schip vrijwillig ontvoeren door de mysterieuze blauwe tractor beam van de Boss Galaga, bevrijd hem in de volgende aanvalsgolf en vecht door met de oppermachtige DUAL FIGHTER met dubbele vuurkracht!',
+      en: 'The revolutionary follow-up to Galaxian and one of the greatest arcade space shooters in gaming history! Pilot the Fighter starship against swarms of insectoid aliens (Zako bees, Goei butterflies, and Commander Boss Galagas) attacking in graceful looping dive-bombs. Risk getting trapped by the Boss Galaga’s pulsating blue tractor beam to later rescue your captive ship and unlock the formidable DUAL FIGHTER with twin plasma cannons!'
+    },
+    highlights: {
+      nl: [
+        'Legendarische "Dual Fighter" modus: verdubbel je vuurkracht door je gevangen schip strategisch te bevrijden uit de tractor beam',
+        'Vloeiende duikvluchten in formaties met Boss Galaga’s, Goei-vlinders en Zako-bijen',
+        'Iconische Challenging Stages (elke 3 levels) met speciale formaties en "PERFECT 10,000 PTS" bonus',
+        'Authentieke RGB-kleurenpaletten, sterrenhemel parallax en iconische procedurale chiptune fanfares'
+      ],
+      en: [
+        'Legendary "Dual Fighter" mechanic: double your firepower by tactically rescuing your captured ship from the tractor beam',
+        'Smooth looping dive-bomb attack curves with Boss Galagas, Goei butterflies, and Zako bees',
+        'Iconic Challenging Stages (every 3 stages) featuring 40 trick-flying aliens and "PERFECT 10,000 PTS" bonuses',
+        'Authentic RGB color palettes, scrolling starfield parallax, and iconic procedural chiptune audio fanfares'
+      ]
+    },
+    specs: {
+      resolution: '224×288 Vertical Raster CRT Display',
+      fps: '60.6 FPS Z80 Arcade Loop',
+      soundChip: 'Namco 3-Channel Custom WSG (Waveform Sound Generator)',
+      media: 'Namco Galaga Arcade PCB Board'
+    },
+    coinPrice: '1 Coin / Play'
+  },
+  {
+    id: 'sudoku',
+    year: 1984,
+    yearDisplay: '1984',
+    yearIcon: '🔢',
+    system: 'ibm_pc',
+    systemName: { nl: 'MS-DOS & Nikoli (1984)', en: 'MS-DOS & Nikoli (1984)' },
+    genre: 'puzzle',
+    genreName: { nl: 'Denksport / Cijferlogica', en: 'Brain Sport / Number Logic' },
+    category: 'brain_logic',
+    categoryName: { nl: 'Denksport, Bord- & Logica', en: 'Brain, Board & Logic' },
+    title: 'SUDOKU',
+    subtitle: { nl: 'Het Wereldwijde Cijferlogica & Breintraining Meesterwerk', en: 'The Global Number Logic & Brain Training Masterpiece' },
+    creator: 'Howard Garns (1979) • Maki Kaji (Nikoli, 1984)',
+    cabinetTheme: {
+      primaryColor: '#d97706',
+      secondaryColor: '#b45309',
+      neonColor: '#fbbf24',
+      glowBorder: 'rgba(217, 119, 6, 0.6)',
+      accentBg: 'from-amber-950 via-stone-900 to-black',
+      textColor: 'text-amber-400',
+      marqueeBg: 'bg-amber-950'
+    },
+    summary: {
+      nl: 'De ultieme logische denkpuzzel ter wereld! Oorspronkelijk bedacht in 1979 door Howard Garns als "Number Place" en in 1984 door Maki Kaji (Nikoli) omgedoopt tot Sudoku. Vul het 9×9 raster zodanig in dat elke rij, kolom en elk 3×3 blok alle cijfers van 1 tot en met 9 precies éénmaal bevat. Gespeeld op een sfeervolle klassieke houten leestafel met krantenpapier, inclusief potloodnotities (pencil notes), 4 moeilijkheidsgraden, slimme hints en rustgevende chiptunes!',
+      en: 'The world’s definitive number logic puzzle! Conceived in 1979 by Howard Garns as "Number Place" and famously christened Sudoku by Maki Kaji (Nikoli) in 1984. Complete the 9×9 grid so that every row, column, and 3×3 box contains the numbers 1 through 9 exactly once. Played across a charming rustic mahogany table with authentic newsprint paper, featuring candidate pencil notes, 4 difficulty levels, smart hints, and peaceful chiptune sounds!'
+    },
+    highlights: {
+      nl: [
+        'Echte wiskundige 9×9 backtracking puzzelgenerator met gegarandeerd één unieke oplossing',
+        '4 moeilijkheidsgraden: Makkelijk, Gemiddeld, Moeilijk en Expert',
+        'Klassiek Krantenpapier thema met potloodkandidaatnotities (Pencil Notes) en gum',
+        'Slimme deductiehints, zetgeschiedenis (Undo) en keuze tussen Vrije Zen-modus of 3 Levens'
+      ],
+      en: [
+        'Pure mathematical 9×9 backtracking puzzle generator with guaranteed unique solutions',
+        '4 difficulty tiers: Easy, Medium, Hard, and Expert',
+        'Classic Newsprint Paper theme with candidate pencil notes and tactile eraser',
+        'Smart deductive hints, full move history (Undo), and choice between Zen Mode or 3 Strikes'
+      ]
+    },
+    specs: {
+      resolution: '9×9 Grid (81 Cells, 9 3×3 Sub-Grids)',
+      fps: '60 FPS Tactile Desk Loop',
+      soundChip: 'Web Audio Procedural Pencil Scratch & Chimes',
+      media: 'The Daily Sudoku Newsprint & Dedicated LCD Handheld'
+    },
+    coinPrice: 'FREE PLAY'
+  },
+  {
+    id: 'battleship',
+    year: 1982,
+    yearDisplay: '1982',
+    yearIcon: '🚢',
+    system: 'ibm_pc',
+    systemName: { nl: 'Juegos & Co. (1982)', en: 'Juegos & Co. (1982)' },
+    genre: 'puzzle',
+    genreName: { nl: 'Logische Denksport / Zeeslag', en: 'Logic Brain Sport / Battleship' },
+    category: 'brain_logic',
+    categoryName: { nl: 'Denksport, Bord- & Logica', en: 'Brain, Board & Logic' },
+    title: 'ZEESLAG SOLITAIRE',
+    subtitle: { nl: 'De Iconische Wiskundige Vlootdeductie & Bimaru Puzzel', en: 'The Iconic Mathematical Fleet Deduction & Bimaru Puzzle' },
+    creator: 'Jaime Poniachik (1982) • WPC World Championship',
+    cabinetTheme: {
+      primaryColor: '#0891b2',
+      secondaryColor: '#0e7490',
+      neonColor: '#22d3ee',
+      glowBorder: 'rgba(8, 145, 178, 0.6)',
+      accentBg: 'from-cyan-950 via-slate-900 to-black',
+      textColor: 'text-cyan-400',
+      marqueeBg: 'bg-cyan-950'
+    },
+    summary: {
+      nl: 'De legendarische maritieme logische deductiepuzzel! In 1982 bedacht door de Argentijnse puzzelgrootmeester Jaime Poniachik als "Batalla Naval" en wereldwijd geliefd als Bimaru en Zeeslag Solitaire. Vind de geheime vloot (slagschip, kruisers, torpedobootjagers en onderzeeërs) met behulp van rij- en kolomtellingen. Schepen mogen elkaar NOOIT horizontaal, verticaal of diagonaal raken! Compleet met snelheidsbonus, strafpunten voor hints en fouten, en lokale topscores.',
+      en: 'The legendary maritime logic puzzle! Created in 1982 by Argentine puzzle grandmaster Jaime Poniachik as "Batalla Naval" and cherished worldwide as Bimaru and Battleship Solitaire. Deduce the hidden fleet (battleship, cruisers, destroyers, submarines) using row and column vessel totals. Crucially, ships may NEVER touch horizontally, vertically, or diagonally! Complete with speed bonuses, penalty deductions, and local leaderboards.'
+    },
+    highlights: {
+      nl: [
+        'Wiskundige solitaire vlootgenerator met unieke deductieve scheepsposities',
+        '3 speelniveaus: Makkelijk (8×8), Gemiddeld (8×8) en Expert Admiraal (10×10)',
+        'Authentiek marineblauw zeekaart-thema met watergolven en gouden scheepsankers',
+        'Strikte diagonale scheiding: geen twee scheepsdelen mogen elkaar ooit raken',
+        'Volledig geïntegreerd scoresysteem met snelheidsbonus, hintaftrek en lokaal vlootlogboek'
+      ],
+      en: [
+        'Pure mathematical solitaire fleet generator with deductive vessel coordinates',
+        '3 difficulty modes: Easy (8×8), Medium (8×8), and Expert Admiral (10×10)',
+        'Authentic nautical naval map theme with ocean waves and gilded ship anchors',
+        'Strict diagonal isolation: no two ship cells may touch each other under any condition',
+        'Full scoring engine with speed decay bonus, penalty deductions, and local hall of fame'
+      ]
+    },
+    specs: {
+      resolution: '8×8 / 10×10 Nautical Grid',
+      fps: '60 FPS Naval Chart Loop',
+      soundChip: 'Web Audio Water Splashes & Ship Sinking Fanfare',
+      media: 'Bimaru Puzzle Book & Naval Chart Solitaire'
+    },
+    coinPrice: 'FREE PLAY'
+  },
+  {
+    id: 'mastermind',
+    year: 1971,
+    yearDisplay: '1971',
+    yearIcon: '🧠',
+    system: 'ibm_pc',
+    systemName: { nl: 'Invicta Games / Jumbo (1971)', en: 'Invicta Games / Jumbo (1971)' },
+    genre: 'puzzle',
+    genreName: { nl: 'Logische Codebreker / Mastermind', en: 'Logic Codebreaker / Mastermind' },
+    category: 'brain_logic',
+    categoryName: { nl: 'Denksport, Bord- & Logica', en: 'Brain, Board & Logic' },
+    title: 'MASTERMIND',
+    subtitle: { nl: 'De Legendarische Kleuren-Codekraker & Deductie Klassieker', en: 'The Iconic Color Codebreaker & Logic Deduction Classic' },
+    creator: 'Mordecai Meirowitz (1970) • Invicta Plastics & Jumbo',
+    cabinetTheme: {
+      primaryColor: '#f59e0b',
+      secondaryColor: '#d97706',
+      neonColor: '#fbbf24',
+      glowBorder: 'rgba(245, 158, 11, 0.6)',
+      accentBg: 'from-amber-950 via-stone-900 to-black',
+      textColor: 'text-amber-400',
+      marqueeBg: 'bg-amber-950'
+    },
+    summary: {
+      nl: 'De ultieme logische deductie- en codekrakerklassieker! In 1970 uitgevonden door Mordecai Meirowitz, uitgegeven door Invicta Plastics en in Nederland immens populair gemaakt door Jumbo. Kraak de geheime kleurencombinatie achter het schildje met behulp van tactische feedbackpinnetjes (zwart voor juiste kleur én plek, wit voor juiste kleur op verkeerde plek). Met klassieke 4-pions en Super Mastermind 5-pions modus, instelbare duplicaten, procedurele chiptunes en lokale Hall of Fame!',
+      en: 'The definitive color codebreaker and deductive logic classic! Conceived in 1970 by Mordecai Meirowitz, manufactured by Invicta Plastics, and distributed across Europe by Jumbo. Crack the secret color sequence hidden behind the shield using feedback clue pins (black for exact position and color, white for right color on the wrong slot). Features both Classic 4-peg and Super Mastermind 5-peg modes, customizable duplicate rules, procedural chiptunes, and local Hall of Fame!'
+    },
+    highlights: {
+      nl: [
+        'Klassieke 4-Pions modus (6 kleuren, 10 beurten) en Deluxe Super Mastermind (5 pionnen, 8 kleuren, 12 beurten)',
+        'Authentieke tactiele plastic vintage speelbord-uitstraling met verborgen schildkap en klikkende pinnen',
+        'Zwarte en witte evaluatiepinnetjes met instant hoorbare chiptune-synthese voor supersnelle deductie',
+        'Slimme deductiehints (-1000pt straf), carrièrestatistieken (winrate, streaks) en lokale topscores met recorddatums'
+      ],
+      en: [
+        'Classic 4-Peg mode (6 colors, 10 turns) plus Deluxe Super Mastermind (5 pegs, 8 colors, 12 turns)',
+        'Authentic tactile vintage plastic board aesthetic with sliding secret shield and snap sockets',
+        'Black and white clue pins with immediate Web Audio chiptune feedback for rapid logic deduction',
+        'Smart deductive hints (-1000pt penalty), career statistics (win rates, streaks), and local hall of fame with dates'
+      ]
+    },
+    specs: {
+      resolution: '4-Slot / 5-Slot Deduction Grid',
+      fps: '60 FPS Tactile Desk Loop',
+      soundChip: 'Web Audio Procedural Peg Clicks & Win Fanfare',
+      media: 'Invicta Plastics Tabletop Board Game'
+    },
+    coinPrice: 'FREE PLAY'
+  },
+  {
+    id: 'patience',
+    year: 1990,
+    yearDisplay: '1990',
+    yearIcon: '🃏',
+    system: 'dos_pc',
+    systemName: { nl: 'PC Windows / DOS', en: 'PC Windows / DOS' },
+    genre: 'puzzle',
+    genreName: { nl: 'Kaartspel / Denksport', en: 'Card Game / Logic' },
+    category: 'card_games',
+    categoryName: { nl: 'PC Kaartspellen & Solitaire', en: 'PC Card Games & Solitaire' },
+    title: 'PATIENCE (SOLITAIRE)',
+    subtitle: { nl: 'Het Legendarische Windows 95 / 3.0 Kaartspel', en: 'The Legendary Windows 95 / 3.0 Card Game' },
+    creator: 'Wes Cherry • Susan Kare • Microsoft',
+    cabinetTheme: {
+      primaryColor: '#10b981',
+      secondaryColor: '#059669',
+      neonColor: '#34d399',
+      glowBorder: 'rgba(16, 185, 129, 0.6)',
+      accentBg: 'from-emerald-950 via-teal-900 to-black',
+      textColor: 'text-emerald-400',
+      marqueeBg: 'bg-emerald-950'
+    },
+    summary: {
+      nl: 'Het meest gespeelde kaartspel in de geschiedenis van personal computing! In de zomer van 1989 geprogrammeerd door Microsoft-stagiair Wes Cherry, met iconische pixel-illustraties van Susan Kare (bekend van het strand met de palmboom en het spookkasteel). Meegeleverd vanaf Windows 3.0 (1990) en Windows 95 om de wereld spelenderwijs te leren slepen en neerzetten (drag-and-drop) met de muis. Inclusief 1-kaart, 2-kaarten (populaire Nederlandse keukentafel-huisregel) en 3-kaarten trekmodus, onbeperkt ongedaan maken, hints, automatische voltooiing en de legendarische stuiterende kaartenregen als overwinningsanimatie!',
+      en: 'The most widely played card game in the history of personal computing! Programmed in summer 1989 by Microsoft intern Wes Cherry, with iconic pixel card artwork designed by Susan Kare (famous for the sunny palm tree beach and haunted castle card backs). Shipped natively in Windows 3.0 (1990) and Windows 95 to teach millions of users how to operate a computer mouse and drag-and-drop. Features Draw 1, Draw 2 (popular house rule), and Draw 3 modes, unlimited undo, smart hints, auto-complete, and the legendary bouncing card cascade victory animation!'
+    },
+    highlights: {
+      nl: [
+        'Klassieke Klondike Patience regels met 7 kolommen, 4 basisstapels, trek-1, trek-2 (huisregel) en trek-3',
+        'Volledige ondersteuning voor zowel muis-slepen (drag-and-drop), snelklikken als dubbelklikken om direct op te ruimen',
+        'Iconische Susan Kare kaartruggen (Strand met Palmboom, Spookkasteel, Hand met Azen, Robot, Smaragd Vilt)',
+        'Authentieke Windows 95 stuiterende kaartenwaterval (bouncing cascade) bij winst met realistische zwaartekrachtfysica!'
+      ],
+      en: [
+        'Classic Klondike Solitaire rules with 7 tableau columns, 4 suit foundations, Draw 1, Draw 2 (house rule), and Draw 3',
+        'Seamless support for mouse drag-and-drop, fast clicking, and double-click / double-tap to quickly send cards to foundation',
+        'Iconic Susan Kare card backs (Palm Tree Beach, Haunted Castle, Hand with Aces, Robot, Emerald Velvet)',
+        'Authentic Windows 95 bouncing card cascade victory animation with realistic gravity physics!'
+      ]
+    },
+    specs: {
+      resolution: '52-Card Klondike Layout',
+      fps: '60 FPS Tactile Card Loop',
+      soundChip: 'Web Audio Card Flips, Foundation Chimes & Fanfare',
+      media: 'Microsoft Windows 3.0 / 95 System App'
+    },
+    coinPrice: 'FREE PLAY'
+  },
+  {
+    id: 'hearts',
+    year: 1992,
+    yearDisplay: '1992',
+    yearIcon: '❤️',
+    system: 'dos_pc',
+    systemName: { nl: 'PC Windows / DOS', en: 'PC Windows / DOS' },
+    genre: 'puzzle',
+    genreName: { nl: 'Kaartspel / Strategie', en: 'Card Game / Strategy' },
+    category: 'card_games',
+    categoryName: { nl: 'PC Kaartspellen & Solitaire', en: 'PC Card Games & Solitaire' },
+    title: 'HARTENJAGEN (HEARTS)',
+    subtitle: { nl: 'The Microsoft Hearts Network (Windows 3.11 / 95)', en: 'The Microsoft Hearts Network (Windows 3.11 / 95)' },
+    creator: 'Microsoft Corporation • Michele, Ben & Paul',
+    cabinetTheme: {
+      primaryColor: '#ef4444',
+      secondaryColor: '#b91c1c',
+      neonColor: '#f87171',
+      glowBorder: 'rgba(239, 68, 68, 0.6)',
+      accentBg: 'from-red-950 via-emerald-950 to-black',
+      textColor: 'text-red-400',
+      marqueeBg: 'bg-red-950'
+    },
+    summary: {
+      nl: 'De ultieme multiplayer kantoorklassieker van Microsoft! Uitgebracht in het najaar van 1992 bij Windows for Workgroups 3.11 en later meegeleverd met Windows 95 om de kracht van kantoornetwerken (LAN) te tonen. Neem plaats aan de iconische groene vilttafel tegen de drie legendarische computergestuurde tegenspelers: Michele (West), Ben (Noord) en Paul (Oost). Geef strategisch 3 kaarten door (links, rechts, oversteken of niet), ontwijk strafpunten van de Harten (1 pt) en de gevreesde Schoppenvrouw (13 pt), of waag de ultieme gok: "De Maan Schieten" (Shoot the Moon)!',
+      en: 'The ultimate multiplayer office classic by Microsoft! Shipped in autumn 1992 with Windows for Workgroups 3.11 and later bundled natively with Windows 95 to demonstrate local area networking. Sit down at the iconic green felt table against the three legendary AI opponents: Michele (West), Ben (North), and Paul (East). Pass 3 cards strategically (left, right, across, or hold), evade penalty points from Hearts (1 pt) and the feared Queen of Spades (13 pt), or pull off the daring triumph: "Shoot the Moon"!'
+    },
+    highlights: {
+      nl: [
+        'Volledige 4-speler slag-engine tegen de klassieke Windows 95 bots: Michele, Ben en Paul',
+        'Vier doorgifte-fasen: naar links, naar rechts, oversteken en geen doorgifte',
+        'Strikte spelregels: uitkomen met Klaveren 2 (♣2), bekennen, harten breken en Schoppenvrouw (♠Q)',
+        'Legendarische "De Maan Schieten" (Shoot the Moon) triomf met triomfantelijke fanfare!'
+      ],
+      en: [
+        'Full 4-player trick-taking engine against classic Windows 95 bots: Michele, Ben, and Paul',
+        'Four passing phases: Pass Left, Pass Right, Pass Across, and Hold (No Pass)',
+        'Strict rules: Must lead 2 of Clubs (♣2), follow suit, broken hearts mechanics, and Queen of Spades (♠Q)',
+        'Legendary "Shoot the Moon" victory mechanic with orchestral brass fanfare!'
+      ]
+    },
+    specs: {
+      resolution: '4-Player Trick Arena Layout',
+      fps: '60 FPS Tactile Card Loop',
+      soundChip: 'Web Audio Queen of Spades Sting & Moon Fanfare',
+      media: 'The Microsoft Hearts Network (Windows 3.11 / 95)'
+    },
+    coinPrice: 'FREE PLAY'
+  },
+  {
+    id: 'freecell',
+    year: 1991,
+    yearDisplay: '1991',
+    yearIcon: '🃏',
+    system: 'dos_pc',
+    systemName: { nl: 'PC Windows / DOS', en: 'PC Windows / DOS' },
+    genre: 'puzzle',
+    genreName: { nl: 'Kaartspel / Logica', en: 'Card Game / Logic' },
+    category: 'card_games',
+    categoryName: { nl: 'PC Kaartspellen & Solitaire', en: 'PC Card Games & Solitaire' },
+    title: 'FREECELL',
+    subtitle: { nl: 'Het Legendarische Wiskundige Windows Solitaire (1991)', en: 'The Legendary Mathematical Windows Solitaire (1991)' },
+    creator: 'Paul Alan Schultz • Microsoft Corporation',
+    cabinetTheme: {
+      primaryColor: '#10b981',
+      secondaryColor: '#047857',
+      neonColor: '#34d399',
+      glowBorder: 'rgba(16, 185, 129, 0.6)',
+      accentBg: 'from-emerald-950 via-slate-900 to-black',
+      textColor: 'text-emerald-400',
+      marqueeBg: 'bg-emerald-950'
+    },
+    summary: {
+      nl: 'Het beroemdste wiskundige solitaire-kaartspel ter wereld! Ontwikkeld in 1991 door Paul Alan Schultz en meegeleverd met het Microsoft Entertainment Pack en Windows 95. In tegenstelling tot Patience liggen bij FreeCell alle 52 kaarten direct open op tafel verdeeld over 8 kolommen. Gebruik de 4 vrije parkeervakken (Free Cells) om kaarten tijdelijk te parkeren en bouw alle 4 basisstapels op van Aas t/m Koning. Inclusief de authentieke historische Microsoft spelnummers #1 t/m #32.000, inclusief de legendarische onoplosbare uitdaging #11982!',
+      en: 'The world\'s most famous mathematical solitaire game! Created in 1991 by Paul Alan Schultz and bundled with the Microsoft Entertainment Pack and Windows 95. Unlike Klondike, all 52 cards are dealt face up across 8 columns. Use the 4 temporary storage cells to manoeuvre cards and build foundations from Ace to King. Features authentic Microsoft game deals #1 to #32,000, including the legendary unsolvable deal #11982!'
+    },
+    highlights: {
+      nl: [
+        'Authentieke Microsoft PRNG-generator voor alle historische spelnummers #1 t/m #32.000',
+        '4 Vrije Parkeervakken (Free Cells) voor strategische kaartmanoeuvres',
+        'Inclusief de beroemde onoplosbare uitdaging Spel #11982',
+        'Automatisch afmaken, slimme hints, stap terug en uitgebreide statistieken'
+      ],
+      en: [
+        'Authentic Microsoft PRNG deck generator for all historic game numbers #1 to #32,000',
+        '4 Free Cells for tactical card maneuvers',
+        'Includes the famous unsolvable challenge Deal #11982',
+        'Auto-complete, smart hints, undo moves, and detailed win-rate statistics'
+      ]
+    },
+    specs: {
+      resolution: '8 Cascade Columns + 4 Free Cells',
+      fps: '60 FPS Tactile Card Drag & Tap',
+      soundChip: 'Web Audio Card FX & Win Fanfare',
+      media: 'Microsoft Entertainment Pack / Windows 95'
+    },
+    coinPrice: 'FREE PLAY'
+  },
+  {
+    id: 'spider_solitaire',
+    year: 1998,
+    yearDisplay: '1998',
+    yearIcon: '🕷️',
+    system: 'ibm_pc',
+    systemName: { nl: 'Windows 98 Plus! & XP', en: 'Windows 98 Plus! & XP' },
+    genre: 'puzzle',
+    genreName: { nl: 'Kaartspel / Solitaire', en: 'Card Game / Solitaire' },
+    category: 'card_games',
+    categoryName: { nl: 'PC Kaartspellen & Solitaire', en: 'PC Card Games & Solitaire' },
+    title: 'SPIDER SOLITAIRE',
+    subtitle: { nl: 'De Koning der Geduldspellen met 104 Kaarten & 10 Kolommen', en: 'The King of Patience with 104 Cards & 10 Columns' },
+    creator: 'Microsoft • John A. Blackall (Plus! 98 / Windows XP)',
+    cabinetTheme: {
+      primaryColor: '#0ea5e9',
+      secondaryColor: '#0284c7',
+      neonColor: '#38bdf8',
+      glowBorder: 'rgba(14, 165, 233, 0.6)',
+      accentBg: 'from-sky-950 via-slate-900 to-black',
+      textColor: 'text-sky-400',
+      marqueeBg: 'bg-sky-950'
+    },
+    summary: {
+      nl: 'Het meest verslavende solitaire-kaartspel ooit gemaakt voor de pc! Gelanceerd in het Microsoft Plus! 98 pakket en ongekend populair geworden in Windows XP. Met 2 volledige kaartspellen (104 kaarten) en 10 kolommen op het tableau moet je complete reeksen van Koning tot en met Aas in dezelfde kleur verzamelen om ze weg te spelen. Speelbaar op 3 niveaus: 1 kleur (schoppen - ontspannend), 2 kleuren (schoppen & harten - tactisch) of 4 kleuren (expert hersenkraker). Inclusief onbeperkt ongedaan maken, tactische hints en high score tracking.',
+      en: 'The most addictive solitaire game ever crafted for Windows! First bundled with Microsoft Plus! 98 and popularized globally in Windows XP. Using 2 full decks (104 cards) across 10 tableau columns, assemble descending runs from King down to Ace of the same suit to clear them. Features 3 distinct skill levels: 1 Suit (Spades - relaxing), 2 Suits (tactical challenge), or 4 Suits (expert mastery). Complete with unlimited undo, strategic hints, and local record tracking.'
+    },
+    highlights: {
+      nl: [
+        '3 Speelniveaus: 1 Kleur (Eenvoudig), 2 Kleuren (Gemiddeld) & 4 Kleuren (Grootmeester)',
+        '10 Kolommen tableau met 104 kaarten en 5 reserve-deals uit de voorraadstapel',
+        'Stap terug (Undo), slimme hint-assistentie en automatische kaartverplaatsing',
+        'Volledige statistieken: winstpercentage, minste zetten, toptijden en records'
+      ],
+      en: [
+        '3 Difficulty tiers: 1 Suit (Casual), 2 Suits (Medium), and 4 Suits (Grandmaster)',
+        '10 Tableau cascades holding 104 cards with 5 reserve stock deals',
+        'Undo support, intelligent hints, and responsive tap-to-move interactions',
+        'Complete statistics: win percentage, least moves, best times, and high scores'
+      ]
+    },
+    specs: {
+      resolution: '10 Tableau Columns (104 Cards / 2 Decks)',
+      fps: '60 FPS Smooth Card Physics',
+      soundChip: 'Procedural Web Audio Dealing & Fanfares',
+      media: 'Microsoft Plus! 98 / Windows XP'
+    },
+    coinPrice: 'FREE PLAY'
+  },
+  {
+    id: 'klaverjassen',
+    year: 1985,
+    yearDisplay: 'Klassiek / 1985',
+    yearIcon: '♣️',
+    system: 'dos_pc',
+    systemName: { nl: 'Nederlands Café Klassieker / MS-DOS', en: 'Dutch Café Classic / MS-DOS' },
+    genre: 'puzzle',
+    genreName: { nl: 'Troef- & Slagenspel', en: 'Trick-Taking Partnership' },
+    category: 'card_games',
+    categoryName: { nl: 'PC Kaartspellen & Solitaire', en: 'PC Card Games & Solitaire' },
+    title: 'KLAVERJASSEN',
+    subtitle: { nl: 'Amsterdams & Rotterdams met Troefkeuze, Roem en Slimme AI-Maat', en: 'Amsterdam & Rotterdam rules with Trumps, Melds and Smart AI Partner' },
+    creator: 'Nederlandse Traditie (1890) • Digitale Recreatie',
+    cabinetTheme: {
+      primaryColor: '#f59e0b',
+      secondaryColor: '#d97706',
+      neonColor: '#fbbf24',
+      glowBorder: 'rgba(245, 158, 11, 0.6)',
+      accentBg: 'from-amber-950 via-slate-900 to-black',
+      textColor: 'text-amber-400',
+      marqueeBg: 'bg-amber-950'
+    },
+    summary: {
+      nl: 'Hét nationale kaartspel van Nederland, digitaal tot leven gebracht aan een gezellige virtuele cafétafel! Speel samen met je partner Henk tegen het tegenspeler-duo Ingrid & Jan. Ondersteunt zowel het Amsterdamse systeem (niet verplicht overtroeven als je maat de slag heeft) als het Rotterdamse systeem (altijd verplicht overtroeven). Bied op de troefkleur of pas door, verzamel roem (driekaart 20, vierkaart 50, stuk 20) en behaal meer dan de helft van de 162 punten om te voorkomen dat je nat gaat!',
+      en: 'The quintessential Dutch trick-taking card game, brought to life on a cozy digital pub table! Play in partnership with teammate Henk against rivals Ingrid & Jan. Fully supports both the Amsterdam variant (no undertrumping needed when partner leads) and Rotterdam variant (strict overtrumping mandatory). Choose the trump suit, score bonus melds (sequences, four-of-a-kind, Stuk), and conquer the 162-point threshold!'
+    },
+    highlights: {
+      nl: [
+        'Volledige ondersteuning voor zowel Amsterdams als Rotterdams speelsysteem',
+        'Automatische herkenning en puntentelling van Roem (20, 50, 100, Stuk 20)',
+        'Slimme AI-maat die seint, meeloopt en troeven aftelt',
+        'Boompje van 16 bomen (of snelle ronde van 4) met boeteberekening bij nat gaan'
+      ],
+      en: [
+        'Comprehensive support for both Amsterdam and Rotterdam rule variations',
+        'Automatic detection and tallying of Meld points (20, 50, 100, Stuk 20)',
+        'Smart AI partner with signalling heuristics, suit-counting, and trump management',
+        '16-round tree (Boompje) or quick 4-round match with wet/nat penalties'
+      ]
+    },
+    specs: {
+      resolution: '4-Player Table (32 Dutch Piquet Cards)',
+      fps: '60 FPS Tactile Slag & Roem Animations',
+      soundChip: 'Procedural Pub Audio & Victory Chimes',
+      media: 'Dutch Card Tradition / MS-DOS Re-engineering'
+    },
+    coinPrice: 'FREE PLAY'
+  },
+  {
+    id: 'blackjack',
+    year: 1962,
+    yearDisplay: '1962 / Vegas',
+    yearIcon: '♠️',
+    system: 'ibm_pc',
+    systemName: { nl: 'Casino Tafel / PC Solitaire', en: 'Casino Felt Table / PC Solitaire' },
+    genre: 'puzzle',
+    genreName: { nl: 'Casino Kaartspel / 21', en: 'Casino Card Game / 21' },
+    category: 'card_games',
+    categoryName: { nl: 'PC Kaartspellen & Solitaire', en: 'PC Card Games & Solitaire' },
+    title: 'BLACKJACK / 21',
+    subtitle: { nl: 'De Koning van Las Vegas met Splitsen, Dubbelen, Verzekering & Basisstrategie', en: 'The King of Las Vegas with Split, Double Down, Insurance & Basic Strategy' },
+    creator: 'Edward O. Thorp & Vegas Casino Traditie (1931/1962)',
+    cabinetTheme: {
+      primaryColor: '#10b981',
+      secondaryColor: '#059669',
+      neonColor: '#34d399',
+      glowBorder: 'rgba(16, 185, 129, 0.6)',
+      accentBg: 'from-emerald-950 via-slate-900 to-black',
+      textColor: 'text-emerald-400',
+      marqueeBg: 'bg-emerald-950'
+    },
+    summary: {
+      nl: 'De onbetwiste koning van de casinotafel! Neem plaats aan de met groen vilt beklede blackjacktafel en neem het op tegen de bank (de dealer). Het doel: behaal met je kaarten een puntentotaal zo dicht mogelijk bij de 21 zonder erboven te gaan. Bied met authentieke fiches (€5 tot €1.000), vraag een extra kaart (Hit), pas op tijd (Stand), verdubbel je inzet (Double Down) bij een sterke 10 of 11, of splits gelijke kaarten in twee afzonderlijke handen. Natuurlijke Blackjack (Aas + 10-kaart) betaalt 3:2 uit! Inclusief wiskundig verantwoorde basisstrategie-tabel, verzekering en statistieken.',
+      en: 'The undisputed king of the casino tables! Take your seat at the rich green felt blackjack table and go head-to-head against the house dealer. Your goal: get your card total as close to 21 as possible without exceeding it. Place authentic casino chips ($5 to $1,000), hit for extra cards, stand when strong, double down on 10 or 11, or split matching pairs into two independent hands. Natural Blackjack pays 3:2! Complete with mathematical basic strategy guide, insurance offers, and bankroll tracking.'
+    },
+    highlights: {
+      nl: [
+        'Volledige Las Vegas Strip regels: Dealer past verplicht op 17, Blackjack betaalt 3:2',
+        'Splitsen (Split) van paren en Verdubbelen (Double Down) bij gunstige startkaarten',
+        'Verzekering (Insurance) tegen dealer Azen en overzichtelijke Soft/Hard handtelling',
+        'Uitgebreide wiskundige basisstrategie-tabel en bankroll tracking in de Hall of Fame'
+      ],
+      en: [
+        'Authentic Vegas Strip rules: Dealer stands on 17, Natural Blackjack pays 3:2',
+        'Split pairs into two hands & Double Down on favorable starting totals',
+        'Insurance against dealer Aces with automatic Soft/Hard Ace counting',
+        'Complete mathematical basic strategy table and Hall of Fame bankroll tracker'
+      ]
+    },
+    specs: {
+      resolution: 'Vegas 6-Deck Shoe (312 Cards / Cut Card)',
+      fps: '60 FPS Tactile Card & Chip Animations',
+      soundChip: 'Procedural Web Audio Chips, Flips & Fanfares',
+      media: 'Casino Table Classic / PC Re-engineering'
+    },
+    coinPrice: 'FREE PLAY'
+  },
+  {
+    id: 'bridge',
+    year: 1925,
+    yearDisplay: '1925 / Club',
+    yearIcon: '♠️',
+    system: 'ibm_pc',
+    systemName: { nl: 'Bridge Club Tafel / PC Denksport', en: 'Bridge Club Felt Table / PC Mind Sport' },
+    genre: 'puzzle',
+    genreName: { nl: 'Denksport / Kaartspel', en: 'Mind Sport / Card Game' },
+    category: 'card_games',
+    categoryName: { nl: 'PC Kaartspellen & Solitaire', en: 'PC Card Games & Solitaire' },
+    title: 'CONTRACT BRIDGE',
+    subtitle: { nl: 'De Koning der Denksporten met Biedbox, 5-Kaart Hoog, Honneurpunten & Dummy Afspelen', en: 'The King of Mind Sports with Bidding Box, 5-Card Majors, HCP & Dummy Play' },
+    creator: 'Harold Vanderbilt (1925) & Nederlandse Bridge Bond (NBB)',
+    cabinetTheme: {
+      primaryColor: '#f59e0b',
+      secondaryColor: '#d97706',
+      neonColor: '#fbbf24',
+      glowBorder: 'rgba(245, 158, 11, 0.6)',
+      accentBg: 'from-amber-950 via-slate-900 to-black',
+      textColor: 'text-amber-400',
+      marqueeBg: 'bg-amber-950'
+    },
+    summary: {
+      nl: 'De absolute koning der denksporten! Neem plaats aan de met klassiek groen laken beklede bridgetafel en speel samen met je partner Henk (Noord) tegen het tegenstanders-duo Ingrid & Jan (Oost en West). Bepaal via de officiële Biedbox (1♣ t/m 7SA, Pas, Doublet en Redoublet) welk paar het contract wint volgens het 5-kaart hoog biedsysteem. Na de openingsuitkomst legt de Dummy (de Blinde) alle 13 kaarten open op tafel, waarna de Leider zowel de eigen hand als de Dummy bestuurt. Bevat automatische Honneurpunten-telling (A=4, K=3, Q=2, J=1), officiële duplicate bridge puntentelling, manchebonussen en een meesterstand!',
+      en: 'The undisputed king of mind sports! Take your seat at the classic green felt bridge table and team up with partner Henk (North) against rivals Ingrid & Jan (East and West). Use the official Bidding Box (1♣ through 7NT, Pass, Double, and Redouble) to contest the auction using Standard 5-Card Majors. Following the opening lead, the Dummy spreads all 13 cards face-up for declarer to masterfully pilot. Features automated High Card Points evaluation (A=4, K=3, Q=2, J=1), official Duplicate Bridge scoring, game & slam bonuses, and Hall of Fame tracking!'
+    },
+    highlights: {
+      nl: [
+        'Volledig biedsysteem met 5-kaart hoog, 1SA (15-17 HCP) opening en officiële Biedbox',
+        'Leider- en Dummy-mechaniek: bestuur zowel je eigen kaarten als de opengelegde dummy',
+        'Officiële Duplicate Bridge puntentelling: Deelscores, Manches (+300/+500) en Slems',
+        'Honneurpunten-indicator (HCP) en Meesterstand met historisch eerbetoon aan vaders'
+      ],
+      en: [
+        'Complete bidding box auction with 5-card majors, 1NT (15-17 HCP), doubles & redoubles',
+        'Declarer and Dummy play: pilot both your hand and the exposed dummy cards',
+        'Official Duplicate Bridge scoring: Partscores, Game bonuses (+300/+500), and Slams',
+        'High Card Point (HCP) evaluator and Hall of Fame honoring master bridge players'
+      ]
+    },
+    specs: {
+      resolution: '4-Player Table (52 Cards / Bidding Box)',
+      fps: '60 FPS Tactile Card & Dummy Animations',
+      soundChip: 'Procedural Felt Snaps, Clicks & Fanfares',
+      media: 'Mind Sport Classic / Computer Bridge Re-engineering'
+    },
+    coinPrice: 'FREE PLAY'
+  },
+  {
+    id: 'radarsoft_3d_ttt',
+    year: 1984,
+    yearDisplay: '1984',
+    yearIcon: '🎲',
+    system: 'c64',
+    systemName: { nl: 'Commodore 64', en: 'Commodore 64' },
+    genre: 'puzzle',
+    genreName: { nl: '3D Denksport & Logica', en: '3D Mind Sport & Logic' },
+    category: 'c64',
+    categoryName: { nl: 'Commodore 64 Klassiekers', en: 'Commodore 64 Classics' },
+    title: '3D TIC TAC TOE',
+    subtitle: { 
+      nl: 'Radarsoft’s debuutspel: 4×4×4 Qubic kubus met 76 winlijnen', 
+      en: 'Radarsoft’s debut title: 4×4×4 Qubic cube with 76 winning lines' 
+    },
+    creator: 'Radarsoft (Cees Kramer & John Vanderaart)',
+    cabinetTheme: {
+      primaryColor: '#0284c7',
+      secondaryColor: '#38bdf8',
+      neonColor: '#00e5ff',
+      glowBorder: 'border-cyan-500/50',
+      accentBg: 'bg-cyan-950/70',
+      textColor: 'text-cyan-300',
+      marqueeBg: 'from-blue-950 via-cyan-950 to-slate-950'
+    },
+    summary: {
+      nl: 'In het voorjaar van 1984 lanceerde het gloednieuwe Utrechtse softwarehuis Radarsoft (Cees Kramer & "Dr. John" Vanderaart) hun allereerste commerciële C64-release: 3D Tic Tac Toe! Geen simpel 3×3 spelletje, maar een volwaardige 4×4×4 Qubic kubus met 64 posities en maar liefst 76 verschillende winlijnen (48 axiaal, 24 vlak-diagonaal en 4 ruimtelijk 3D). Met authentieke C64 SID chiptune-audio, vrije 3D-rotatie, 4-lagige tactische weergave en een slimme AI op 3 niveaus.',
+      en: 'In spring 1984, newly formed Dutch software powerhouse Radarsoft (Cees Kramer & "Dr. John" Vanderaart) published their inaugural commercial C64 title: 3D Tic Tac Toe! Rather than a trivial 3×3 grid, this is full 4×4×4 Qubic spanning 64 coordinates and 76 unique winning vectors (48 axial, 24 planar diagonal, and 4 space diagonals). Features authentic C64 SID chiptune synthesis, interactive 3D cube orbiting, 4-layer tactical boards, and 3-level AI.'
+    },
+    highlights: {
+      nl: [
+        'Volledige 4×4×4 Qubic kubus met realtime 3D-rotatie, zoom en camerahoeken',
+        '76 geverifieerde winlijnen (48 axiaal, 24 vlakdiagonalen, 4 ruimtelijke hoofddiagonalen)',
+        '4-laags tactisch overzicht (L1 t/m L4) met directe interactie en coördinaten',
+        'Slimme C64 AI op 3 niveaus: Novice, Dr. John (Vorkheuristiek) en Grandmaster',
+        'Volledige Commodore 64 SID 6581 sound-synthese en CRT phosphor scanlines'
+      ],
+      en: [
+        'Complete 4×4×4 Qubic cube with real-time 3D orbit rotation, zoom, and preset angles',
+        '76 mathematically verified winning lines (48 axial, 24 planar, 4 space diagonals)',
+        '4-layer tactical board matrix (L1 to L4) with instant interactive move placement',
+        'Intelligent C64 AI with 3 tiers: Novice, Dr. John (Fork heuristic), and Grandmaster',
+        'Full MOS 6581 SID chiptune sound synthesis and authentic CRT phosphor scanlines'
+      ]
+    },
+    specs: {
+      resolution: '4×4×4 Qubic Cube (64 Positions / 4 Levels)',
+      fps: '60 FPS 3D Orbit & CRT Raster',
+      soundChip: 'MOS 6581 SID Procedural Synthesis',
+      media: '1984 Radarsoft Debut C64 Cassette/Disk'
+    },
+    coinPrice: 'FREE PLAY'
+  },
+  {
+    id: 'stratego',
+    year: 1958,
+    yearDisplay: '1958',
+    yearIcon: '⚔️',
+    system: 'ibm_pc',
+    systemName: { nl: 'Bordspel & PC', en: 'Board Game & PC' },
+    genre: 'puzzle',
+    genreName: { nl: 'Tactische Oorlogsstrategie', en: 'Tactical Warfare & Bluff' },
+    category: 'brain_logic',
+    categoryName: { nl: 'Denksport, Bord- & Logica', en: 'Brain, Board & Logic' },
+    title: 'STRATEGO',
+    subtitle: { 
+      nl: 'Nederlands meesterwerk van tactiek, bluf en Fog of War', 
+      en: 'Dutch masterpiece of military tactics, bluff, and Fog of War' 
+    },
+    creator: 'Jacques Johan Mogendorff / Hausemann & Hötte (Jumbo)',
+    cabinetTheme: {
+      primaryColor: '#b45309',
+      secondaryColor: '#f59e0b',
+      neonColor: '#fbbf24',
+      glowBorder: 'border-amber-500/50',
+      accentBg: 'bg-amber-950/70',
+      textColor: 'text-amber-300',
+      marqueeBg: 'from-amber-950 via-red-950 to-slate-950'
+    },
+    summary: {
+      nl: 'In 1947 bedacht de Nederlander Jacques Johan Mogendorff Stratego, waarna de befaamde Amsterdamse uitgever Jumbo (Hausemann & Hötte) het in 1958 perfectioneerde met de iconische houten torentjes en het slagveld met de twee meren. Voer het bevel over 40 pionnen (Maarschalk, Spion, Mineuren, Verkenners, Bommen en Vlag) in een duel van geheugen, bluf en Fog of War!',
+      en: 'Invented in 1947 by Dutch creator Jacques Johan Mogendorff and perfected in 1958 by iconic Amsterdam publisher Jumbo, Stratego is the world-famous board game of military deception. Command an army of 40 pieces (Marshal, Spy, Miners, Scouts, Bombs, and Flag) on a 10×10 battlefield with central lakes under complete Fog of War!'
+    },
+    highlights: {
+      nl: [
+        'Volledig 10×10 Jumbo slagveld met de twee iconische meren en reliëf torentjes',
+        'Volledige Fog of War: vijandelijke pionnen blijven geheim tot de strijd ontbrandt',
+        'Alle klassieke regels: Spion verslaat Maarschalk, Mineur ontmantelt Bom, Verkenners snelle sprint',
+        '5 Tactische opstellingspresets (Gebalanceerd, Fortress, Bluf, Mineuren Blitz) plus vrije opstelling',
+        'Slimme tactische AI die niet spiekt en redeneert op basis van verkenningsinformatie'
+      ],
+      en: [
+        'Authentic 10×10 Jumbo battlefield with dual central lakes and embossed wooden pieces',
+        'True Fog of War: enemy ranks remain shrouded in secrecy until engaged in combat',
+        'All official rules: Spy takes Marshal on attack, Miner defuses Bombs, Scouts long-range sprint',
+        '5 Tactical setup formations (Balanced, Fortress, Bluff, Miner Blitz) plus custom piece swapping',
+        'Intelligent Fog-of-War compliant AI that deduces your army purely from scouting intel'
+      ]
+    },
+    specs: {
+      resolution: '10×10 Vintage Board (80 Combat Pieces / 2 Lakes)',
+      fps: '60 FPS Tactile Piece Animations',
+      soundChip: 'Procedural Drum Rolls, Sword Clashes & Bugle Fanfares',
+      media: '1947/1958 Jumbo Tabletop & Mind Sport Classic'
+    },
+    coinPrice: 'FREE PLAY'
+  },
+  {
+    id: 'kamertje_verhuren',
+    year: 1895,
+    yearDisplay: '1895 / Schrift',
+    yearIcon: '📐',
+    system: 'dos_pc',
+    systemName: { nl: 'Ruitjespapier & Balpen', en: 'Graph Paper & Pen' },
+    genre: 'puzzle',
+    genreName: { nl: 'Denksport & Wiskunde', en: 'Logic & Mathematics' },
+    category: 'brain_logic',
+    categoryName: { nl: 'Denksport, Bord- & Logica', en: 'Brain, Board & Logic' },
+    title: 'KAMERTJE VERHUREN',
+    subtitle: { 
+      nl: 'De legendarische ruitjespapier klassieker met balpen & kettingreacties', 
+      en: 'The iconic graph paper dots-and-boxes school classic with pen & chain combos' 
+    },
+    creator: 'Édouard Lucas (1895) / Ruitjesschrift Traditie',
+    cabinetTheme: {
+      primaryColor: '#d97706',
+      secondaryColor: '#f59e0b',
+      neonColor: '#2563eb',
+      glowBorder: 'border-amber-500/50',
+      accentBg: 'bg-amber-950/70',
+      textColor: 'text-amber-300',
+      marqueeBg: 'from-amber-950 via-slate-900 to-blue-950'
+    },
+    summary: {
+      nl: 'Kamertje Verhuren (internationaal bekend als Dots and Boxes of La Pipopipette) is de ultieme schoolbanken-klassieker, getekend met balpen op geruit wiskundepapier. Spelers trekken om de beurt een lijntje tussen twee stippen; wie het vierde lijntje van een vierkantje voltooit, claimt het kamertje, scoort een punt en mag direct NOG een beurt doen. Wat begint als een onschuldig spelletje ontaardt in diepgaande combinatorische wiskunde met gigantische kettingreacties en de befaamde dubbele-weggeefzet!',
+      en: 'Kamertje Verhuren (internationally known as Dots and Boxes or La Pipopipette) is the quintessential school notebook classic drawn with ballpoint pens on graph paper. Conceived in 1895 by French mathematician Édouard Lucas, players take turns connecting adjacent dots; closing the fourth side of a square claims the box, scores a point, and grants an immediate extra turn, opening thrilling chain reactions and combinatorial strategy!'
+    },
+    highlights: {
+      nl: [
+        'Authentieke ruitjespapier & collegeblok esthetiek met blauwe en rode balpen-inkt',
+        '3×3 t/m 6×6 rasters met realistische krasgeluiden en kettingreactie-combos',
+        'Intelligente AI (Klasgenoot, Wiskundedocent & Édouard Lucas met de Dubbele-Weggeefzet)',
+        'Volledige wiskundige speltheorie-gids (John Conway Nimstring analyse & schoolherinneringen)',
+        'Pass & Play voor 2 spelers én solo tegen de computer'
+      ],
+      en: [
+        'Authentic graph paper notebook aesthetic with royal blue and crimson ballpoint ink',
+        '3×3 to 6×6 grid sizes with tactile pen scratch audio and chain combo streaks',
+        '3-tier AI (Schoolmate, Math Teacher & Édouard Lucas with Double-Cross sacrifice logic)',
+        'Complete combinatorial game theory dossier (John Conway Nimstring & classroom nostalgia)',
+        '2-Player Pass & Play mode and solo challenge vs computer'
+      ]
+    },
+    specs: {
+      resolution: 'Geruit Wiskundeschrift (3×3 t/m 6×6 Rasters)',
+      fps: '60 FPS Vloeiende Balpen-Inkt Animaties',
+      soundChip: 'Procedurale Bic Balpen-Krasjes & Ketting-Chimes',
+      media: 'Édouard Lucas (1895) / Ruitjespapier Klassieker'
+    },
+    coinPrice: 'FREE PLAY'
+  },
+  {
+    id: 'connect_four',
+    year: 1974,
+    yearDisplay: '1974',
+    yearIcon: '🟡',
+    system: 'arcade',
+    systemName: { nl: 'MB Klassieker', en: 'Milton Bradley Classic' },
+    genre: 'puzzle',
+    genreName: { nl: 'Brein & Strategie', en: 'Brain & Strategy' },
+    category: 'brain_logic',
+    categoryName: { nl: 'Bordspellen & Logica', en: 'Board & Logic' },
+    title: 'VIER OP EEN RIJ',
+    subtitle: { nl: 'Het Legendarische Kunststof Speelraam', en: 'The Legendary Vertical Drop Game' },
+    creator: 'Milton Bradley (MB) • Howard Wexler & Ned Strongin',
+    cabinetTheme: {
+      primaryColor: '#2563eb',
+      secondaryColor: '#1d4ed8',
+      neonColor: '#60a5fa',
+      glowBorder: 'rgba(37, 99, 235, 0.4)',
+      accentBg: 'from-blue-950 via-slate-900 to-black',
+      textColor: 'text-blue-400',
+      marqueeBg: 'bg-blue-900/60'
+    },
+    summary: {
+      nl: 'Het iconische verticale blauwe speelraam uit 1974! Laat je rode fiches vallen, blokkeer de C64 AI en maak als eerste 4 op een rij horizontaal, verticaal of diagonaal.',
+      en: 'The iconic 1974 vertical blue plastic drop grid! Drop your red tokens, outsmart the C64 AI and connect 4 in a row horizontally, vertically or diagonally.'
+    },
+    highlights: {
+      nl: [
+        'Authentiek blauw plastic speelraam met rode en gele fiches',
+        'Iconische gele schuifbalk onderaan om alle fiches te laten vallen',
+        'Slimme C64 AI met Minimax Alpha-Beta Pruning (3 niveaus)'
+      ],
+      en: [
+        'Authentic blue plastic drop grid with red and yellow tokens',
+        'Iconic bottom slider release lever to drop tokens with rattle sounds',
+        'Smart C64 AI with Minimax Alpha-Beta Pruning engine'
+      ]
+    },
+    specs: {
+      resolution: '7×6 Vertical Grid (42 Holes)',
+      fps: '60.0 FPS Fixed Physics Loop',
+      soundChip: 'PSG Web Audio Chip Generator',
+      media: 'Milton Bradley 1974 Cabinet'
+    },
+    coinPrice: '1 Coin / Play'
+  },
+  {
+    id: 'hangman',
+    year: 1894,
+    yearDisplay: '1894',
+    yearIcon: '✍️',
+    system: 'apple_ii',
+    systemName: { nl: 'Collegeblok Ruitjespapier', en: 'Grid Math Notepad' },
+    genre: 'puzzle',
+    genreName: { nl: 'Woordpuzzel & Taalkunde', en: 'Word Puzzle & Vocabulary' },
+    category: 'brain_logic',
+    categoryName: { nl: 'Bordspellen & Logica', en: 'Board & Logic' },
+    title: 'GALGJE OP RUITJESPAPIER',
+    subtitle: { nl: 'Klassiek Ruitjesschrift Woordraadspel', en: 'Classic Paper & Pencil Word Guessing Game' },
+    creator: 'Traditioneel Papier- & Pen Spel • Woordenboek Edities',
+    cabinetTheme: {
+      primaryColor: '#0284c7',
+      secondaryColor: '#0369a1',
+      neonColor: '#38bdf8',
+      glowBorder: 'rgba(2, 132, 199, 0.4)',
+      accentBg: 'from-sky-950 via-slate-900 to-black',
+      textColor: 'text-sky-400',
+      marqueeBg: 'bg-sky-900/60'
+    },
+    summary: {
+      nl: 'Het geliefde klaslokaal spel op geruit wiskundepapier! Raad letters in de uitgebreide Nederlandse en Engelse woordenschat met 4 moeilijkheidsgraden, hints en balpen krasgeluiden.',
+      en: 'The beloved classroom paper-and-pencil game on grid paper! Guess letters across massive Dutch and English dictionaries with 4 difficulty tiers, category hints, and ballpoint ink animations.'
+    },
+    highlights: {
+      nl: [
+        'Uitgebreide Nederlandse & Engelse woordenschat (4 moeilijkheidsgraden)',
+        'Authentieke balpen inkt tekenanimaties van de galg op ruitjespapier',
+        'Handige categorie hints en 2-speler Paspas & Speel modus'
+      ],
+      en: [
+        'Massive bilingual dictionary in Dutch & English across 4 difficulty levels',
+        'Authentic hand-drawn ballpoint ink hangman animations on graph paper',
+        'Category hint reveal system and 2-player custom word creator'
+      ]
+    },
+    specs: {
+      resolution: 'Geruit Wiskundeschrift (Collegeblok Layout)',
+      fps: '60 FPS Vloeiende Inkt-Animate Loops',
+      soundChip: 'Procedurale Balpen Kras & Papier Web Audio API',
+      media: 'Traditioneel Papier & Potlood Spel (1894)'
+    },
+    coinPrice: '1 Coin / Play'
   }
 ];
 
 export const LOBBY_TRANSLATIONS = {
   nl: {
     badge: 'RETRO ARCADE VAULT',
-    activeGamesBadge: '53 GAMES & CONSOLES ACTIEF • FREE PLAY',
-    headerSub: 'Gouden Tijdperk Retro Speelhal, Game Boy Bibliotheek & PC Klassiekers • 10 Game Boy Klassiekers, GBA SP, Atari, Sinclair, BBC Micro, C64 & DOS',
+    activeGamesBadge: '72 SPEELBARE TITELS • FREE PLAY',
+    headerSub: '',
     mainTitle: 'De Ultieme Retro Speelhal',
-    mainDesc: 'Stap binnen in de gouden eeuw van videogames (1972 – 2011). Speel 53 iconische arcademeesterwerken, complete 10-game Game Boy bibliotheek, handheld klassiekers en pc-avonturen in authentieke resolutie, 60 FPS snelheid en originele chiptune-synthese.',
+    mainDesc: 'Stap binnen in de gouden eeuw van videogames en klassieke denksporten (1895 – 2011). Speel 72 iconische meesterwerken, waaronder Kamertje Verhuren (het legendarische ruitjespapier & balpen-spel met kettingreacties & dubbele-weggeefzet), Stratego (1947/1958 Jumbo klassieker met 40 pionnen & Fog of War), Radarsoft 3D Tic Tac Toe (1984 C64 debuut met 4×4×4 Qubic & 76 winlijnen), Contract Bridge (met Biedbox, 5-Kaart Hoog & Dummy-spel), Blackjack / 21, Klaverjassen (Amsterdams & Rotterdams), Spider Solitaire (1, 2 & 4 kleuren), FreeCell (#1-32.000), Hartenjagen (Win95 Hearts), Patience (Solitaire), Mastermind, Zeeslag Solitaire, Sudoku, Galaga, Arkanoid, complete 10-game Game Boy bibliotheek, Apple II klassiekers, Spy Fox en pc-avonturen in authentieke resolutie, 60 FPS snelheid en originele chiptune-synthese.',
     
     // Views
     views: {
@@ -2405,7 +3456,9 @@ export const LOBBY_TRANSLATIONS = {
     // Filters
     filterLabel: 'Sorteer & Filter:',
     allCategories: 'Alle Categorieën',
+    categoryCardGames: 'PC Kaartspellen & Solitaire',
     categoryArcade: 'Arcade Hal Klassiekers',
+    categoryBrainLogic: 'Denksport, Bord- & Logica',
     categoryHandheld: 'Handheld & Game Boy',
     categoryAdventure: 'Grafische Avonturen (Sierra)',
     categoryC64: 'Commodore 64 Klassiekers',
@@ -2453,10 +3506,10 @@ export const LOBBY_TRANSLATIONS = {
   },
   en: {
     badge: 'RETRO ARCADE VAULT',
-    activeGamesBadge: '53 GAMES & CONSOLES IN VAULT • FREE PLAY',
-    headerSub: 'Golden Era Retro Arcade Collection, Complete Game Boy Library & PC Classics • 10 Game Boy Classics, GBA SP, Atari Vector, Sinclair, BBC Micro, C64 & DOS',
+    activeGamesBadge: '71 PLAYABLE TITLES • FREE PLAY',
+    headerSub: '',
     mainTitle: 'The Ultimate Retro Arcade Hall',
-    mainDesc: 'Step into the golden age of video games (1972 – 2011). Play 53 iconic arcade masterpieces, full 10-game Game Boy library, handheld classics, vector games and graphic adventures in authentic resolution, 60 FPS performance, and original synthesized chiptune audio.',
+    mainDesc: 'Step into the golden age of video games and classic mind sports (1925 – 2011). Play 71 iconic masterpieces including Stratego (1947/1958 Jumbo classic with 40 pieces & Fog of War), Radarsoft 3D Tic Tac Toe (1984 C64 debut with 4×4×4 Qubic & 76 winning lines), Contract Bridge (with Bidding Box, 5-Card Majors & Dummy Play), Blackjack / 21, Klaverjassen (Amsterdam & Rotterdam rules), Spider Solitaire (1, 2 & 4 suits), FreeCell (#1-32,000), Hearts (The Microsoft Hearts Network), Patience (Solitaire), Mastermind, Battleship Solitaire, Sudoku, Galaga, Arkanoid, full 10-game Game Boy library, Apple II classics, Spy Fox and graphic adventures in authentic resolution, 60 FPS performance, and original synthesized chiptune audio.',
 
     // Views
     views: {
@@ -2473,7 +3526,9 @@ export const LOBBY_TRANSLATIONS = {
     // Filters
     filterLabel: 'Sort & Filter:',
     allCategories: 'All Categories',
+    categoryCardGames: 'PC Card & Solitaire Games',
     categoryArcade: 'Arcade Hall Classics',
+    categoryBrainLogic: 'Brain, Board & Logic Games',
     categoryHandheld: 'Handheld & Game Boy',
     categoryAdventure: 'Graphic Adventures (Sierra)',
     categoryC64: 'Commodore 64 Classics',

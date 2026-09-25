@@ -43,12 +43,33 @@ import { ImpossibleMissionCabinet } from './components/ImpossibleMissionCabinet'
 import { GameBoyCabinet } from './components/GameBoyCabinet';
 import { GbaSpCabinet } from './components/GbaSpCabinet';
 import { Ps1Cabinet } from './components/Ps1Cabinet';
+import { SpyFoxCabinet } from './components/SpyFoxCabinet';
+import { NightDriverCabinet } from './components/NightDriverCabinet';
+import { TopografieEuropaCabinet } from './components/TopografieEuropaCabinet';
+import { LodeRunnerCabinet } from './components/LodeRunnerCabinet';
+import { ArkanoidCabinet } from './components/ArkanoidCabinet';
+import { GalagaCabinet } from './components/GalagaCabinet';
+import { SudokuCabinet } from './components/SudokuCabinet';
+import { BattleshipCabinet } from './components/BattleshipCabinet';
+import { MastermindCabinet } from './components/MastermindCabinet';
+import { PatienceCabinet } from './components/PatienceCabinet';
+import { HeartsCabinet } from './components/HeartsCabinet';
+import { FreeCellCabinet } from './components/FreeCellCabinet';
+import { SpiderCabinet } from './components/SpiderCabinet';
+import { KlaverjassenCabinet } from './components/KlaverjassenCabinet';
+import { BlackjackCabinet } from './components/BlackjackCabinet';
+import { BridgeCabinet } from './components/BridgeCabinet';
+import { Radarsoft3DTicTacToeCabinet } from './components/Radarsoft3DTicTacToeCabinet';
+import { StrategoCabinet } from './components/StrategoCabinet';
+import { KamertjeVerhurenCabinet } from './components/KamertjeVerhurenCabinet';
+import { ConnectFourCabinet } from './components/ConnectFourCabinet';
+import { HangmanCabinet } from './components/HangmanCabinet';
 import { ArcadeLobby } from './components/ArcadeLobby';
 import { LeaderboardModal } from './components/LeaderboardModal';
 import { gamepadManager } from './utils/gamepadManager';
 
 export default function App() {
-  const [activeScreen, setActiveScreen] = useState<'lobby' | 'pacman' | 'space_invaders' | 'donkey_kong' | 'demon_attack' | 'repton' | 'eindeloos' | 'frogger' | 'chuckie_egg' | 'frak' | 'arcadians' | 'rocket_raid' | 'qbert' | 'outrun' | 'tetris' | 'kings_quest' | 'space_quest' | 'pong' | 'battle_chess' | 'mario' | 'super_mario' | 'wolfenstein' | 'doom' | 'duke' | 'half_life' | 'zaxxon' | 'c64_pinball' | 'temple_run' | 'lemmings' | 'manic_miner' | 'monster_maze' | 'asteroids' | 'prince' | 'double_dragon' | 'snake' | 'exile' | 'impossible_mission' | 'mario_land' | 'tetris_dmg' | 'dr_mario' | 'metroid_2' | 'kirby_dream_land' | 'mario_land_2' | 'zelda_links_awakening' | 'donkey_kong_94' | 'pokemon_red' | 'wario_land_2' | 'gba_sp' | 'ps1' | 'pokemon_emerald' | 'mario_advance' | 'zelda_minish' | 'crash_bandicoot' | 'ridge_racer'>('lobby');
+  const [activeScreen, setActiveScreen] = useState<'lobby' | 'pacman' | 'space_invaders' | 'donkey_kong' | 'demon_attack' | 'repton' | 'eindeloos' | 'frogger' | 'chuckie_egg' | 'frak' | 'arcadians' | 'rocket_raid' | 'qbert' | 'outrun' | 'tetris' | 'kings_quest' | 'space_quest' | 'pong' | 'battle_chess' | 'mario' | 'super_mario' | 'wolfenstein' | 'doom' | 'duke' | 'half_life' | 'zaxxon' | 'c64_pinball' | 'temple_run' | 'lemmings' | 'manic_miner' | 'monster_maze' | 'asteroids' | 'prince' | 'double_dragon' | 'snake' | 'exile' | 'impossible_mission' | 'mario_land' | 'tetris_dmg' | 'dr_mario' | 'metroid_2' | 'kirby_dream_land' | 'mario_land_2' | 'zelda_links_awakening' | 'donkey_kong_94' | 'pokemon_red' | 'wario_land_2' | 'gba_sp' | 'ps1' | 'pokemon_emerald' | 'mario_advance' | 'zelda_minish' | 'crash_bandicoot' | 'ridge_racer' | 'spy_fox' | 'night_driver' | 'topografie_europa' | 'lode_runner' | 'arkanoid' | 'galaga' | 'sudoku' | 'battleship' | 'mastermind' | 'patience' | 'hearts' | 'freecell' | 'spider_solitaire' | 'klaverjassen' | 'blackjack' | 'bridge' | 'radarsoft_3d_ttt' | 'stratego' | 'kamertje_verhuren' | 'connect_four' | 'hangman'>('lobby');
   const [isLeaderboardOpen, setIsLeaderboardOpen] = useState(false);
 
   useEffect(() => {
@@ -59,6 +80,39 @@ export default function App() {
     }
     return () => {
       gamepadManager.stop();
+    };
+  }, [activeScreen]);
+
+  // Global Escape & Controller Back buttons listener to return to lobby unconditionally
+  useEffect(() => {
+    const handleGlobalKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && activeScreen !== 'lobby') {
+        setActiveScreen('lobby');
+      }
+    };
+
+    window.addEventListener('keydown', handleGlobalKeyDown, true);
+
+    // High precision Gamepad polling for BACK/Select buttons
+    let animId: number;
+    const pollExitButton = () => {
+      if (activeScreen !== 'lobby') {
+        const snapshot = gamepadManager.getSnapshot();
+        if (snapshot.connected) {
+          // View (Select/Back button on Xbox controller) allows exiting back to lobby instantly
+          if (snapshot.buttons.has('View')) {
+            setActiveScreen('lobby');
+          }
+        }
+      }
+      animId = requestAnimationFrame(pollExitButton);
+    };
+
+    animId = requestAnimationFrame(pollExitButton);
+
+    return () => {
+      window.removeEventListener('keydown', handleGlobalKeyDown, true);
+      cancelAnimationFrame(animId);
     };
   }, [activeScreen]);
 
@@ -404,6 +458,132 @@ export default function App() {
       {activeScreen === 'ridge_racer' && (
         <Ps1Cabinet
           initialDisc="ridge_racer"
+          onBackToLobby={() => setActiveScreen('lobby')}
+        />
+      )}
+
+      {activeScreen === 'spy_fox' && (
+        <SpyFoxCabinet
+          onBackToLobby={() => setActiveScreen('lobby')}
+        />
+      )}
+
+      {activeScreen === 'night_driver' && (
+        <NightDriverCabinet
+          onBackToLobby={() => setActiveScreen('lobby')}
+        />
+      )}
+
+      {activeScreen === 'topografie_europa' && (
+        <TopografieEuropaCabinet
+          onBackToLobby={() => setActiveScreen('lobby')}
+        />
+      )}
+
+      {activeScreen === 'lode_runner' && (
+        <LodeRunnerCabinet
+          onBackToLobby={() => setActiveScreen('lobby')}
+        />
+      )}
+
+      {activeScreen === 'arkanoid' && (
+        <ArkanoidCabinet
+          onBackToLobby={() => setActiveScreen('lobby')}
+        />
+      )}
+
+      {activeScreen === 'galaga' && (
+        <GalagaCabinet
+          onBackToLobby={() => setActiveScreen('lobby')}
+        />
+      )}
+
+      {activeScreen === 'sudoku' && (
+        <SudokuCabinet
+          onBackToLobby={() => setActiveScreen('lobby')}
+        />
+      )}
+
+      {activeScreen === 'battleship' && (
+        <BattleshipCabinet
+          onBackToLobby={() => setActiveScreen('lobby')}
+        />
+      )}
+
+      {activeScreen === 'mastermind' && (
+        <MastermindCabinet
+          onBackToLobby={() => setActiveScreen('lobby')}
+        />
+      )}
+
+      {activeScreen === 'patience' && (
+        <PatienceCabinet
+          onBackToLobby={() => setActiveScreen('lobby')}
+        />
+      )}
+
+      {activeScreen === 'hearts' && (
+        <HeartsCabinet
+          onBackToLobby={() => setActiveScreen('lobby')}
+        />
+      )}
+
+      {activeScreen === 'freecell' && (
+        <FreeCellCabinet
+          onBackToLobby={() => setActiveScreen('lobby')}
+        />
+      )}
+
+      {activeScreen === 'spider_solitaire' && (
+        <SpiderCabinet
+          onBackToLobby={() => setActiveScreen('lobby')}
+        />
+      )}
+
+      {activeScreen === 'klaverjassen' && (
+        <KlaverjassenCabinet
+          onBackToLobby={() => setActiveScreen('lobby')}
+        />
+      )}
+
+      {activeScreen === 'blackjack' && (
+        <BlackjackCabinet
+          onBackToLobby={() => setActiveScreen('lobby')}
+        />
+      )}
+
+      {activeScreen === 'bridge' && (
+        <BridgeCabinet
+          onBackToLobby={() => setActiveScreen('lobby')}
+        />
+      )}
+
+      {activeScreen === 'radarsoft_3d_ttt' && (
+        <Radarsoft3DTicTacToeCabinet
+          onBackToLobby={() => setActiveScreen('lobby')}
+        />
+      )}
+
+      {activeScreen === 'stratego' && (
+        <StrategoCabinet
+          onBackToLobby={() => setActiveScreen('lobby')}
+        />
+      )}
+
+      {activeScreen === 'kamertje_verhuren' && (
+        <KamertjeVerhurenCabinet
+          onBackToLobby={() => setActiveScreen('lobby')}
+        />
+      )}
+
+      {activeScreen === 'connect_four' && (
+        <ConnectFourCabinet
+          onBackToLobby={() => setActiveScreen('lobby')}
+        />
+      )}
+
+      {activeScreen === 'hangman' && (
+        <HangmanCabinet
           onBackToLobby={() => setActiveScreen('lobby')}
         />
       )}

@@ -61,6 +61,19 @@ class HapticsManager {
     } catch {}
   }
 
+  /** Warning alert feedback */
+  public warning() {
+    if (!this.enabled || !this.isSupported()) return;
+    try {
+      navigator.vibrate([30, 40, 30]);
+    } catch {}
+  }
+
+  /** Error or invalid move feedback */
+  public error() {
+    this.heavy();
+  }
+
   /** Eating a Power Pellet (energizer) */
   public powerPellet() {
     if (!this.enabled || !this.isSupported()) return;
@@ -139,6 +152,39 @@ class HapticsManager {
     try {
       navigator.vibrate([30, 20, 50]);
     } catch {}
+  }
+
+  /** Subtle click or tap feedback */
+  public softClick() {
+    this.light();
+  }
+
+  /** Button press feedback */
+  public buttonPress() {
+    this.selection();
+  }
+
+  /** Wall hit or error feedback */
+  public wallHit() {
+    this.heavy();
+  }
+
+  /** Coin insert feedback */
+  public coinInsert() {
+    if (!this.enabled || !this.isSupported()) return;
+    try {
+      navigator.vibrate([20, 30, 40]);
+    } catch {}
+  }
+
+  /** Fruit or bonus item eaten */
+  public fruitEaten() {
+    this.eatFruit();
+  }
+
+  /** Game over vibration */
+  public gameOver() {
+    this.death();
   }
 
   /** Selection / UI toggle feedback */
